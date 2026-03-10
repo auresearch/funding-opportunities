@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/jmaher/Downloads/index%20(4).html -->
+<!-- saved from url=(0050)file:///C:/Users/jmaher/Downloads/index%20(5).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -200,7 +200,7 @@
     <div class="loading-text">Loading funding opportunities…</div>
     <div class="loading-sub">Fetching federal grants and curated database</div>
   </div>
-  <div class="warn-banner" id="warn-banner" style="display: block;">Warning: Could not load the federal tab. Error: Failed to fetch</div>
+  <div class="warn-banner" id="warn-banner" style="display: block;">Warning: Could not load the curated tab. Error: Failed to fetch</div>
   <div class="grid" id="grid"></div>
   <div class="lm-wrap" id="lm-wrap" style="display:none"><button class="lm-btn" onclick="loadMore()">Load more opportunities</button></div>
   <div class="empty" id="empty" style="display: block;"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
@@ -298,7 +298,7 @@ async function loadTab(tabName,source){
   // Use direct published CSV URL for curated tab, gviz for federal
   const url = source==="curated"
     ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1152854448&single=true&output=csv"
-    : "https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&sheet="+encodeURIComponent(tabName);
+    : "https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1347133722&single=true&output=csv";
   try{
     const res=await fetch(url);
     if(!res.ok)throw new Error("HTTP "+res.status);
