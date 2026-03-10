@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(12).html -->
+<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(13).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -281,14 +281,7 @@ function parseCSV(text,source){
     const item={id:`${source}_${i}`,source,name,
       funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
-      amount:(()=>{
-        const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");
-        if(!raw)return"See listing";
-        // Must contain at least 3 digits to be a real amount (filters out $1, stray numbers)
-        const digits=(raw.match(/\d/g)||[]).length;
-        if(digits<3&&!raw.toLowerCase().includes("varies")&&!raw.toLowerCase().includes("up to"))return"See listing";
-        return raw;
-      })(),
+      amount:getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"See listing")||"See listing",
       description:getFirst(row,["description","summary","synopsis","opportunitydescription"],""),
       eligibility:getFirst(row,["eligibility","eligibleapplicants"],"See listing"),
       category:cat,keywords:kws,
