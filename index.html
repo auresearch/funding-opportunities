@@ -1,8 +1,11 @@
+
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Funding Opportunities | American University</title>
-<link href="./index_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   :root {
@@ -174,7 +177,9 @@
   <div class="header">
     <!-- White logo bar matching AU.edu -->
     <div class="header-white-bar">
-      <img src="./index_files/AU_landscape_logo.png" alt="American University, Washington DC" class="header-logo">
+      <img src="https://www.american.edu/ucm/images/AU_landscape_logo.png"
+           alt="American University, Washington DC"
+           class="header-logo"/>
       <div class="header-divider"></div>
       <span class="header-office">Office of Research</span>
     </div>
@@ -184,49 +189,49 @@
       <h1>Research <em>Funding</em> Database</h1>
       <div class="header-sub">Federal grants from Grants.gov · curated non-federal awards · updated daily</div>
       <div class="header-stats">
-        <div class="stat-pill"><strong id="total-count">0</strong> opportunities</div>
-        <div class="stat-pill fp">🏛 <strong id="fed-count">0</strong> federal</div>
-        <div class="stat-pill cp">⭐ <strong id="cur-count">0</strong> curated</div>
+        <div class="stat-pill"><strong id="total-count">—</strong> opportunities</div>
+        <div class="stat-pill fp">🏛 <strong id="fed-count">—</strong> federal</div>
+        <div class="stat-pill cp">⭐ <strong id="cur-count">—</strong> curated</div>
         <div class="sync-row">
-          <div class="sync-item"><div class="sync-dot error" id="dot-fed"></div><span id="lbl-fed">No Sheet ID set</span></div>
-          <div class="sync-item"><div class="sync-dot error" id="dot-cur"></div><span id="lbl-cur">No Sheet ID set</span></div>
+          <div class="sync-item"><div class="sync-dot loading" id="dot-fed"></div><span id="lbl-fed">Loading federal…</span></div>
+          <div class="sync-item"><div class="sync-dot loading" id="dot-cur"></div><span id="lbl-cur">Loading curated…</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="controls" id="controls" style="display: flex;">
+  <div class="controls" id="controls" style="display:none">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility…" oninput="render()">
+      <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility…" oninput="render()"/>
     </div>
     <select id="sort" onchange="render()">
       <option value="deadline">Deadline (soonest)</option>
       <option value="amount">Amount (largest)</option>
       <option value="name">Name A–Z</option>
     </select>
-    <span class="results-count" id="results-count">0 results</span>
+    <span class="results-count" id="results-count"></span>
   </div>
 
-  <div class="source-tabs" id="source-tabs" style="display: flex;">
-    <button class="stab active" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">0</span></button>
-    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">0</span></button>
-    <button class="stab" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">0</span></button>
+  <div class="source-tabs" id="source-tabs" style="display:none">
+    <button class="stab active"     onclick="setSrc('all')"     data-s="all">All Sources <span class="tcnt" id="tc-all">—</span></button>
+    <button class="stab fed"        onclick="setSrc('federal')" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">—</span></button>
+    <button class="stab"            onclick="setSrc('curated')" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">—</span></button>
   </div>
 
-  <div class="filter-chips" id="filter-chips" style="display: flex;">
+  <div class="filter-chips" id="filter-chips" style="display:none">
     <span class="chip-label">Category:</span>
-    <button class="chip active" onclick="setCat(&#39;&#39;)" data-cat="">All</button>
-    <button class="chip" onclick="setCat(&#39;STEM&#39;)" data-cat="STEM">Science &amp; Engineering</button>
-    <button class="chip" onclick="setCat(&#39;Health&#39;)" data-cat="Health">Health &amp; Bio</button>
-    <button class="chip" onclick="setCat(&#39;Humanities&#39;)" data-cat="Humanities">Humanities</button>
-    <button class="chip" onclick="setCat(&#39;Education&#39;)" data-cat="Education">Education</button>
-    <button class="chip" onclick="setCat(&#39;Environment&#39;)" data-cat="Environment">Environment &amp; Energy</button>
-    <button class="chip" onclick="setCat(&#39;Social&#39;)" data-cat="Social">Social Sciences</button>
-    <button class="chip" onclick="setCat(&#39;Arts&#39;)" data-cat="Arts">Arts &amp; Culture</button>
+    <button class="chip active" onclick="setCat('')"            data-cat="">All</button>
+    <button class="chip"        onclick="setCat('STEM')"        data-cat="STEM">Science &amp; Engineering</button>
+    <button class="chip"        onclick="setCat('Health')"      data-cat="Health">Health &amp; Bio</button>
+    <button class="chip"        onclick="setCat('Humanities')"  data-cat="Humanities">Humanities</button>
+    <button class="chip"        onclick="setCat('Education')"   data-cat="Education">Education</button>
+    <button class="chip"        onclick="setCat('Environment')" data-cat="Environment">Environment &amp; Energy</button>
+    <button class="chip"        onclick="setCat('Social')"      data-cat="Social">Social Sciences</button>
+    <button class="chip"        onclick="setCat('Arts')"        data-cat="Arts">Arts &amp; Culture</button>
   </div>
 
-  <div class="loading-screen" id="loading-screen" style="display: none;">
+  <div class="loading-screen" id="loading-screen">
     <div class="spinner"></div>
     <div class="loading-text">Loading funding opportunities…</div>
     <div class="loading-sub">Fetching federal grants and curated database</div>
@@ -238,7 +243,7 @@
   <div class="lm-wrap" id="lm-wrap" style="display:none">
     <button class="lm-btn" onclick="loadMore()">Load more opportunities</button>
   </div>
-  <div class="empty" id="empty" style="display: block;">
+  <div class="empty" id="empty">
     <div class="empty-icon">🔭</div>
     <h3>No opportunities found</h3>
     <p>Try a different keyword or adjust your filters</p>
@@ -247,10 +252,11 @@
   <!-- AU FOOTER -->
   <div style="background:#182449; border-top:4px solid #E0263C; margin-top:32px; padding:18px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
     <div style="display:flex; align-items:center; gap:14px;">
-      <img src="./index_files/crest-logotype-blue.svg" alt="American University" style="height:28px;  opacity:0.9;">
-      <span style="color:rgba(255,255,255,0.5); font-size:11px; font-family:&#39;Source Sans 3&#39;,sans-serif;">Office of Research</span>
+      <img src="https://www.american.edu/customcf/assets/crest-logotype-blue.svg"
+           alt="American University" style="height:28px;  opacity:0.9;"/>
+      <span style="color:rgba(255,255,255,0.5); font-size:11px; font-family:'Source Sans 3',sans-serif;">Office of Research</span>
     </div>
-    <span style="color:rgba(255,255,255,0.35); font-size:11px; font-family:&#39;Source Sans 3&#39;,sans-serif;">4400 Massachusetts Avenue NW · Washington, DC 20016</span>
+    <span style="color:rgba(255,255,255,0.35); font-size:11px; font-family:'Source Sans 3',sans-serif;">4400 Massachusetts Avenue NW · Washington, DC 20016</span>
   </div>
 </div>
 
@@ -260,15 +266,15 @@
     <div class="modal-stripe" id="m-stripe"></div>
     <div class="modal-header">
       <button class="modal-close" onclick="closeOverlay()">✕</button>
-      <div class="modal-src" id="m-src"></div>
+      <div class="modal-src"    id="m-src"></div>
       <div class="modal-funder" id="m-funder"></div>
-      <div class="modal-title" id="m-title"></div>
+      <div class="modal-title"  id="m-title"></div>
     </div>
     <div class="modal-body">
       <div class="modal-row">
         <div class="mbox"><div class="mbox-label">Award Amount</div><div class="mbox-val" id="m-amount"></div></div>
         <div class="mbox"><div class="mbox-label">Deadline</div><div class="mbox-val" id="m-deadline"></div></div>
-        <div class="mbox"><div class="mbox-label">Eligibility</div><div class="mbox-val" id="m-elig" style="font-size:12px;font-family:&#39;Source Sans 3&#39;,sans-serif;font-weight:400;line-height:1.4;"></div></div>
+        <div class="mbox"><div class="mbox-label">Eligibility</div><div class="mbox-val" id="m-elig" style="font-size:12px;font-family:'Source Sans 3',sans-serif;font-weight:400;line-height:1.4;"></div></div>
       </div>
       <div class="msec">About this opportunity</div>
       <div class="mdesc" id="m-desc"></div>
@@ -301,7 +307,7 @@ let curCat = "";
 
 // ── DATA LOADING ─────────────────────────────────────────────
 async function loadTab(tabName, source) {
-  if (SHEET_ID === "1bdZ2UyQGuOkOK3fCwWq5dFnq-aWnJ_gehc80v06Qi7o") {
+  if (!SHEET_ID || SHEET_ID === "YOUR_SHEET_ID_HERE") {
     setSyncState(source, 'error', 'No Sheet ID set');
     return [];
   }
@@ -556,6 +562,5 @@ document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeOverlay(); }
 
 init();
 </script>
-
-
-</body></html>
+</body>
+</html>
