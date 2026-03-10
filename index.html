@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/jmaher/Downloads/index%20(3).html -->
+<!-- saved from url=(0050)file:///C:/Users/jmaher/Downloads/index%20(4).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -200,7 +200,7 @@
     <div class="loading-text">Loading funding opportunities…</div>
     <div class="loading-sub">Fetching federal grants and curated database</div>
   </div>
-  <div class="warn-banner" id="warn-banner" style="display: block;">Warning: Could not load the curated tab (Curated Grants). Check the tab name and sharing settings.</div>
+  <div class="warn-banner" id="warn-banner" style="display: block;">Warning: Could not load the federal tab. Error: Failed to fetch</div>
   <div class="grid" id="grid"></div>
   <div class="lm-wrap" id="lm-wrap" style="display:none"><button class="lm-btn" onclick="loadMore()">Load more opportunities</button></div>
   <div class="empty" id="empty" style="display: block;"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
@@ -295,26 +295,24 @@ function parseCSV(text,source){
 }
 async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
-  // Try export URL first (works when logged in), fall back to gviz (public)
-  const exportUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/export?format=csv&sheet="+encodeURIComponent(tabName);
-  const gvizUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&sheet="+encodeURIComponent(tabName);
-  for(const url of [exportUrl, gvizUrl]){
-    try{
-      const res=await fetch(url);
-      if(!res.ok)continue;
-      const text=await res.text();
-      // Sanity check: must look like CSV not HTML
-      console.log(source,"URL:",url,"First 150 chars:",text.slice(0,150));
-      if(text.trim().startsWith("<")){console.warn(source,"got HTML, not CSV - skipping");continue;}
-      const rows=parseCSV(text,source);
-      if(rows.length===0&&source==="curated")continue;
-      setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
-      return rows;
-    }catch(err){continue;}
+  // Use direct published CSV URL for curated tab, gviz for federal
+  const url = source==="curated"
+    ? "https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1152854448&single=true&output=csv"
+    : "https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&sheet="+encodeURIComponent(tabName);
+  try{
+    const res=await fetch(url);
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    const text=await res.text();
+    console.log(source,"first 150:",text.slice(0,150));
+    if(text.trim().startsWith("<"))throw new Error("Got HTML instead of CSV");
+    const rows=parseCSV(text,source);
+    setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
+    return rows;
+  }catch(err){
+    setSyncState(source,"error","Could not load "+source);
+    showWarn("Could not load the "+source+" tab. Error: "+err.message);
+    return[];
   }
-  setSyncState(source,"error","Could not load "+source);
-  showWarn("Could not load the "+source+" tab ("+tabName+"). Check the tab name and sharing settings.");
-  return[];
 }
 async function init(){
   const[federal,curated]=await Promise.all([loadTab(FEDERAL_TAB,"federal"),loadTab(CURATED_TAB,"curated")]);
