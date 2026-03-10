@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(17).html -->
+<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(18).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -283,7 +283,14 @@ function parseCSV(text,source){
     const item={id:`${source}_${i}`,source,name,
       funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
-      amount:getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"See listing")||"See listing",
+      amount:(()=>{
+        const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");
+        if(!raw||raw.toLowerCase()==="see listing")return"See listing";
+        // If it's a plain number, format it as currency
+        const num=parseFloat(raw.replace(/[$,]/g,""));
+        if(!isNaN(num)&&num>0)return"$"+num.toLocaleString("en-US");
+        return raw;
+      })(),
       description:getFirst(row,["description","summary","synopsis","opportunitydescription"],""),
       eligibility:getFirst(row,["eligibility","eligibleapplicants"],"See listing"),
       category:cat,keywords:kws,
