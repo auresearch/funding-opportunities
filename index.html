@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(18).html -->
+<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(19).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -347,13 +347,69 @@ function setSrc(s){curSrc=s;document.querySelectorAll(".stab").forEach(t=>t.clas
 function setCat(c){curCat=c;document.querySelectorAll(".chip[data-cat]").forEach(x=>x.classList.toggle("active",x.dataset.cat===c));PAGE=0;render();}
 function dlLabel(days){if(!days||days===9999)return{label:"Open",cls:"upcoming"};if(days<0)return{label:"Closed",cls:"urgent"};if(days<=45)return{label:days+"d left",cls:"urgent"};if(days<=120)return{label:days+"d left",cls:"soon"};return{label:new Date(Date.now()+days*86400000).toLocaleDateString("en-US",{month:"short",year:"numeric"}),cls:"upcoming"};}
 function amtNum(s){return parseInt(String(s||"0").replace(/[^0-9]/g,""))||0;}
+const SYNONYMS={
+  "money":["funding","grant","award","financial"],
+  "cash":["funding","grant","award"],
+  "climate":["environment","environmental","sustainability","energy","carbon","ecology"],
+  "environment":["climate","ecology","sustainability","green","conservation"],
+  "medicine":["health","medical","clinical","disease","biomedical","healthcare"],
+  "health":["medical","clinical","disease","biomedical","healthcare","medicine"],
+  "doctor":["medical","clinical","health","physician"],
+  "computer":["technology","computing","software","stem","engineering","data"],
+  "tech":["technology","stem","engineering","computing","software","ai"],
+  "ai":["artificial intelligence","machine learning","technology","computing","stem"],
+  "race":["diversity","equity","inclusion","social justice","minority"],
+  "diversity":["equity","inclusion","minority","underrepresented","social justice"],
+  "poverty":["social","community","equity","economic","low income","underserved"],
+  "community":["social","public","civic","nonprofit","outreach"],
+  "writing":["humanities","literature","creative","arts","communication"],
+  "art":["arts","creative","humanities","culture","music"],
+  "music":["arts","creative","humanities","culture","performing"],
+  "history":["humanities","culture","heritage","social sciences"],
+  "science":["stem","research","engineering","technology","biology","chemistry","physics"],
+  "biology":["health","stem","life sciences","biomedical","ecology"],
+  "engineering":["stem","technology","computing","infrastructure"],
+  "education":["teaching","training","workforce","learning","academic"],
+  "teaching":["education","training","workforce","academic"],
+  "international":["global","foreign","abroad","overseas","developing"],
+  "global":["international","foreign","abroad","overseas"],
+  "women":["gender","diversity","equity","inclusion","female"],
+  "minority":["diversity","equity","inclusion","underrepresented","race"],
+  "startup":["entrepreneurship","innovation","business","commercialization"],
+  "business":["entrepreneurship","economic","commerce","social sciences"],
+  "law":["legal","policy","justice","social sciences"],
+  "policy":["law","government","social","public","political"],
+  "mental health":["psychology","behavioral","social","wellness","counseling"],
+  "psychology":["mental health","behavioral","social sciences","neuroscience"],
+  "food":["agriculture","nutrition","health","environment","sustainability"],
+  "energy":["environment","sustainability","climate","renewable","infrastructure"],
+  "water":["environment","ecology","sustainability","climate","natural resources"],
+  "housing":["community","social","equity","urban","poverty"],
+  "drug":["health","medical","clinical","pharmaceutical","biomedical"],
+  "cancer":["health","medical","biomedical","clinical","disease"],
+  "virus":["health","medical","infectious disease","biomedical","public health"],
+  "space":["stem","astronomy","physics","engineering","technology"],
+  "math":["stem","mathematics","statistics","computing","engineering"]
+};
+function expandQuery(q){
+  const terms=[q];
+  for(const[key,vals]of Object.entries(SYNONYMS)){
+    if(q.includes(key))vals.forEach(v=>{if(!terms.includes(v))terms.push(v);});
+    if(vals.some(v=>q.includes(v))&&!terms.includes(key))terms.push(key);
+  }
+  return terms;
+}
 function render(){
   const q=document.getElementById("search").value.toLowerCase().trim();
   const sort=document.getElementById("sort").value;
+  const terms=q?expandQuery(q):[];
   FILT=ALL.filter(g=>{
     if(curSrc!=="all"&&g.source!==curSrc)return false;
     if(curCat&&g.category!==curCat)return false;
-    if(q){const hay=[g.name,g.funder,g.description,(g.keywords||[]).join(" "),g.eligibility,g.oppNum,g.category].join(" ").toLowerCase();if(!hay.includes(q))return false;}
+    if(q){
+      const hay=[g.name,g.funder,g.description,(g.keywords||[]).join(" "),g.eligibility,g.oppNum,g.category].join(" ").toLowerCase();
+      if(!terms.some(t=>hay.includes(t)))return false;
+    }
     return true;
   });
   if(sort==="deadline")FILT.sort((a,b)=>deadlineDays(a.deadline)-deadlineDays(b.deadline));
@@ -366,7 +422,14 @@ function render(){
 function renderPage(){
   const slice=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
   const grid=document.getElementById("grid"),empty=document.getElementById("empty"),lmw=document.getElementById("lm-wrap");
-  if(!FILT.length){grid.innerHTML="";empty.style.display="block";lmw.style.display="none";return;}
+  if(!FILT.length){
+    grid.innerHTML="";
+    const q=document.getElementById("search").value.toLowerCase().trim();
+    const terms=q?expandQuery(q):[];
+    const extraTerms=terms.filter(t=>t!==q);
+    empty.innerHTML='<div class="empty-icon">&#128301;</div><h3>No opportunities found</h3><p>No results for "'+escapeHtml(q)+'"'+(extraTerms.length?' — also searched: '+extraTerms.slice(0,4).map(t=>'<em>'+escapeHtml(t)+'</em>').join(', '):'')+'</p><p style="margin-top:8px;font-size:12px;">Try different keywords or clear your filters</p>';
+    empty.style.display="block";lmw.style.display="none";return;
+  }
   empty.style.display="none";
   grid.innerHTML=slice.map((g,i)=>{
     const dl=dlLabel(deadlineDays(g.deadline)),tags=(g.keywords||[]).slice(0,3),isFed=g.source==="federal";
