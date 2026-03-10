@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- saved from url=(0050)file:///C:/Users/jmaher/Downloads/index%20(3).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Funding Opportunities | American University</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="./index_files/css2" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   :root {
@@ -148,7 +148,7 @@
 <div class="app-shell">
   <div class="header">
     <div class="header-white-bar">
-      <img src="https://www.american.edu/ucm/images/AU_landscape_logo.png" alt="American University, Washington DC" class="header-logo"/>
+      <img src="./index_files/AU_landscape_logo.png" alt="American University, Washington DC" class="header-logo">
       <div class="header-divider"></div>
       <span class="header-office">Office of Research</span>
     </div>
@@ -157,66 +157,66 @@
       <h1>Research <em>Funding</em> Database</h1>
       <div class="header-sub">Federal grants from Grants.gov · curated non-federal awards · updated daily</div>
       <div class="header-stats">
-        <div class="stat-pill"><strong id="total-count">&#8212;</strong> opportunities</div>
-        <div class="stat-pill fp">&#127963; <strong id="fed-count">&#8212;</strong> federal</div>
-        <div class="stat-pill cp">&#11088; <strong id="cur-count">&#8212;</strong> curated</div>
+        <div class="stat-pill"><strong id="total-count">0</strong> opportunities</div>
+        <div class="stat-pill fp">🏛 <strong id="fed-count">0</strong> federal</div>
+        <div class="stat-pill cp">⭐ <strong id="cur-count">0</strong> curated</div>
         <div class="sync-row">
-          <div class="sync-item"><div class="sync-dot loading" id="dot-fed"></div><span id="lbl-fed">Loading federal&#8230;</span></div>
-          <div class="sync-item"><div class="sync-dot loading" id="dot-cur"></div><span id="lbl-cur">Loading curated&#8230;</span></div>
+          <div class="sync-item"><div class="sync-dot error" id="dot-fed"></div><span id="lbl-fed">Could not load federal</span></div>
+          <div class="sync-item"><div class="sync-dot error" id="dot-cur"></div><span id="lbl-cur">Could not load curated</span></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="controls" id="controls" style="display:none">
+  <div class="controls" id="controls" style="display: flex;">
     <div class="search-wrap">
-      <span class="search-icon">&#128269;</span>
-      <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility&#8230;" oninput="render()"/>
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility…" oninput="render()">
     </div>
     <select id="sort" onchange="render()">
       <option value="deadline">Deadline (soonest)</option>
       <option value="amount">Amount (largest)</option>
-      <option value="name">Name A&#8211;Z</option>
+      <option value="name">Name A–Z</option>
     </select>
-    <span class="results-count" id="results-count"></span>
+    <span class="results-count" id="results-count">0 results</span>
   </div>
-  <div class="source-tabs" id="source-tabs" style="display:none">
-    <button class="stab active" onclick="setSrc('all')" data-s="all">All Sources <span class="tcnt" id="tc-all">&#8212;</span></button>
-    <button class="stab fed" onclick="setSrc('federal')" data-s="federal">&#127963; Federal (Grants.gov) <span class="tcnt" id="tc-fed">&#8212;</span></button>
-    <button class="stab" onclick="setSrc('curated')" data-s="curated">&#11088; Curated (Non-federal) <span class="tcnt" id="tc-cur">&#8212;</span></button>
+  <div class="source-tabs" id="source-tabs" style="display: flex;">
+    <button class="stab active" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">0</span></button>
+    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">0</span></button>
+    <button class="stab" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">0</span></button>
   </div>
-  <div class="filter-chips" id="filter-chips" style="display:none">
+  <div class="filter-chips" id="filter-chips" style="display: flex;">
     <span class="chip-label">Category:</span>
-    <button class="chip active" onclick="setCat('')" data-cat="">All</button>
-    <button class="chip" onclick="setCat('STEM')" data-cat="STEM">Science &amp; Engineering</button>
-    <button class="chip" onclick="setCat('Health')" data-cat="Health">Health &amp; Bio</button>
-    <button class="chip" onclick="setCat('Humanities')" data-cat="Humanities">Humanities</button>
-    <button class="chip" onclick="setCat('Education')" data-cat="Education">Education</button>
-    <button class="chip" onclick="setCat('Environment')" data-cat="Environment">Environment &amp; Energy</button>
-    <button class="chip" onclick="setCat('Social')" data-cat="Social">Social Sciences</button>
-    <button class="chip" onclick="setCat('Arts')" data-cat="Arts">Arts &amp; Culture</button>
+    <button class="chip active" onclick="setCat(&#39;&#39;)" data-cat="">All</button>
+    <button class="chip" onclick="setCat(&#39;STEM&#39;)" data-cat="STEM">Science &amp; Engineering</button>
+    <button class="chip" onclick="setCat(&#39;Health&#39;)" data-cat="Health">Health &amp; Bio</button>
+    <button class="chip" onclick="setCat(&#39;Humanities&#39;)" data-cat="Humanities">Humanities</button>
+    <button class="chip" onclick="setCat(&#39;Education&#39;)" data-cat="Education">Education</button>
+    <button class="chip" onclick="setCat(&#39;Environment&#39;)" data-cat="Environment">Environment &amp; Energy</button>
+    <button class="chip" onclick="setCat(&#39;Social&#39;)" data-cat="Social">Social Sciences</button>
+    <button class="chip" onclick="setCat(&#39;Arts&#39;)" data-cat="Arts">Arts &amp; Culture</button>
   </div>
-  <div class="loading-screen" id="loading-screen">
+  <div class="loading-screen" id="loading-screen" style="display: none;">
     <div class="spinner"></div>
-    <div class="loading-text">Loading funding opportunities&#8230;</div>
+    <div class="loading-text">Loading funding opportunities…</div>
     <div class="loading-sub">Fetching federal grants and curated database</div>
   </div>
-  <div class="warn-banner" id="warn-banner"></div>
+  <div class="warn-banner" id="warn-banner" style="display: block;">Warning: Could not load the curated tab (Curated Grants). Check the tab name and sharing settings.</div>
   <div class="grid" id="grid"></div>
   <div class="lm-wrap" id="lm-wrap" style="display:none"><button class="lm-btn" onclick="loadMore()">Load more opportunities</button></div>
-  <div class="empty" id="empty"><div class="empty-icon">&#128301;</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
+  <div class="empty" id="empty" style="display: block;"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
   <div style="background:#182449;border-top:4px solid #E0263C;margin-top:32px;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
     <div style="display:flex;align-items:center;gap:14px;">
-      <img src="https://www.american.edu/customcf/assets/crest-logotype-blue.svg" alt="American University" style="height:28px;opacity:0.9;"/>
-      <span style="color:rgba(255,255,255,0.5);font-size:11px;font-family:'Source Sans 3',sans-serif;">Office of Research</span>
+      <img src="./index_files/crest-logotype-blue.svg" alt="American University" style="height:28px;opacity:0.9;">
+      <span style="color:rgba(255,255,255,0.5);font-size:11px;font-family:&#39;Source Sans 3&#39;,sans-serif;">Office of Research</span>
     </div>
-    <span style="color:rgba(255,255,255,0.35);font-size:11px;font-family:'Source Sans 3',sans-serif;">4400 Massachusetts Avenue NW &#183; Washington, DC 20016</span>
+    <span style="color:rgba(255,255,255,0.35);font-size:11px;font-family:&#39;Source Sans 3&#39;,sans-serif;">4400 Massachusetts Avenue NW · Washington, DC 20016</span>
   </div>
 </div>
 <div class="overlay" id="overlay" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-stripe" id="m-stripe"></div>
     <div class="modal-header">
-      <button class="modal-close" onclick="closeOverlay()">&#10005;</button>
+      <button class="modal-close" onclick="closeOverlay()">✕</button>
       <div class="modal-src" id="m-src"></div>
       <div class="modal-funder" id="m-funder"></div>
       <div class="modal-title" id="m-title"></div>
@@ -225,7 +225,7 @@
       <div class="modal-row">
         <div class="mbox"><div class="mbox-label">Award Amount</div><div class="mbox-val" id="m-amount"></div></div>
         <div class="mbox"><div class="mbox-label">Deadline</div><div class="mbox-val" id="m-deadline"></div></div>
-        <div class="mbox"><div class="mbox-label">Eligibility</div><div class="mbox-val" id="m-elig" style="font-size:12px;font-family:'Source Sans 3',sans-serif;font-weight:400;line-height:1.4;"></div></div>
+        <div class="mbox"><div class="mbox-label">Eligibility</div><div class="mbox-val" id="m-elig" style="font-size:12px;font-family:&#39;Source Sans 3&#39;,sans-serif;font-weight:400;line-height:1.4;"></div></div>
       </div>
       <div class="msec">About this opportunity</div>
       <div class="mdesc" id="m-desc"></div>
@@ -234,7 +234,7 @@
     </div>
     <div class="modal-footer">
       <button class="mbtn-sec" onclick="closeOverlay()">Close</button>
-      <button class="mbtn-pri" id="m-apply">Learn More &amp; Apply &#8594;</button>
+      <button class="mbtn-pri" id="m-apply">Learn More &amp; Apply →</button>
     </div>
   </div>
 </div>
@@ -254,10 +254,16 @@ function normaliseCategory(raw){const t=String(raw||"").toLowerCase().replace(/\
 function parseCSV(text,source){
   const lines=splitCSVRows(text);
   if(lines.length<2)return[];
-  const headers=parseCSVLine(lines[0]).map(cleanHeader);
+  // Detect if first row is a real header row
+  const firstRowCells=parseCSVLine(lines[0]).map(cleanHeader);
+  const knownHeaders=["opportunity","name","title","funder","agency","amount","deadline","summary","description","discipline","category","keywords","eligibility"];
+  const isHeader=firstRowCells.some(h=>knownHeaders.includes(h));
+  // If first row doesn't look like a header, skip it (stale cache issue)
+  const startRow=isHeader?1:2;
+  const headers=isHeader?firstRowCells:parseCSVLine(lines[1]?lines[1]:"").map(cleanHeader);
   const accentOf={STEM:"tech",Health:"health",Humanities:"humanity",Education:"social",Environment:"energy",Social:"social",Arts:"humanity"};
   const rows=[];
-  for(let i=1;i<lines.length;i++){
+  for(let i=startRow;i<lines.length;i++){
     if(!lines[i].trim())continue;
     const vals=parseCSVLine(lines[i]);
     const row={};
@@ -269,36 +275,46 @@ function parseCSV(text,source){
     const kws=rawKw?rawKw.replace(/^["']+|["']+$/g,"").split(/\s+/).map(k=>k.replace(/^#/,"").trim().toLowerCase()).filter(k=>k.length>1):[cat.toLowerCase()];
     const deadline=getFirst(row,["deadline","closedate","duedate","applicationdeadline"],"");
     if(deadlineDays(deadline)<-30)continue;
-    rows.push({id:`${source}_${i}`,source,name,
-      funder:getFirst(row,["funder","agency","agencyname"],""),
+    const item={id:`${source}_${i}`,source,name,
+      funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
-      amount:getFirst(row,["amount","awardceiling","estimatedtotalprogramfunding"],"See listing")||"See listing",
+      amount:getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"See listing")||"See listing",
       description:getFirst(row,["description","summary","synopsis","opportunitydescription"],""),
       eligibility:getFirst(row,["eligibility","eligibleapplicants"],"See listing"),
       category:cat,keywords:kws,
-      url:getFirst(row,["url","link","opportunitylink","grantsgovurl"],"#"),
-      oppNum:getFirst(row,["opportunitynumber","fundingopportunitynumber"],""),
+      url:getFirst(row,["url","link","opportunitylink","grantsgovurl","grantorlink"],"#"),
+      oppNum:getFirst(row,["opportunitynumber","opportunity_number","fundingopportunitynumber"],""),
       cfda:getFirst(row,["cfda","cfdanumber","assistancelistingnumber"],""),
       accentClass:source==="federal"?"federal":(accentOf[cat]||"curated")
-    });
+    };
+    const looksFederal=!!getFirst(row,["opportunitynumber","fundingopportunitynumber","cfdanumber","assistancelistingnumber","agencycode","categoryoffundingactivity"],"");
+    if(source==="curated"&&looksFederal){console.warn("Skipping federal-looking row in curated tab:",name);continue;}
+    rows.push(item);
   }
   return rows;
 }
 async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
-  const url="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/export?format=csv&sheet="+encodeURIComponent(tabName);
-  try{
-    const res=await fetch(url);
-    if(!res.ok)throw new Error("HTTP "+res.status);
-    const text=await res.text();
-    const rows=parseCSV(text,source);
-    setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
-    return rows;
-  }catch(err){
-    setSyncState(source,"error","Could not load "+source);
-    showWarn("Could not load the "+source+" tab ("+tabName+"). Error: "+err.message);
-    return[];
+  // Try export URL first (works when logged in), fall back to gviz (public)
+  const exportUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/export?format=csv&sheet="+encodeURIComponent(tabName);
+  const gvizUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&sheet="+encodeURIComponent(tabName);
+  for(const url of [exportUrl, gvizUrl]){
+    try{
+      const res=await fetch(url);
+      if(!res.ok)continue;
+      const text=await res.text();
+      // Sanity check: must look like CSV not HTML
+      console.log(source,"URL:",url,"First 150 chars:",text.slice(0,150));
+      if(text.trim().startsWith("<")){console.warn(source,"got HTML, not CSV - skipping");continue;}
+      const rows=parseCSV(text,source);
+      if(rows.length===0&&source==="curated")continue;
+      setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
+      return rows;
+    }catch(err){continue;}
   }
+  setSyncState(source,"error","Could not load "+source);
+  showWarn("Could not load the "+source+" tab ("+tabName+"). Check the tab name and sharing settings.");
+  return[];
 }
 async function init(){
   const[federal,curated]=await Promise.all([loadTab(FEDERAL_TAB,"federal"),loadTab(CURATED_TAB,"curated")]);
@@ -396,5 +412,5 @@ function closeModal(e){if(e.target===document.getElementById("overlay"))closeOve
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOverlay();});
 init();
 </script>
-</body>
-</html>
+
+</body></html>
