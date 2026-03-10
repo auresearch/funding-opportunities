@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(16).html -->
+<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(17).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -160,12 +160,12 @@
       <h1>Research <em>Funding</em> Database</h1>
       <div class="header-sub">Federal grants from Grants.gov · curated non-federal awards · updated daily</div>
       <div class="header-stats">
-        <div class="stat-pill"><strong id="total-count">1,011</strong> opportunities</div>
-        <div class="stat-pill fp">🏛 <strong id="fed-count">903</strong> federal</div>
-        <div class="stat-pill cp">⭐ <strong id="cur-count">108</strong> curated</div>
+        <div class="stat-pill"><strong id="total-count">1,018</strong> opportunities</div>
+        <div class="stat-pill fp">🏛 <strong id="fed-count">905</strong> federal</div>
+        <div class="stat-pill cp">⭐ <strong id="cur-count">113</strong> curated</div>
         <div class="sync-row">
-          <div class="sync-item"><div class="sync-dot" id="dot-fed"></div><span id="lbl-fed">903 federal grants</span></div>
-          <div class="sync-item"><div class="sync-dot" id="dot-cur"></div><span id="lbl-cur">108 curated grants</span></div>
+          <div class="sync-item"><div class="sync-dot" id="dot-fed"></div><span id="lbl-fed">905 federal grants</span></div>
+          <div class="sync-item"><div class="sync-dot" id="dot-cur"></div><span id="lbl-cur">113 curated grants</span></div>
         </div>
       </div>
     </div>
@@ -180,12 +180,12 @@
       <option value="amount">Amount (largest)</option>
       <option value="name">Name A–Z</option>
     </select>
-    <span class="results-count" id="results-count">1,011 results</span>
+    <span class="results-count" id="results-count">1,018 results</span>
   </div>
   <div class="source-tabs" id="source-tabs" style="display: flex;">
-    <button class="stab active" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">1,011</span></button>
-    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">903</span></button>
-    <button class="stab" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">108</span></button>
+    <button class="stab active" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">1,018</span></button>
+    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">905</span></button>
+    <button class="stab" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">113</span></button>
   </div>
   <div class="filter-chips" id="filter-chips" style="display: flex;">
     <span class="chip-label">Category:</span>
@@ -249,7 +249,8 @@ const PAGE_SIZE=24;
 let ALL=[],FILT=[],PAGE=0,curSrc="all",curCat="";
 function cleanHeader(h){return String(h||"").toLowerCase().replace(/[\s_"]+/g,"").replace(/[^a-z0-9]/g,"");}
 function splitCSVRows(text){const rows=[];let cur="",inQ=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if((c==='\n'||c==='\r')&&!inQ){if(cur.trim())rows.push(cur);cur='';if(c==='\r'&&n==='\n')i++;}else cur+=c;}if(cur.trim())rows.push(cur);return rows;}
-function parseCSVLine(line){const res=[];let cur="",inQ=false;for(let i=0;i<line.length;i++){const c=line[i],n=line[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if(c===','&&!inQ){res.push(cur.trim());cur="";}else cur+=c;}res.push(cur.trim());return res;}
+function parseCSVLine(line,delim){delim=delim||",";const res=[];let cur="",inQ=false;for(let i=0;i<line.length;i++){const c=line[i],n=line[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if(c===delim&&!inQ){res.push(cur.trim());cur="";}else cur+=c;}res.push(cur.trim());return res;}
+function detectDelimiter(line){return line.includes("	")?"	":",";}
 function getFirst(row,keys,fallback=""){for(const k of keys)if(row[k]!==undefined&&String(row[k]).trim()!=="")return String(row[k]).trim();return fallback;}
 function parseDateSafe(v){if(!v)return null;const d=new Date(v);return isNaN(d)?null:d;}
 function deadlineDays(d){const p=parseDateSafe(d);if(!p)return 9999;return Math.ceil((p-new Date())/86400000);}
@@ -257,18 +258,19 @@ function normaliseCategory(raw){const t=String(raw||"").toLowerCase().replace(/\
 function parseCSV(text,source){
   const lines=splitCSVRows(text);
   if(lines.length<2)return[];
+  const delim=detectDelimiter(lines[0]);
   // Detect if first row is a real header row
-  const firstRowCells=parseCSVLine(lines[0]).map(cleanHeader);
+  const firstRowCells=parseCSVLine(lines[0],delim).map(cleanHeader);
   const knownHeaders=["opportunity","name","title","funder","agency","amount","deadline","summary","description","discipline","category","keywords","eligibility"];
   const isHeader=firstRowCells.some(h=>knownHeaders.includes(h));
   // If first row doesn't look like a header, skip it (stale cache issue)
   const startRow=isHeader?1:2;
-  const headers=isHeader?firstRowCells:parseCSVLine(lines[1]?lines[1]:"").map(cleanHeader);
+  const headers=isHeader?firstRowCells:parseCSVLine(lines[1]?lines[1]:"",delim).map(cleanHeader);
   const accentOf={STEM:"tech",Health:"health",Humanities:"humanity",Education:"social",Environment:"energy",Social:"social",Arts:"humanity"};
   const rows=[];
   for(let i=startRow;i<lines.length;i++){
     if(!lines[i].trim())continue;
-    const vals=parseCSVLine(lines[i]);
+    const vals=parseCSVLine(lines[i],delim);
     const row={};
     headers.forEach((h,idx)=>{row[h]=(vals[idx]||"").replace(/^"|"$/g,"").trim();});
     const name=getFirst(row,["name","opportunity","opportunitytitle","title","fundingopportunitytitle"]);
@@ -299,8 +301,8 @@ function parseCSV(text,source){
 async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
   // Use direct published CSV URL for curated tab, gviz for federal
-  const CURATED_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1152854448&single=true&output=csv";
-  const FEDERAL_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1347133722&single=true&output=csv";
+  const CURATED_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1152854448&single=true&output=tsv";
+  const FEDERAL_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1347133722&single=true&output=tsv";
   const directUrl=source==="curated"?CURATED_URL:FEDERAL_URL;
   const proxies=[
     directUrl,
