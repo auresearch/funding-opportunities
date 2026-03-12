@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0046)file:///C:/Users/jmaher/Downloads/index_8.html -->
+<!-- saved from url=(0046)file:///C:/Users/jmaher/Downloads/index_9.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -311,35 +311,53 @@ function parseCSV(text,source){
 }
 async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
-  // Use direct published CSV URL for curated tab, gviz for federal
-  const CURATED_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1152854448&single=true&output=csv";
-  const FEDERAL_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid=1347133722&single=true&output=csv";
-  const directUrl=source==="curated"?CURATED_URL:FEDERAL_URL;
-  const proxies=[
-    "https://corsproxy.io/?"+encodeURIComponent(directUrl),
-    "https://api.allorigins.win/raw?url="+encodeURIComponent(directUrl),
-    "https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(directUrl),
-    directUrl
-  ];
-  for(const url of proxies){
-    try{
-      const controller=new AbortController();
-      const timer=setTimeout(()=>controller.abort(),8000);
-      const res=await fetch(url,{mode:"cors",signal:controller.signal});
-      clearTimeout(timer);
-      if(!res.ok)continue;
-      const text=await res.text();
-      console.log(source,"url ok:",url.slice(0,60),"first 100:",text.slice(0,100));
-      if(text.trim().startsWith("<")||text.trim().startsWith("{")){console.warn("not csv, skipping");continue;}
+  const SHEET_ID="1bdZ2UyQGuOkOK3fCwWq5dFnq-aWnJ_gehc80v06Qi7o";
+  const GID=source==="curated"?"1152854448":"1347133722";
+  const gvizUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&gid="+GID;
+  return new Promise((resolve)=>{
+    const script=document.createElement("script");
+    const cbName="gvizCb_"+source+"_"+Date.now();
+    const timeout=setTimeout(()=>{
+      delete window[cbName];
+      document.head.removeChild(script);
+      setSyncState(source,"error","Could not load "+source);
+      showWarn("Warning: Could not load the "+source+" grants. Please check the sheet is published to web as CSV.");
+      resolve([]);
+    },15000);
+    // Use fetch with no-cors as primary, fallback to script tag
+    fetch(gvizUrl).then(r=>r.text()).then(text=>{
+      clearTimeout(timeout);
+      if(text.trim().startsWith("<")||text.length<10){
+        setSyncState(source,"error","Could not load "+source);
+        resolve([]);
+        return;
+      }
       const rows=parseCSV(text,source);
       setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
-      return rows;
-    }catch(err){console.warn(source,"failed:",url.slice(0,60),err.message);continue;}
-  }
-  setSyncState(source,"error","Could not load "+source);
-  showWarn("Could not load the "+source+" grants. Please check the sheet is published to web as CSV.");
-  return[];
+      resolve(rows);
+    }).catch(()=>{
+      // fallback to published CSV via corsproxy
+      const csvUrl="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid="+GID+"&single=true&output=csv";
+      const proxyUrl="https://corsproxy.io/?"+encodeURIComponent(csvUrl);
+      const ctrl=new AbortController();
+      const t2=setTimeout(()=>ctrl.abort(),10000);
+      fetch(proxyUrl,{signal:ctrl.signal}).then(r=>r.text()).then(text=>{
+        clearTimeout(t2);
+        clearTimeout(timeout);
+        if(text.trim().startsWith("<")||text.length<10){resolve([]);return;}
+        const rows=parseCSV(text,source);
+        setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
+        resolve(rows);
+      }).catch(()=>{
+        clearTimeout(timeout);
+        setSyncState(source,"error","Could not load "+source);
+        showWarn("Warning: Could not load the "+source+" grants. Please check the sheet is published to web as CSV.");
+        resolve([]);
+      });
+    });
+  });
 }
+
 async function init(){
   const[federal,curated]=await Promise.all([
     loadTab(FEDERAL_TAB,"federal").catch(()=>[]),
