@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///C:/Users/jmaher/Downloads/index_10.html -->
+<!-- saved from url=(0044)file:///C:/Users/jmaher/Downloads/index.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Funding Opportunities | American University</title>
 <link href="./index_files/css2" rel="stylesheet">
@@ -50,11 +49,28 @@
   .search-wrap input { width:100%; padding:10px 14px 10px 38px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:14px; color:var(--text); background:var(--bg); outline:none; transition:border-color 0.2s; }
   .search-wrap input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,79,162,0.12); }
   .search-wrap input::placeholder { color:var(--text3); }
-
-
   select { padding:10px 30px 10px 12px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:13px; color:var(--text); background:var(--bg); outline:none; cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239c9590' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center; }
   select:focus { border-color:var(--accent); }
-  .results-count { font-size:12px; color:var(--text3); white-space:nowrap; margin-left:auto; }
+  .results-count { font-size:12px; color:var(--text3); white-space:nowrap; }
+  .dl-btn { background:var(--accent); color:#fff; border:none; border-radius:9px; padding:10px 16px; font-family:'Source Sans 3',sans-serif; font-size:13px; font-weight:500; cursor:pointer; transition:background 0.18s; white-space:nowrap; display:flex; align-items:center; gap:6px; }
+  .dl-btn:hover { background:#003882; }
+  .dl-btn:disabled { background:var(--border); color:var(--text3); cursor:not-allowed; }
+  /* Selection checkboxes & floating bar */
+  .card-check { width:22px; height:22px; min-width:22px; border-radius:5px; border:2px solid var(--border); background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.18s; flex-shrink:0; }
+  .card-check:hover { border-color:var(--accent); }
+  .card-check.checked { background:var(--accent); border-color:var(--accent); }
+  .card-check.checked::after { content:'\2713'; color:#fff; font-size:14px; font-weight:700; line-height:1; }
+  .sel-bar { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--au-navy); color:#fff; border-radius:14px; padding:10px 20px; display:flex; align-items:center; gap:14px; box-shadow:0 8px 32px rgba(0,0,0,0.25); z-index:200; font-family:'Source Sans 3',sans-serif; font-size:14px; animation:slideUp 0.25s ease; }
+  @keyframes slideUp { from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)} }
+  .sel-bar-count { font-weight:600; white-space:nowrap; }
+  .sel-bar-btn { background:#fff; color:var(--au-navy); border:none; border-radius:8px; padding:7px 16px; font-family:'Source Sans 3',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:background 0.18s; white-space:nowrap; }
+  .sel-bar-btn:hover { background:#E8EFF8; }
+  .sel-bar-clear { background:transparent; color:rgba(255,255,255,0.7); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:7px 14px; font-family:'Source Sans 3',sans-serif; font-size:13px; cursor:pointer; transition:all 0.18s; white-space:nowrap; }
+  .sel-bar-clear:hover { color:#fff; border-color:rgba(255,255,255,0.6); }
+  .sel-all-wrap { display:flex; align-items:center; gap:6px; margin-left:8px; }
+  .sel-all-btn { background:transparent; border:1.5px solid var(--border); border-radius:7px; padding:6px 12px; font-family:'Source Sans 3',sans-serif; font-size:12px; color:var(--text2); cursor:pointer; transition:all 0.18s; white-space:nowrap; }
+  .sel-all-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .sel-all-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
   .source-tabs { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; display:flex; gap:0; overflow-x:auto; }
   .stab { padding:11px 18px; font-size:13px; font-weight:500; cursor:pointer; border:none; background:transparent; color:var(--text2); font-family:'Source Sans 3',sans-serif; border-bottom:3px solid transparent; transition:all 0.18s; display:flex; align-items:center; gap:7px; white-space:nowrap; }
   .stab:hover { color:var(--text); }
@@ -98,7 +114,6 @@
   .dl-chip { padding:4px 12px; border-radius:20px; font-size:12px; font-weight:500; cursor:pointer; border:1.5px solid var(--border); background:transparent; color:var(--text2); font-family:"Source Sans 3",sans-serif; transition:all 0.18s; white-space:nowrap; }
   .dl-chip:hover { border-color:#004FA2; color:#004FA2; }
   .dl-chip.active { background:#004FA2; border-color:#004FA2; color:#fff; }
-
   .dl-badge.soon     { background:#FEF9EC; color:#7A5C00; border:1px solid #EDD870; }
   .dl-badge.upcoming { background:#EDF1F8; color:#004FA2; border:1px solid #B8CCE8; }
   .card-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:5px; margin-top:4px; }
@@ -147,36 +162,23 @@
   .empty { text-align:center; padding:60px 24px; color:var(--text3); display:none; }
   .empty-icon { font-size:40px; margin-bottom:12px; }
   .empty h3 { font-family:'Playfair Display',serif; font-size:19px; color:var(--text2); margin-bottom:6px; }
-  @media(max-width:680px){.header{padding:20px 18px 16px;}.controls{padding:12px 16px;gap:8px;}.filter-chips{padding:8px 16px;}.grid{grid-template-columns:1fr;gap:14px;padding:16px;}.results-count{display:none;}.modal-header,.modal-body,.modal-footer{padding-left:18px;padding-right:18px;}select{min-width:0;flex:1;}.sync-row{display:none;}}
+  @media(max-width:680px){.header{padding:20px 18px 16px;}.controls{padding:12px 16px;gap:8px;}.filter-chips{padding:8px 16px;}.grid{grid-template-columns:1fr;gap:14px;padding:16px;}.results-count{display:none;}.modal-header,.modal-body,.modal-footer{padding-left:18px;padding-right:18px;}select{min-width:0;flex:1;}.sync-row{display:none;}.dl-btn span{display:none;}.sel-bar{left:12px;right:12px;transform:none;border-radius:12px;padding:10px 14px;gap:10px;font-size:13px;}}
   @media(min-width:681px) and (max-width:940px){.grid{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
 <body>
 <div class="app-shell">
 
-  <div class="header">
-    <div class="header-white-bar">
-      <img src="https://www.american.edu/customcf/2016-redesign/images/sitebranding/au-logo.svg" class="header-logo" alt="American University" onerror="this.style.display='none'">
-      <div class="header-divider"></div>
-      <span class="header-office">Office of Research &amp; Sponsored Programs</span>
-    </div>
-    <div class="header-inner">
-      <div class="header-eyebrow">Research &amp; Sponsored Programs</div>
-      <h1>Funding <em>Opportunities</em></h1>
-      <div class="header-sub">Explore federal grants and curated funding for AU faculty and researchers</div>
-      <div class="header-stats">
-        <span class="stat-pill fp">🏛 <strong id="fed-count">—</strong> Federal</span>
-        <span class="stat-pill cp">⭐ <strong id="cur-count">—</strong> Curated</span>
-        <span class="stat-pill"><strong id="total-count">—</strong> Total</span>
-        <div class="sync-row">
-          <div class="sync-item"><span class="sync-dot" id="dot-fed"></span><span id="lbl-fed">Connecting…</span></div>
-          <div class="sync-item"><span class="sync-dot" id="dot-cur"></span><span id="lbl-cur">Connecting…</span></div>
-        </div>
-      </div>
-    </div>
+  <!-- Hidden elements required by JavaScript - do not remove -->
+  <div style="display:none" aria-hidden="true">
+    <strong id="fed-count">904</strong>
+    <strong id="cur-count">110</strong>
+    <strong id="total-count">1,014</strong>
+    <span id="dot-fed" class="sync-dot"></span><span id="lbl-fed">904 federal grants</span>
+    <span id="dot-cur" class="sync-dot"></span><span id="lbl-cur">110 curated grants</span>
   </div>
 
-  <div class="controls" id="controls" style="display:none">
+  <div class="controls" id="controls" style="display: flex;">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
       <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility…" oninput="render()">
@@ -186,14 +188,18 @@
       <option value="amount">Amount (largest)</option>
       <option value="name">Name A–Z</option>
     </select>
-    <span class="results-count" id="results-count"></span>
+    <button class="dl-btn" id="download-btn" onclick="downloadCSV()">⬇ <span>Download All</span></button>
+    <div class="sel-all-wrap">
+      <button class="sel-all-btn" id="sel-all-btn" onclick="toggleSelectAll()">Select All</button>
+    </div>
+    <span class="results-count" id="results-count">110 results</span>
   </div>
-  <div class="source-tabs" id="source-tabs" style="display:none">
-    <button class="stab active" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">—</span></button>
-    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">—</span></button>
-    <button class="stab" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">—</span></button>
+  <div class="source-tabs" id="source-tabs" style="display: flex;">
+    <button class="stab" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">1,014</span></button>
+    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">904</span></button>
+    <button class="stab active" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">110</span></button>
   </div>
-  <div class="filter-chips" id="filter-chips" style="display:none">
+  <div class="filter-chips" id="filter-chips" style="display: flex;">
     <span class="chip-label">Category:</span>
     <button class="chip active" onclick="setCat(&#39;&#39;)" data-cat="">All</button>
     <button class="chip" onclick="setCat(&#39;STEM&#39;)" data-cat="STEM">Science &amp; Engineering</button>
@@ -210,7 +216,7 @@
     <button class="chip" onclick="setCat(&#39;PublicHealth&#39;)" data-cat="PublicHealth">Public Health</button>
     <button class="chip" onclick="setCat(&#39;DataScience&#39;)" data-cat="DataScience">Data Science &amp; AI</button>
   </div>
-  <div class="filter-chips" id="deadline-chips" style="display:none">
+  <div class="filter-chips" id="deadline-chips" style="display: flex;">
     <span class="chip-label">Deadline:</span>
     <button class="dl-chip active" onclick="setDeadline(0)" data-dl="0">All</button>
     <button class="dl-chip" onclick="setDeadline(30)" data-dl="30">Next 30 days</button>
@@ -218,15 +224,20 @@
     <button class="dl-chip" onclick="setDeadline(90)" data-dl="90">Next 90 days</button>
     <button class="dl-chip" onclick="setDeadline(180)" data-dl="180">Next 6 months</button>
   </div>
-  <div class="loading-screen" id="loading-screen">
+  <div class="loading-screen" id="loading-screen" style="display: none;">
     <div class="spinner"></div>
     <div class="loading-text">Loading funding opportunities…</div>
     <div class="loading-sub">Fetching federal grants and curated database</div>
   </div>
   <div class="warn-banner" id="warn-banner"></div>
-  <div class="grid" id="grid"></div>
-  <div class="lm-wrap" id="lm-wrap" style="display:none"><button class="lm-btn" onclick="loadMore()">Load more opportunities</button></div>
-  <div class="empty" id="empty"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
+  <div class="grid" id="grid"><div class="card" style="animation-delay:0s" onclick="openModal(&#39;curated_96&#39;)"><div class="cab health"></div><div class="card-body"><div class="card-top"><span class="funder-badge">International Society for the Study of the Lumbar Spine</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">8d left</span></div><div class="card-title">Clinical science research grant</div><div class="card-desc">The purpose of the award is to promote research into the lumbar spine. The research proposal should be in clinical science.</div><div class="card-tags"><span class="tag">graduate</span><span class="tag">students</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_96&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$20,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_96&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.04s" onclick="openModal(&#39;curated_48&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">VinFuture Foundation</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">13d left</span></div><div class="card-title">VinFuture Prize</div><div class="card-desc">Honors breakthrough innovations in science and technology that improve millions of lives worldwide.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">engineering</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_48&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$3,000,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_48&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.08s" onclick="openModal(&#39;curated_53&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">American Physical Society (APS)</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">43d left</span></div><div class="card-title">APS Medal for Exceptional Achievement in Research</div><div class="card-desc">Recognizes exceptional achievements in physics research. APS’s highest honor for scientific contributions.</div><div class="card-tags"><span class="tag">physics</span><span class="tag">stem</span><span class="tag">scienceawards</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_53&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$50,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_53&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.12s" onclick="openModal(&#39;curated_54&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">The Pew Charitable Trusts</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">43d left</span></div><div class="card-title">Pew Scholars Program in Biomedical Sciences</div><div class="card-desc">Supports young investigators of outstanding promise in biomedical sciences.</div><div class="card-tags"><span class="tag">health</span><span class="tag">stem</span><span class="tag">earlycareer</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_54&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$300,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_54&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.16s" onclick="openModal(&#39;curated_62&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">The Pew Charitable Trusts</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">43d left</span></div><div class="card-title">Pew-Stewart Scholars for Cancer Research</div><div class="card-desc">Supports early-career scientists in innovative cancer research.</div><div class="card-tags"><span class="tag">health</span><span class="tag">stem</span><span class="tag">cancerresearch</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_62&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$300,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_62&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.2s" onclick="openModal(&#39;curated_77&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">American Association of Law Libraries (AALL)</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">60d left</span></div><div class="card-title">AALL/Bloomberg Law Continuing Education Grants Program</div><div class="card-desc">The purpose of the AALL/Bloomberg Law Continuing Education Grant Program is to encourage educational program development and promote program sharing among AALL entities.</div><div class="card-tags"><span class="tag">siss</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_77&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_77&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.24s" onclick="openModal(&#39;curated_63&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Klingenstein-Simons Fellowship Program</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">74d left</span></div><div class="card-title">Klingenstein-Simons Fellowship Awards in Neuroscience</div><div class="card-desc">Provides funding to early-career scientists engaged in neuroscience research.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">neuroscience</span><span class="tag">earlycareer</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_63&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$225,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_63&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.28s" onclick="openModal(&#39;curated_59&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Arnold and Mabel Beckman Foundation</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">104d left</span></div><div class="card-title">Arnold O. Beckman Postdoctoral Fellowship</div><div class="card-desc">Supports postdoctoral fellows with potential for independent research careers in chemical and life sciences.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">chemicalsciences</span><span class="tag">lifesciences</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_59&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$224,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_59&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.32s" onclick="openModal(&#39;curated_79&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Division of Behavioral and Cognitive Sciences (BCS)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Dec 2026</span></div><div class="card-title">Archaeometry (AMTRY)</div><div class="card-desc">The Archaeology Program administers an annual Archaeometry competition with a target date of December 1. The goal is to fund projects in two main categories: To develop or refine anthropologically relevant archaeometric techniques. Examples include the development of methods to identify specific types of organic residues on ceramics or development of field applicable analytic techniques.</div><div class="card-tags"><span class="tag">chapter</span><span class="tag">i.e.</span><span class="tag">academic</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_79&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$600,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_79&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.36s" onclick="openModal(&#39;curated_58&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Academy of Engineering (NAE)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Jan 2027</span></div><div class="card-title">Charles Stark Draper Prize for Engineering</div><div class="card-desc">Recognizes engineers whose accomplishments have significantly impacted society. Considered the Nobel Prize of engineering.</div><div class="card-tags"><span class="tag">engineering</span><span class="tag">stem</span><span class="tag">engineers</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_58&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$500,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_58&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.4s" onclick="openModal(&#39;curated_34&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Institutes of Health (NIH)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Nov 2027</span></div><div class="card-title">Notice of Special Interest: Women’s Health Research</div><div class="card-desc">Encourages research proposals focused on women’s health across NIH institutes and centers.</div><div class="card-tags"><span class="tag">health</span><span class="tag">womenshealth</span><span class="tag">nih</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_34&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_34&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.44s" onclick="openModal(&#39;curated_1&#39;)"><div class="cab energy"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Westinghouse Electric Company</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Sustainable Charitable Giving Program</div><div class="card-desc">Westinghouse’s charitable giving program supports projects in education (particularly STEM)</div><div class="card-tags"><span class="tag">non‑profit</span><span class="tag">organizations</span><span class="tag">located</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_1&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_1&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_2&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Open Technology Fund (OTF)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Internet Freedom Fund</div><div class="card-desc">Provides support for innovative projects that advance Internet freedom</div><div class="card-tags"><span class="tag">with</span><span class="tag">most</span><span class="tag">applicants</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_2&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$900,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_2&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_3&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Department of Defense (DoD)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Fundamental Research to Counter Weapons of Mass Destruction (HDTRA1-25-S-0001)</div><div class="card-desc">This broad agency announcement solicits pre-application white papers and invited proposals for fundamental research to counter chemical</div><div class="card-tags"><span class="tag">https://researchfunding.duke.edu/fundamental-research-counter-weapons-mass-destruction-dtra</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_3&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$1,000,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_3&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_4&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Alfred P. Sloan Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Technology Program (Alfred P. Sloan Foundation)</div><div class="card-desc">The Technology program leverages advances in technology to benefit the research community through exploratory grantmaking designed to surface</div><div class="card-tags"><span class="tag">researchers</span><span class="tag">and</span><span class="tag">organizations</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_4&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_4&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_5&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Open Society Foundations</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Latin America &amp; Caribbean Program</div><div class="card-desc">OSF works in Latin America and the Caribbean to bolster democratic change by transforming public concern about inequality</div><div class="card-tags"><span class="tag">policy</span><span class="tag">debate</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_5&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_5&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_6&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Institute for Humane Studies</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Humane Studies Fellowship</div><div class="card-desc">The Humane Studies Fellowship supports graduate students (PhD or postdoctoral) completing major research projects</div><div class="card-tags"><span class="tag">applicants</span><span class="tag">must</span><span class="tag">be</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_6&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$5,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_6&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_7&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Rogovy Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Frontier Fund</div><div class="card-desc">Discretionary grant program that distributes funds to nonprofit organizations engaged in civics and investigative journalism; in 2017 the Rogovy Foundation’s Frontier Fund distributed $50</div><div class="card-tags"><span class="tag">nonprofit</span><span class="tag">organizations</span><span class="tag">engaged</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_7&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$50,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_7&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_8&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Minor Foundation for Major Challenges</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Climate Change Mitigation Grants</div><div class="card-desc">000 to €200</div><div class="card-tags"><span class="tag">000;</span><span class="tag">small</span><span class="tag">grants</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_8&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$200,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_8&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_9&#39;)"><div class="cab social"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Adobe Research</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Data Science Research Award</div><div class="card-desc">Unrestricted funding for university faculty research projects that advance data science in marketing; proposals should address topics related to Adobe Experience Cloud and are evaluated twice per year.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">datascience</span><span class="tag">marketing</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_9&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$50,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_9&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_10&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Defense Threat Reduction Agency (DTRA)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Fundamental Research to Counter Weapons of Mass Destruction (C-WMD) BAA</div><div class="card-desc">DTRA’s broad agency announcement seeks basic and applied research to safeguard the United States and its allies from chemical</div><div class="card-tags"><span class="tag">https://www.dtra.mil/</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_10&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$25,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_10&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_11&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Two Sigma</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Faculty Research Award (Two Sigma)</div><div class="card-desc">Annual award recognizing a tenured or tenure‑track faculty member at a U.S. university for outstanding impact in STEM research</div><div class="card-tags"><span class="tag">https://www.twosigma.com/professors-and-universities/faculty-research-award/</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_11&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$75,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_11&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_12&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Genentech</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Health Equity and Diversity in STEM Innovation Fund</div><div class="card-desc">Varies</div><div class="card-tags"><span class="tag">and</span><span class="tag">opportunities</span><span class="tag">for</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_12&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">a member of the Roche Group</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_12&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_13&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Friedreich’s Ataxia Research Alliance (FARA)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Keats Award for International Collaboration in Research on Friedreich’s Ataxia (FA)</div><div class="card-desc">The Keats Award supports international collaborative research projects focused on Friedreich’s Ataxia (FA). The award encourages cross-border scientific partnerships to accelerate treatment breakthroughs.</div><div class="card-tags"><span class="tag">friedreichsataxia</span><span class="tag">health</span><span class="tag">stem</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_13&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$400,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_13&#39;)">View Details</button></div></div></div>
+  <div class="lm-wrap" id="lm-wrap" style="display: block;"><button class="lm-btn" onclick="loadMore()">Load more opportunities</button></div>
+  <div class="empty" id="empty" style="display: none;"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
+</div>
+<div class="sel-bar" id="sel-bar" style="display: none;">
+  <span class="sel-bar-count" id="sel-bar-count">1 selected</span>
+  <button class="sel-bar-btn" onclick="downloadSelected()">⬇ Download Selected</button>
+  <button class="sel-bar-clear" onclick="clearSelection()">Clear</button>
 </div>
 <div class="overlay" id="overlay" onclick="closeModal(event)">
   <div class="modal">
@@ -260,10 +271,11 @@ const CURATED_TAB="Curated Grants";
 const FEDERAL_TAB="Federal Grants";
 const PAGE_SIZE=24;
 let ALL=[],FILT=[],PAGE=0,curSrc="all",curCat="",curDeadline=0;
+const SELECTED=new Set();
 function cleanHeader(h){return String(h||"").toLowerCase().replace(/[\s_"]+/g,"").replace(/[^a-z0-9]/g,"");}
 function splitCSVRows(text){const rows=[];let cur="",inQ=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if((c==='\n'||c==='\r')&&!inQ){if(cur.trim())rows.push(cur);cur='';if(c==='\r'&&n==='\n')i++;}else cur+=c;}if(cur.trim())rows.push(cur);return rows;}
 function parseCSVLine(line,delim){delim=delim||",";const res=[];let cur="",inQ=false;for(let i=0;i<line.length;i++){const c=line[i],n=line[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if(c===delim&&!inQ){res.push(cur.trim());cur="";}else cur+=c;}res.push(cur.trim());return res;}
-function detectDelimiter(line){return line.includes("	")?"	":",";}
+function detectDelimiter(line){return line.includes("\t")?"\t":",";}
 function getFirst(row,keys,fallback=""){for(const k of keys)if(row[k]!==undefined&&String(row[k]).trim()!=="")return String(row[k]).trim();return fallback;}
 function parseDateSafe(v){if(!v)return null;const d=new Date(v);return isNaN(d)?null:d;}
 function deadlineDays(d){const p=parseDateSafe(d);if(!p)return 9999;return Math.ceil((p-new Date())/86400000);}
@@ -285,11 +297,9 @@ function parseCSV(text,source){
   const lines=splitCSVRows(text);
   if(lines.length<2)return[];
   const delim=detectDelimiter(lines[0]);
-  // Detect if first row is a real header row
   const firstRowCells=parseCSVLine(lines[0],delim).map(cleanHeader);
   const knownHeaders=["opportunity","name","title","funder","agency","amount","deadline","summary","description","discipline","category","keywords","eligibility"];
   const isHeader=firstRowCells.some(h=>knownHeaders.includes(h));
-  // If first row doesn't look like a header, skip it (stale cache issue)
   const startRow=isHeader?1:2;
   const headers=isHeader?firstRowCells:parseCSVLine(lines[1]?lines[1]:"",delim).map(cleanHeader);
   const accentOf={STEM:"tech",Health:"health",Humanities:"humanity",Education:"social",Environment:"energy",Social:"social",Arts:"humanity",Law:"social",Business:"social",International:"social",Media:"humanity",PublicHealth:"health",DataScience:"tech"};
@@ -312,7 +322,6 @@ function parseCSV(text,source){
       amount:(()=>{
         const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");
         if(!raw||raw.toLowerCase()==="see listing")return"See listing";
-        // If it's a plain number, format it as currency
         const num=parseFloat(raw.replace(/[$,]/g,""));
         if(!isNaN(num)&&num>0)return"$"+num.toLocaleString("en-US");
         return raw;
@@ -326,58 +335,67 @@ function parseCSV(text,source){
       accentClass:source==="federal"?"federal":(accentOf[cat]||"curated")
     };
     const looksFederal=!!getFirst(row,["opportunitynumber","fundingopportunitynumber","cfdanumber","assistancelistingnumber","agencycode","categoryoffundingactivity"],"");
-    if(source==="curated"&&looksFederal){console.warn("Skipping federal-looking row in curated tab:",name);continue;}
+    if(source==="curated"&&looksFederal){continue;}
     rows.push(item);
   }
   return rows;
 }
+function gvizToCSV(data){
+  if(!data||!data.table)return"";
+  const t=data.table,heads=t.cols.map(c=>c.label||""),csvRows=[heads.join(",")];
+  for(const r of t.rows){
+    const vals=r.c.map((cell,i)=>{
+      if(!cell||cell.v===null||cell.v===undefined)return"";
+      let v=cell.f||String(cell.v);
+      if(v.includes(",")||v.includes('"')||v.includes("\n"))v='"'+v.replace(/"/g,'""')+'"';
+      return v;
+    });
+    csvRows.push(vals.join(","));
+  }
+  return csvRows.join("\n");
+}
 async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
-  const SHEET_ID="1bdZ2UyQGuOkOK3fCwWq5dFnq-aWnJ_gehc80v06Qi7o";
   const GID=source==="curated"?"1152854448":"1347133722";
   const gvizUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&gid="+GID;
-  return new Promise((resolve)=>{
-    const script=document.createElement("script");
-    const cbName="gvizCb_"+source+"_"+Date.now();
-    const timeout=setTimeout(()=>{
-      delete window[cbName];
-      document.head.removeChild(script);
-      setSyncState(source,"error","Could not load "+source);
-      showWarn("Warning: Could not load the "+source+" grants. Please check the sheet is published to web as CSV.");
-      resolve([]);
-    },15000);
-    // Use fetch with no-cors as primary, fallback to script tag
-    fetch(gvizUrl).then(r=>r.text()).then(text=>{
-      clearTimeout(timeout);
-      if(text.trim().startsWith("<")||text.length<10){
-        setSyncState(source,"error","Could not load "+source);
-        resolve([]);
-        return;
-      }
-      const rows=parseCSV(text,source);
-      setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
-      resolve(rows);
-    }).catch(()=>{
-      // fallback to published CSV via corsproxy
-      const csvUrl="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid="+GID+"&single=true&output=csv";
-      const proxyUrl="https://corsproxy.io/?"+encodeURIComponent(csvUrl);
-      const ctrl=new AbortController();
-      const t2=setTimeout(()=>ctrl.abort(),10000);
-      fetch(proxyUrl,{signal:ctrl.signal}).then(r=>r.text()).then(text=>{
-        clearTimeout(t2);
-        clearTimeout(timeout);
-        if(text.trim().startsWith("<")||text.length<10){resolve([]);return;}
-        const rows=parseCSV(text,source);
-        setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
-        resolve(rows);
-      }).catch(()=>{
-        clearTimeout(timeout);
-        setSyncState(source,"error","Could not load "+source);
-        showWarn("Warning: Could not load the "+source+" grants. Please check the sheet is published to web as CSV.");
-        resolve([]);
-      });
+  function tryFetch(url){
+    return fetch(url).then(r=>r.text()).then(text=>{
+      if(text.trim().startsWith("<")||text.length<10)throw new Error("bad response");
+      return text;
     });
-  });
+  }
+  function tryJSONP(){
+    return new Promise((res,rej)=>{
+      const cbName="gvizCb_"+source+"_"+Date.now();
+      const script=document.createElement("script");
+      const timer=setTimeout(()=>{delete window[cbName];try{document.head.removeChild(script);}catch(e){} rej(new Error("timeout"));},15000);
+      window[cbName]=function(data){
+        clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){}
+        const csv=gvizToCSV(data);
+        if(csv.length<10){rej(new Error("empty"));return;}
+        res(csv);
+      };
+      script.onerror=function(){clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){} rej(new Error("script error"));};
+      script.src="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?gid="+GID+"&headers=1&tqx=responseHandler:"+cbName;
+      document.head.appendChild(script);
+    });
+  }
+  try{
+    let text;
+    try{text=await tryJSONP();}catch(e){
+      try{text=await tryFetch(gvizUrl);}catch(e2){
+        const csvUrl="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid="+GID+"&single=true&output=csv";
+        text=await tryFetch("https://corsproxy.io/?"+encodeURIComponent(csvUrl));
+      }
+    }
+    const rows=parseCSV(text,source);
+    setSyncState(source,"ok",rows.length+" "+(source==="federal"?"federal":"curated")+" grants");
+    return rows;
+  }catch(e){
+    setSyncState(source,"error","Could not load "+source);
+    showWarn("Could not load the "+source+" grants. Please check the sheet is published to web.");
+    return[];
+  }
 }
 
 async function init(){
@@ -392,14 +410,14 @@ async function init(){
   document.getElementById("source-tabs").style.display="flex";
   document.getElementById("filter-chips").style.display="flex";
   document.getElementById("deadline-chips").style.display="flex";
+  const btn=document.getElementById("download-btn");
+  if(btn&&ALL.length>0)btn.disabled=false;
   render();
 }
 function setSrc(s){curSrc=s;document.querySelectorAll(".stab").forEach(t=>t.classList.toggle("active",t.dataset.s===s));PAGE=0;render();}
 function setCat(c){curCat=c;document.querySelectorAll(".chip[data-cat]").forEach(x=>x.classList.toggle("active",x.dataset.cat===c));PAGE=0;render();}
 function setDeadline(d){curDeadline=d;document.querySelectorAll(".dl-chip[data-dl]").forEach(x=>x.classList.toggle("active",parseInt(x.dataset.dl)===d));PAGE=0;render();}
 function isNew(g){
-  // Mark as new if added recently - for curated, check if deadline is >180 days away (freshly posted)
-  // For federal, check if opportunity number contains current year
   if(g.source==="curated"&&(!g.deadline||deadlineDays(g.deadline)>180))return true;
   const yr=new Date().getFullYear().toString();
   if(g.source==="federal"&&g.oppNum&&g.oppNum.includes(yr))return true;
@@ -408,8 +426,7 @@ function isNew(g){
 function dlLabel(days){if(!days||days===9999)return{label:"Open",cls:"upcoming"};if(days<0)return{label:"Closed",cls:"urgent"};if(days<=45)return{label:days+"d left",cls:"urgent"};if(days<=120)return{label:days+"d left",cls:"soon"};return{label:new Date(Date.now()+days*86400000).toLocaleDateString("en-US",{month:"short",year:"numeric"}),cls:"upcoming"};}
 function amtNum(s){return parseInt(String(s||"0").replace(/[^0-9]/g,""))||0;}
 const SYNONYMS={
-  "money":["funding","grant","award","financial"],
-  "cash":["funding","grant","award"],
+  "money":["funding","grant","award","financial"],"cash":["funding","grant","award"],
   "climate":["environment","environmental","sustainability","energy","carbon","ecology"],
   "environment":["climate","ecology","sustainability","green","conservation"],
   "medicine":["health","medical","clinical","disease","biomedical","healthcare"],
@@ -436,13 +453,10 @@ const SYNONYMS={
   "women":["gender","diversity","equity","inclusion","female"],
   "minority":["diversity","equity","inclusion","underrepresented","race"],
   "startup":["entrepreneurship","innovation","business","commercialization"],
-  "business":["entrepreneurship","economic","commerce","social sciences"],
+  "business":["economics","entrepreneurship","commerce","finance","management"],
   "law":["legal","policy","justice","regulation","governance"],
   "policy":["law","government","regulation","public","political"],
-  "business":["economics","entrepreneurship","commerce","finance","management"],
   "economics":["business","finance","commerce","trade","fiscal"],
-  "international":["global","foreign","diplomacy","developing","overseas","geopolitics"],
-  "global":["international","foreign","diplomacy","overseas"],
   "media":["communication","journalism","broadcasting","film","press","digital media"],
   "journalism":["media","communication","press","broadcasting"],
   "communication":["media","journalism","broadcasting","film","press"],
@@ -450,7 +464,6 @@ const SYNONYMS={
   "epidemiology":["public health","disease","population","global health"],
   "data science":["machine learning","ai","artificial intelligence","computing","statistics","analytics"],
   "machine learning":["ai","data science","computing","artificial intelligence","algorithms"],
-  "policy":["law","government","social","public","political"],
   "mental health":["psychology","behavioral","social","wellness","counseling"],
   "psychology":["mental health","behavioral","social sciences","neuroscience"],
   "food":["agriculture","nutrition","health","environment","sustainability"],
@@ -491,6 +504,7 @@ function render(){
   PAGE=0;
   document.getElementById("results-count").textContent=FILT.length.toLocaleString()+" results";
   renderPage();
+  updateSelectAllBtn();
 }
 function renderPage(){
   const slice=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
@@ -506,6 +520,7 @@ function renderPage(){
   empty.style.display="none";
   grid.innerHTML=slice.map((g,i)=>{
     const dl=dlLabel(deadlineDays(g.deadline)),tags=(g.keywords||[]).slice(0,3),isFed=g.source==="federal";
+    const isSel=SELECTED.has(g.id);
     return'<div class="card" style="animation-delay:'+Math.min(i,12)*0.04+'s" onclick="openModal(\''+g.id+'\')">'+
       '<div class="cab '+g.accentClass+'"></div>'+
       '<div class="card-body">'+
@@ -516,8 +531,9 @@ function renderPage(){
         '<div class="card-tags">'+tags.map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join("")+(g.oppNum?'<span class="tag fed-tag">'+escapeHtml(g.oppNum)+'</span>':'')+'</div>'+
       '</div>'+
       '<div class="card-footer">'+
-        '<div><div class="amount-label">Award</div><div class="amount">'+escapeHtml(g.amount)+'</div></div>'+
-        '<button class="apply-btn '+(isFed?"fb":"") +'" onclick="event.stopPropagation();openModal(\''+g.id+'\')">View Details</button>'+
+        '<div class="card-check'+(isSel?' checked':'')+'" onclick="event.stopPropagation();toggleSelect(\''+g.id+'\')" title="Select for download"></div>'+
+        '<div style="flex:1"><div class="amount-label">Award</div><div class="amount">'+escapeHtml(g.amount)+'</div></div>'+
+        '<button class="apply-btn '+(isFed?"fb":"")+'" onclick="event.stopPropagation();openModal(\''+g.id+'\')">View Details</button>'+
       '</div>'+
     '</div>';
   }).join("");
@@ -528,7 +544,7 @@ function updateCounts(){
   const fed=ALL.filter(g=>g.source==="federal").length,cur=ALL.filter(g=>g.source==="curated").length;
   ["total-count","fed-count","cur-count","tc-all","tc-fed","tc-cur"].forEach((id,i)=>{
     const v=i===0||i===3?fed+cur:i===1||i===4?fed:cur;
-    document.getElementById(id).textContent=v.toLocaleString();
+    const el=document.getElementById(id);if(el)el.textContent=v.toLocaleString();
   });
 }
 function setSyncState(which,state,label){
@@ -556,15 +572,8 @@ function openModal(id){
   const btn=document.getElementById("m-apply");
   btn.className="mbtn-pri"+(isFed?" fed":"");
   if(g.url&&g.url!=="#"){
-    btn.disabled=false;btn.style.opacity="1";btn.textContent="Learn More & Apply →";
-    btn.onclick=async()=>{
-      try{
-        const test=await fetch(g.url,{method:"HEAD",mode:"no-cors"});
-        window.open(g.url,"_blank","noopener,noreferrer");
-      }catch(e){
-        window.open(g.url,"_blank","noopener,noreferrer");
-      }
-    };
+    btn.disabled=false;btn.style.opacity="1";btn.textContent="Learn More & Apply \u2192";
+    btn.onclick=()=>{window.open(g.url,"_blank","noopener,noreferrer");};
   }else{
     btn.disabled=true;btn.style.opacity="0.4";btn.textContent="No link available";btn.onclick=null;
   }
@@ -574,6 +583,73 @@ function openModal(id){
 function closeOverlay(){document.getElementById("overlay").classList.remove("open");document.body.style.overflow="";}
 function closeModal(e){if(e.target===document.getElementById("overlay"))closeOverlay();}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOverlay();});
+
+/* ===== SELECTION FEATURE ===== */
+function toggleSelect(id){
+  if(SELECTED.has(id))SELECTED.delete(id);else SELECTED.add(id);
+  updateSelBar();
+  // Update checkbox visually without full re-render
+  document.querySelectorAll('.card-check').forEach(el=>{
+    const cardEl=el.parentElement;
+    const onclick=el.getAttribute('onclick')||'';
+    const match=onclick.match(/toggleSelect\('([^']+)'\)/);
+    if(match&&match[1]===id)el.classList.toggle('checked',SELECTED.has(id));
+  });
+  updateSelectAllBtn();
+}
+function updateSelBar(){
+  const bar=document.getElementById('sel-bar'),cnt=document.getElementById('sel-bar-count');
+  if(SELECTED.size>0){
+    bar.style.display='flex';
+    cnt.textContent=SELECTED.size+' selected';
+  }else{
+    bar.style.display='none';
+  }
+}
+function clearSelection(){SELECTED.clear();updateSelBar();renderPage();updateSelectAllBtn();}
+function toggleSelectAll(){
+  const allOnPage=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
+  const allSelected=allOnPage.every(g=>SELECTED.has(g.id));
+  if(allSelected){allOnPage.forEach(g=>SELECTED.delete(g.id));}
+  else{allOnPage.forEach(g=>SELECTED.add(g.id));}
+  updateSelBar();renderPage();updateSelectAllBtn();
+}
+function updateSelectAllBtn(){
+  const btn=document.getElementById('sel-all-btn');if(!btn)return;
+  const allOnPage=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
+  const allSelected=allOnPage.length>0&&allOnPage.every(g=>SELECTED.has(g.id));
+  btn.classList.toggle('active',allSelected);
+  btn.textContent=allSelected?'Deselect All':'Select All';
+}
+function downloadSelected(){
+  if(!SELECTED.size)return;
+  const items=ALL.filter(g=>SELECTED.has(g.id));
+  generateCSV(items,'selected_opportunities');
+}
+
+/* ===== DOWNLOAD CSV FEATURE ===== */
+function generateCSV(items,filenamePrefix){
+  if(!items.length)return;
+  const csvEsc=v=>{const s=String(v||"");return s.includes(",")||s.includes('"')||s.includes("\n")?'"'+s.replace(/"/g,'""')+'"':s;};
+  const headers=["Name","Source","Funder","Amount","Deadline","Category","Description","Eligibility","Keywords","URL","Opportunity Number"];
+  const rows=items.map(g=>[
+    csvEsc(g.name),csvEsc(g.source),csvEsc(g.funder),csvEsc(g.amount),
+    csvEsc(g.deadline),csvEsc(g.category),csvEsc(g.description),csvEsc(g.eligibility),
+    csvEsc((g.keywords||[]).join(", ")),csvEsc(g.url),csvEsc(g.oppNum)
+  ].join(","));
+  const csv=headers.join(",")+"\n"+rows.join("\n");
+  const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
+  const link=document.createElement("a");
+  link.href=URL.createObjectURL(blob);
+  link.download=filenamePrefix+"_"+new Date().toISOString().slice(0,10)+".csv";
+  document.body.appendChild(link);link.click();document.body.removeChild(link);
+  URL.revokeObjectURL(link.href);
+}
+function downloadCSV(){
+  if(!FILT.length)return;
+  generateCSV(FILT,'funding_opportunities');
+}
+
 init();
 </script>
 
