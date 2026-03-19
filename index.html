@@ -315,7 +315,7 @@ function parseCSV(text,source){
     const rawKw=getFirst(row,["keywords","keyword","tags"],"");
     const kws=rawKw?rawKw.replace(/^["']+|["']+$/g,"").split(/\s+/).map(k=>k.replace(/^#/,"").trim().toLowerCase()).filter(k=>k.length>1):[cat.toLowerCase()];
     const deadline=getFirst(row,["deadline","closedate","duedate","applicationdeadline"],"");
-    if(deadlineDays(deadline)<-30)continue;
+    if(deadlineDays(deadline)<0)continue;
     const item={id:`${source}_${i}`,source,name,
       funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
