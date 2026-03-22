@@ -90,11 +90,11 @@
   .loading-text { font-size:14px; color:var(--text2); }
   .loading-sub  { font-size:12px; color:var(--text3); }
   .warn-banner { background:#FEF2F4; border:1px solid #F5C6CC; border-left:4px solid #E0263C; border-radius:8px; padding:12px 18px; margin:16px 24px 0; font-size:13px; color:var(--text2); line-height:1.6; display:none; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:18px; padding:22px 24px; }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:transform 0.2s,box-shadow 0.2s; display:flex; flex-direction:column; animation:fadeUp 0.3s ease both; cursor:pointer; }
-  .card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .grid { display:flex; flex-direction:column; gap:10px; padding:18px 24px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:transform 0.2s,box-shadow 0.2s; display:flex; flex-direction:row; animation:fadeUp 0.3s ease both; cursor:pointer; align-items:stretch; min-height:72px; }
+  .card:hover { box-shadow:var(--shadow-lg); }
   @keyframes fadeUp { from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)} }
-  .cab { height:4px; }
+  .cab { width:5px; min-width:5px; flex-shrink:0; }
   .cab.federal { background:linear-gradient(90deg,#182449,#004FA2); }
   .cab.curated { background:linear-gradient(90deg,#004FA2,#6995DD); }
   .cab.health  { background:linear-gradient(90deg,#005099,#6995DD); }
@@ -102,26 +102,26 @@
   .cab.energy  { background:linear-gradient(90deg,#C4122E,#E0263C); }
   .cab.social  { background:linear-gradient(90deg,#182449,#005099); }
   .cab.tech    { background:linear-gradient(90deg,#004FA2,#6995DD); }
-  .card-body { padding:16px 18px; flex:1; }
-  .card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px; }
-  .funder-badge { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text3); font-weight:500; overflow:hidden; text-overflow:ellipsis; max-width:60%; white-space:nowrap; }
-  .src-badge { font-size:10px; font-weight:600; padding:2px 8px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
+  .card-body { padding:12px 16px; flex:1; min-width:0; }
+  .card-top { display:flex; justify-content:space-between; align-items:center; gap:6px; margin-bottom:4px; flex-wrap:nowrap; }
+  .funder-badge { font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text); font-weight:700; overflow:hidden; text-overflow:ellipsis; max-width:60%; white-space:nowrap; }
+  .src-badge { font-size:10px; font-weight:600; padding:2px 8px; border-radius:4px; white-space:nowrap; flex-shrink:0; min-width:fit-content; }
   .src-badge.federal { background:#EDF1F8; color:#182449; }
   .src-badge.curated { background:#E8EFF8; color:#004FA2; }
   .dl-badge { font-size:11px; font-weight:500; padding:3px 9px; border-radius:6px; white-space:nowrap; }
   .dl-badge.urgent   { background:#FEF2F4; color:#961E28; border:1px solid #F5C6CC; }
-  .new-badge { background:#E8F5E9; color:#2E7D32; border:1px solid #A5D6A7; font-size:10px; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:0.08em; text-transform:uppercase; margin-left:4px; }
+  .new-badge { background:#E8F5E9; color:#2E7D32; border:1px solid #A5D6A7; font-size:10px; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:0.08em; text-transform:uppercase; margin-left:4px; flex-shrink:0; white-space:nowrap; }
   .dl-chip { padding:4px 12px; border-radius:20px; font-size:12px; font-weight:500; cursor:pointer; border:1.5px solid var(--border); background:transparent; color:var(--text2); font-family:"Source Sans 3",sans-serif; transition:all 0.18s; white-space:nowrap; }
   .dl-chip:hover { border-color:#004FA2; color:#004FA2; }
   .dl-chip.active { background:#004FA2; border-color:#004FA2; color:#fff; }
   .dl-badge.soon     { background:#FEF9EC; color:#7A5C00; border:1px solid #EDD870; }
   .dl-badge.upcoming { background:#EDF1F8; color:#004FA2; border:1px solid #B8CCE8; }
-  .card-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:5px; margin-top:4px; }
-  .card-desc { font-size:12px; color:var(--text2); line-height:1.6; margin-bottom:12px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-  .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:12px; }
+  .card-title { font-family:'Playfair Display',serif; font-size:15px; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:2px; margin-top:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; flex:1; }
+  .card-desc { display:none; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:0; }
   .tag { font-size:11px; padding:2px 8px; border-radius:4px; background:var(--tag-bg); color:var(--tag-color); font-weight:500; }
   .tag.fed-tag { background:#EDF1F8; color:#182449; }
-  .card-footer { display:flex; align-items:center; justify-content:space-between; padding:12px 18px; border-top:1px solid var(--border); background:var(--surface2); gap:10px; }
+  .card-footer { display:flex; align-items:center; padding:12px 18px; border-left:1px solid var(--border); background:var(--surface2); gap:12px; flex-shrink:0; width:240px; min-width:240px; }
   .amount { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:var(--text); }
   .amount-label { font-size:10px; color:var(--text3); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1px; }
   .apply-btn { background:var(--accent); color:#fff; border:none; border-radius:7px; padding:8px 16px; font-family:'Source Sans 3',sans-serif; font-size:12px; font-weight:500; cursor:pointer; transition:background 0.18s; }
@@ -162,8 +162,15 @@
   .empty { text-align:center; padding:60px 24px; color:var(--text3); display:none; }
   .empty-icon { font-size:40px; margin-bottom:12px; }
   .empty h3 { font-family:'Playfair Display',serif; font-size:19px; color:var(--text2); margin-bottom:6px; }
-  @media(max-width:680px){.header{padding:20px 18px 16px;}.controls{padding:12px 16px;gap:8px;}.filter-chips{padding:8px 16px;}.grid{grid-template-columns:1fr;gap:14px;padding:16px;}.results-count{display:none;}.modal-header,.modal-body,.modal-footer{padding-left:18px;padding-right:18px;}select{min-width:0;flex:1;}.sync-row{display:none;}.dl-btn span{display:none;}.sel-bar{left:12px;right:12px;transform:none;border-radius:12px;padding:10px 14px;gap:10px;font-size:13px;}}
-  @media(min-width:681px) and (max-width:940px){.grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:680px){.header{padding:20px 18px 16px;}.controls{padding:12px 16px;gap:8px;}.filter-chips{padding:8px 16px;}.grid{gap:8px;padding:12px;}.results-count{display:none;}.modal-header,.modal-body,.modal-footer{padding-left:18px;padding-right:18px;}select{min-width:0;flex:1;}.sync-row{display:none;}.dl-btn span{display:none;}.sel-bar{left:12px;right:12px;transform:none;border-radius:12px;padding:10px 14px;gap:10px;font-size:13px;}}
+  @media(min-width:681px) and (max-width:940px){}
+
+  .search-mode { display:inline-flex; border:1.5px solid var(--border); border-radius:9px; overflow:hidden; flex-shrink:0; }
+  .search-mode-btn { padding:8px 14px; font-family:'Source Sans 3',sans-serif; font-size:12px; font-weight:600; cursor:pointer; border:none; background:var(--bg); color:var(--text2); transition:all 0.18s; white-space:nowrap; }
+  .search-mode-btn:first-child { border-right:1.5px solid var(--border); }
+  .search-mode-btn:hover { color:var(--accent); }
+  .search-mode-btn.active { background:var(--accent); color:#fff; }
+  .facet-count { font-size:11px; color:var(--text3); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -183,6 +190,7 @@
       <span class="search-icon">🔍</span>
       <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility…" oninput="render()">
     </div>
+    <div class="search-mode" id="search-mode"><button class="search-mode-btn active" data-mode="any" onclick="setSearchMode('any')">Contains Any</button><button class="search-mode-btn" data-mode="all" onclick="setSearchMode('all')">Contains All</button></div>
     <select id="sort" onchange="render()">
       <option value="deadline">Deadline (soonest)</option>
       <option value="amount">Amount (largest)</option>
@@ -201,28 +209,30 @@
   </div>
   <div class="filter-chips" id="filter-chips" style="display: flex;">
     <span class="chip-label">Category:</span>
-    <button class="chip active" onclick="setCat(&#39;&#39;)" data-cat="">All</button>
-    <button class="chip" onclick="setCat(&#39;STEM&#39;)" data-cat="STEM">Science &amp; Engineering</button>
-    <button class="chip" onclick="setCat(&#39;Health&#39;)" data-cat="Health">Health &amp; Bio</button>
-    <button class="chip" onclick="setCat(&#39;Humanities&#39;)" data-cat="Humanities">Humanities</button>
-    <button class="chip" onclick="setCat(&#39;Education&#39;)" data-cat="Education">Education</button>
-    <button class="chip" onclick="setCat(&#39;Environment&#39;)" data-cat="Environment">Environment &amp; Energy</button>
-    <button class="chip" onclick="setCat(&#39;Social&#39;)" data-cat="Social">Social Sciences</button>
-    <button class="chip" onclick="setCat(&#39;Arts&#39;)" data-cat="Arts">Arts &amp; Culture</button>
-    <button class="chip" onclick="setCat(&#39;Law&#39;)" data-cat="Law">Law &amp; Policy</button>
-    <button class="chip" onclick="setCat(&#39;Business&#39;)" data-cat="Business">Business &amp; Economics</button>
-    <button class="chip" onclick="setCat(&#39;International&#39;)" data-cat="International">International Affairs</button>
-    <button class="chip" onclick="setCat(&#39;Media&#39;)" data-cat="Media">Communication &amp; Media</button>
-    <button class="chip" onclick="setCat(&#39;PublicHealth&#39;)" data-cat="PublicHealth">Public Health</button>
-    <button class="chip" onclick="setCat(&#39;DataScience&#39;)" data-cat="DataScience">Data Science &amp; AI</button>
-  </div>
-  <div class="filter-chips" id="deadline-chips" style="display: flex;">
-    <span class="chip-label">Deadline:</span>
-    <button class="dl-chip active" onclick="setDeadline(0)" data-dl="0">All</button>
-    <button class="dl-chip" onclick="setDeadline(30)" data-dl="30">Next 30 days</button>
-    <button class="dl-chip" onclick="setDeadline(60)" data-dl="60">Next 60 days</button>
-    <button class="dl-chip" onclick="setDeadline(90)" data-dl="90">Next 90 days</button>
-    <button class="dl-chip" onclick="setDeadline(180)" data-dl="180">Next 6 months</button>
+    <select id="cat-select" onchange="setCat(this.value)" style="flex:0 1 auto;">
+      <option value="">All Categories</option>
+      <option value="STEM">Science &amp; Engineering</option>
+      <option value="Health">Health &amp; Bio</option>
+      <option value="Humanities">Humanities</option>
+      <option value="Education">Education</option>
+      <option value="Environment">Environment &amp; Energy</option>
+      <option value="Social">Social Sciences</option>
+      <option value="Arts">Arts &amp; Culture</option>
+      <option value="Law">Law &amp; Policy</option>
+      <option value="Business">Business &amp; Economics</option>
+      <option value="International">International Affairs</option>
+      <option value="Media">Communication &amp; Media</option>
+      <option value="PublicHealth">Public Health</option>
+      <option value="DataScience">Data Science &amp; AI</option>
+    </select>
+    <span class="chip-label" style="margin-left:16px;">Deadline:</span>
+    <select id="dl-select" onchange="setDeadline(parseInt(this.value))" style="flex:0 1 auto;">
+      <option value="0">All Deadlines</option>
+      <option value="30">Next 30 days</option>
+      <option value="60">Next 60 days</option>
+      <option value="90">Next 90 days</option>
+      <option value="180">Next 6 months</option>
+    </select>
   </div>
   <div class="loading-screen" id="loading-screen" style="display: none;">
     <div class="spinner"></div>
@@ -270,7 +280,7 @@ const SHEET_ID="1bdZ2UyQGuOkOK3fCwWq5dFnq-aWnJ_gehc80v06Qi7o";
 const CURATED_TAB="Curated Grants";
 const FEDERAL_TAB="Federal Grants";
 const PAGE_SIZE=24;
-let ALL=[],FILT=[],PAGE=0,curSrc="all",curCat="",curDeadline=0;
+let ALL=[],FILT=[],PAGE=0,curSrc="all",curCat="",curDeadline=0,searchMode="any";
 const SELECTED=new Set();
 function cleanHeader(h){return String(h||"").toLowerCase().replace(/[\s_"]+/g,"").replace(/[^a-z0-9]/g,"");}
 function splitCSVRows(text){const rows=[];let cur="",inQ=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if((c==='\n'||c==='\r')&&!inQ){if(cur.trim())rows.push(cur);cur='';if(c==='\r'&&n==='\n')i++;}else cur+=c;}if(cur.trim())rows.push(cur);return rows;}
@@ -484,6 +494,53 @@ function expandQuery(q){
   }
   return terms;
 }
+function setSearchMode(mode){searchMode=mode;document.querySelectorAll('.search-mode-btn').forEach(function(b){b.classList.toggle('active',b.dataset.mode===mode);});render();}
+function updateFacetCounts(){
+  var q=document.getElementById("search").value.toLowerCase().trim();
+  var terms=q?expandQuery(q):[];
+  var base=ALL.filter(function(g){
+    if(curSrc!=="all"&&g.source!==curSrc)return false;
+    if(q){
+      var hay=[g.name,g.funder,g.description,(g.keywords||[]).join(" "),g.eligibility,g.oppNum,g.category].join(" ").toLowerCase();
+      if(searchMode==='all'){var words=q.split(/\s+/).filter(function(w){return w.length>0;});if(!words.every(function(w){var wTerms=expandQuery(w);return wTerms.some(function(t){return hay.includes(t);});}))return false;}
+      else{if(!terms.some(function(t){return hay.includes(t);}))return false;}
+    }
+    return true;
+  });
+  var catSel=document.getElementById("cat-select");
+  if(catSel){
+    var opts=catSel.options;
+    for(var i=0;i<opts.length;i++){
+      var cv=opts[i].value;
+      var count=cv===""?base.length:base.filter(function(g){return g.category===cv;}).length;
+      var label=opts[i].textContent.replace(/ \(\d+\)/,"");
+      opts[i].textContent=label+" ("+count+")";
+    }
+  }
+  var dlSel=document.getElementById("dl-select");
+  if(dlSel){
+    var dlOpts=dlSel.options;
+    var catFiltered=curCat?base.filter(function(g){return g.category===curCat;}):base;
+    for(var j=0;j<dlOpts.length;j++){
+      var dv=parseInt(dlOpts[j].value);
+      var dcount;
+      if(dv===0){dcount=catFiltered.length;}
+      else{dcount=catFiltered.filter(function(g){var days=deadlineDays(g.deadline);return days>=0&&days<=dv;}).length;}
+      var dlabel=dlOpts[j].textContent.replace(/ \(\d+\)/,"");
+      dlOpts[j].textContent=dlabel+" ("+dcount+")";
+    }
+  }
+  var tabs=document.querySelectorAll(".stab .tcnt");
+  var allCount=base.length;
+  var fedCount=base.filter(function(g){return g.source==="federal";}).length;
+  var curCount=base.filter(function(g){return g.source==="curated";}).length;
+  var tcAll=document.getElementById("tc-all");
+  var tcFed=document.getElementById("tc-fed");
+  var tcCur=document.getElementById("tc-cur");
+  if(tcAll)tcAll.textContent=allCount.toLocaleString();
+  if(tcFed)tcFed.textContent=fedCount.toLocaleString();
+  if(tcCur)tcCur.textContent=curCount.toLocaleString();
+}
 function render(){
   const q=document.getElementById("search").value.toLowerCase().trim();
   const sort=document.getElementById("sort").value;
@@ -493,7 +550,7 @@ function render(){
     if(curCat&&g.category!==curCat)return false;
     if(q){
       const hay=[g.name,g.funder,g.description,(g.keywords||[]).join(" "),g.eligibility,g.oppNum,g.category].join(" ").toLowerCase();
-      if(!terms.some(t=>hay.includes(t)))return false;
+      if(searchMode==='all'){var words=q.split(/\s+/).filter(function(w){return w.length>0;});if(!words.every(function(w){var wTerms=expandQuery(w);return wTerms.some(function(t){return hay.includes(t);});}))return false;}else{if(!terms.some(t=>hay.includes(t)))return false;}
     }
     if(curDeadline>0){const days=deadlineDays(g.deadline);if(days>curDeadline||days<0)return false;}
     return true;
@@ -505,6 +562,7 @@ function render(){
   document.getElementById("results-count").textContent=FILT.length.toLocaleString()+" results";
   renderPage();
   updateSelectAllBtn();
+  updateFacetCounts();
 }
 function renderPage(){
   const slice=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
@@ -524,15 +582,12 @@ function renderPage(){
     return'<div class="card" style="animation-delay:'+Math.min(i,12)*0.04+'s" onclick="openModal(\''+g.id+'\')">'+
       '<div class="cab '+g.accentClass+'"></div>'+
       '<div class="card-body">'+
-        '<div class="card-top"><span class="funder-badge">'+escapeHtml(g.funder||"Unknown funder")+'</span><span class="src-badge '+g.source+'">'+(isFed?"Federal":"Curated")+'</span>'+(isNew(g)?'<span class="new-badge">New</span>':'')+'</div>'+
-        '<div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge '+dl.cls+'">'+dl.label+'</span></div>'+
-        '<div class="card-title">'+escapeHtml(g.name)+'</div>'+
-        '<div class="card-desc">'+escapeHtml(g.description||"Visit the grant listing for full details.")+'</div>'+
-        '<div class="card-tags">'+tags.map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join("")+(g.oppNum?'<span class="tag fed-tag">'+escapeHtml(g.oppNum)+'</span>':'')+'</div>'+
+        '<div class="card-top"><span class="card-title">'+escapeHtml(g.name)+'</span><span class="src-badge '+g.source+'">'+(isFed?"Federal":"Curated")+'</span>'+(isNew(g)?'<span class="new-badge">New</span>':'')+'<span class="dl-badge '+dl.cls+'" style="margin-left:auto;">'+dl.label+'</span></div>'+
+        '<div class="card-top" style="margin-top:0;margin-bottom:0;gap:6px;"><span class="funder-badge">'+escapeHtml(g.funder||"Unknown funder")+'</span><span style="color:var(--text3);">·</span>'+tags.slice(0,2).map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join("")+(g.oppNum?'<span class="tag fed-tag">'+escapeHtml(g.oppNum)+'</span>':'')+'</div>'+
       '</div>'+
       '<div class="card-footer">'+
         '<div class="card-check'+(isSel?' checked':'')+'" onclick="event.stopPropagation();toggleSelect(\''+g.id+'\')" title="Select for download"></div>'+
-        '<div style="flex:1"><div class="amount-label">Award</div><div class="amount">'+escapeHtml(g.amount)+'</div></div>'+
+        '<div style="flex:1;text-align:center;"><div class="amount-label">Award</div><div class="amount">'+escapeHtml(g.amount)+'</div></div>'+
         '<button class="apply-btn '+(isFed?"fb":"")+'" onclick="event.stopPropagation();openModal(\''+g.id+'\')">View Details</button>'+
       '</div>'+
     '</div>';
@@ -565,92 +620,4 @@ function openModal(id){
   document.getElementById("m-amount").textContent=g.amount;
   const pd=parseDateSafe(g.deadline);
   document.getElementById("m-deadline").textContent=pd?pd.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"}):"Open / See listing";
-  document.getElementById("m-elig").textContent=g.eligibility||"See listing";
-  document.getElementById("m-desc").textContent=g.description||"Visit the grant listing for full details.";
-  const extra=(g.oppNum?'<span class="mtag ft">'+escapeHtml(g.oppNum)+'</span>':'')+(g.cfda?'<span class="mtag ft">CFDA: '+escapeHtml(g.cfda)+'</span>':'');
-  document.getElementById("m-tags").innerHTML=(g.keywords||[]).map(t=>'<span class="mtag">'+escapeHtml(t)+'</span>').join("")+extra;
-  const btn=document.getElementById("m-apply");
-  btn.className="mbtn-pri"+(isFed?" fed":"");
-  if(g.url&&g.url!=="#"){
-    btn.disabled=false;btn.style.opacity="1";btn.textContent="Learn More & Apply \u2192";
-    btn.onclick=()=>{window.open(g.url,"_blank","noopener,noreferrer");};
-  }else{
-    btn.disabled=true;btn.style.opacity="0.4";btn.textContent="No link available";btn.onclick=null;
-  }
-  document.getElementById("overlay").classList.add("open");
-  document.body.style.overflow="hidden";
-}
-function closeOverlay(){document.getElementById("overlay").classList.remove("open");document.body.style.overflow="";}
-function closeModal(e){if(e.target===document.getElementById("overlay"))closeOverlay();}
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOverlay();});
-
-/* ===== SELECTION FEATURE ===== */
-function toggleSelect(id){
-  if(SELECTED.has(id))SELECTED.delete(id);else SELECTED.add(id);
-  updateSelBar();
-  // Update checkbox visually without full re-render
-  document.querySelectorAll('.card-check').forEach(el=>{
-    const cardEl=el.parentElement;
-    const onclick=el.getAttribute('onclick')||'';
-    const match=onclick.match(/toggleSelect\('([^']+)'\)/);
-    if(match&&match[1]===id)el.classList.toggle('checked',SELECTED.has(id));
-  });
-  updateSelectAllBtn();
-}
-function updateSelBar(){
-  const bar=document.getElementById('sel-bar'),cnt=document.getElementById('sel-bar-count');
-  if(SELECTED.size>0){
-    bar.style.display='flex';
-    cnt.textContent=SELECTED.size+' selected';
-  }else{
-    bar.style.display='none';
-  }
-}
-function clearSelection(){SELECTED.clear();updateSelBar();renderPage();updateSelectAllBtn();}
-function toggleSelectAll(){
-  const allOnPage=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
-  const allSelected=allOnPage.every(g=>SELECTED.has(g.id));
-  if(allSelected){allOnPage.forEach(g=>SELECTED.delete(g.id));}
-  else{allOnPage.forEach(g=>SELECTED.add(g.id));}
-  updateSelBar();renderPage();updateSelectAllBtn();
-}
-function updateSelectAllBtn(){
-  const btn=document.getElementById('sel-all-btn');if(!btn)return;
-  const allOnPage=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
-  const allSelected=allOnPage.length>0&&allOnPage.every(g=>SELECTED.has(g.id));
-  btn.classList.toggle('active',allSelected);
-  btn.textContent=allSelected?'Deselect All':'Select All';
-}
-function downloadSelected(){
-  if(!SELECTED.size)return;
-  const items=ALL.filter(g=>SELECTED.has(g.id));
-  generateCSV(items,'selected_opportunities');
-}
-
-/* ===== DOWNLOAD CSV FEATURE ===== */
-function generateCSV(items,filenamePrefix){
-  if(!items.length)return;
-  const csvEsc=v=>{const s=String(v||"");return s.includes(",")||s.includes('"')||s.includes("\n")?'"'+s.replace(/"/g,'""')+'"':s;};
-  const headers=["Name","Source","Funder","Amount","Deadline","Category","Description","Eligibility","Keywords","URL","Opportunity Number"];
-  const rows=items.map(g=>[
-    csvEsc(g.name),csvEsc(g.source),csvEsc(g.funder),csvEsc(g.amount),
-    csvEsc(g.deadline),csvEsc(g.category),csvEsc(g.description),csvEsc(g.eligibility),
-    csvEsc((g.keywords||[]).join(", ")),csvEsc(g.url),csvEsc(g.oppNum)
-  ].join(","));
-  const csv=headers.join(",")+"\n"+rows.join("\n");
-  const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
-  const link=document.createElement("a");
-  link.href=URL.createObjectURL(blob);
-  link.download=filenamePrefix+"_"+new Date().toISOString().slice(0,10)+".csv";
-  document.body.appendChild(link);link.click();document.body.removeChild(link);
-  URL.revokeObjectURL(link.href);
-}
-function downloadCSV(){
-  if(!FILT.length)return;
-  generateCSV(FILT,'funding_opportunities');
-}
-
-init();
-</script>
-
-</body></html>
+  document.getE
