@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///C:/Users/jmaher/Downloads/index_13.html -->
+<!-- saved from url=(0051)file:///C:/Users/jmaher/Downloads/index%20(37).html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Funding Opportunities | American University</title>
-<link href="./Funding Opportunities _ American University_files/css2" rel="stylesheet">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
   :root {
@@ -20,75 +20,64 @@
   }
   body { font-family:'Source Sans 3',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; -webkit-font-smoothing:antialiased; }
   .app-shell { max-width:1160px; margin:0 auto; }
-  .header { background:#182449; padding:0 0 0; position:relative; overflow:hidden; }
-  .header-white-bar { background:#fff; padding:10px 32px; border-bottom:3px solid #E0263C; display:flex; align-items:center; gap:20px; }
-  .header-logo { height:42px; width:auto; display:block; }
-  .header-divider { width:1px; height:38px; background:#D9DCE3; }
-  .header-office { font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#8A95A5; font-weight:600; font-family:'Source Sans 3',sans-serif; }
-  .header-inner { padding:20px 32px 22px; position:relative; }
-  .header::before { content:''; position:absolute; top:-60px; right:-60px; width:280px; height:280px; border-radius:50%; background:rgba(0,79,162,0.2); pointer-events:none; }
-  .header::after  { content:''; position:absolute; bottom:-40px; right:60px; width:160px; height:160px; border-radius:50%; background:rgba(224,38,60,0.1); pointer-events:none; }
-  .header-eyebrow { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; color:rgba(224,38,60,0.9); margin-bottom:8px; font-weight:600; }
-  .header h1 { font-family:'Playfair Display',serif; font-size:clamp(22px,4vw,34px); font-weight:700; color:#fff; line-height:1.15; position:relative; z-index:1; }
-  .header h1 em { font-style:italic; color:#6995DD; }
-  .header-sub { font-size:13px; color:rgba(255,255,255,0.55); margin-top:6px; position:relative; z-index:1; }
-  .header-stats { display:flex; gap:10px; margin-top:18px; position:relative; z-index:1; flex-wrap:wrap; align-items:center; }
-  .stat-pill { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); border-radius:20px; padding:4px 14px; font-size:12px; color:rgba(255,255,255,0.85); white-space:nowrap; }
-  .stat-pill strong { color:#6995DD; }
-  .stat-pill.fp { background:rgba(0,79,162,0.4); border-color:rgba(105,149,221,0.4); }
-  .stat-pill.cp { background:rgba(224,38,60,0.25); border-color:rgba(224,38,60,0.4); }
-  .sync-row { display:flex; gap:14px; align-items:center; margin-left:auto; flex-wrap:wrap; }
-  .sync-item { display:flex; align-items:center; gap:5px; font-size:11px; color:rgba(255,255,255,0.65); }
-  .sync-dot { width:7px; height:7px; border-radius:50%; background:#6DB888; flex-shrink:0; transition:background 0.3s; }
-  .sync-dot.loading { background:#E0263C; animation:pulse 1.2s ease-in-out infinite; }
-  .sync-dot.error   { background:#ef4444; }
-  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
-  .controls { background:var(--surface); border-bottom:1px solid var(--border); border-top:2px solid #004FA2; padding:16px 24px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
-  .search-wrap { position:relative; flex:1; min-width:220px; }
-  .search-icon { position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--text3); pointer-events:none; }
-  .search-wrap input { width:100%; padding:10px 14px 10px 38px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:14px; color:var(--text); background:var(--bg); outline:none; transition:border-color 0.2s; }
+
+  /* ===== TOOLBAR ===== */
+  .toolbar { background:var(--surface); border-bottom:1px solid var(--border); border-top:2px solid #004FA2; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+
+  /* Row 1: search + filters */
+  .toolbar-row1 { padding:12px 24px 10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .search-wrap { position:relative; min-width:180px; flex:1.5; }
+  .search-icon { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text3); pointer-events:none; font-size:13px; }
+  .search-wrap input { width:100%; padding:9px 12px 9px 34px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:13px; color:var(--text); background:var(--bg); outline:none; transition:border-color 0.2s; }
   .search-wrap input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,79,162,0.12); }
   .search-wrap input::placeholder { color:var(--text3); }
-  select { padding:10px 30px 10px 12px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:13px; color:var(--text); background:var(--bg); outline:none; cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239c9590' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center; }
+  .search-mode { display:inline-flex; border:1.5px solid var(--border); border-radius:9px; overflow:hidden; flex-shrink:0; }
+  .search-mode-btn { padding:7px 11px; font-family:'Source Sans 3',sans-serif; font-size:12px; font-weight:600; cursor:pointer; border:none; background:var(--bg); color:var(--text2); transition:all 0.18s; white-space:nowrap; }
+  .search-mode-btn:first-child { border-right:1.5px solid var(--border); }
+  .search-mode-btn:hover { color:var(--accent); }
+  .search-mode-btn.active { background:var(--accent); color:#fff; }
+  .filter-label { font-size:11px; color:var(--text3); white-space:nowrap; font-weight:500; }
+  select { padding:9px 26px 9px 11px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:13px; color:var(--text); background:var(--bg); outline:none; cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239c9590' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 8px center; }
   select:focus { border-color:var(--accent); }
+  #funder-select { max-width:200px; }
+  #cat-select { max-width:170px; }
+  #dl-select { max-width:140px; }
+  #sort { max-width:155px; }
+
+  /* Row 2: actions */
+  .toolbar-row2 { padding:8px 24px 10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; border-top:1px solid var(--border); background:var(--surface2); }
   .results-count { font-size:12px; color:var(--text3); white-space:nowrap; }
-  .dl-btn { background:var(--accent); color:#fff; border:none; border-radius:9px; padding:10px 16px; font-family:'Source Sans 3',sans-serif; font-size:13px; font-weight:500; cursor:pointer; transition:background 0.18s; white-space:nowrap; display:flex; align-items:center; gap:6px; }
+  .dl-btn { background:var(--accent); color:#fff; border:none; border-radius:9px; padding:8px 14px; font-family:'Source Sans 3',sans-serif; font-size:13px; font-weight:500; cursor:pointer; transition:background 0.18s; white-space:nowrap; display:flex; align-items:center; gap:6px; }
   .dl-btn:hover { background:#003882; }
   .dl-btn:disabled { background:var(--border); color:var(--text3); cursor:not-allowed; }
-  .card-check { width:22px; height:22px; min-width:22px; border-radius:5px; border:2px solid var(--border); background:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.18s; flex-shrink:0; }
-  .card-check:hover { border-color:var(--accent); }
-  .card-check.checked { background:var(--accent); border-color:var(--accent); }
-  .card-check.checked::after { content:'\2713'; color:#fff; font-size:14px; font-weight:700; line-height:1; }
-  .sel-bar { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--au-navy); color:#fff; border-radius:14px; padding:10px 20px; display:flex; align-items:center; gap:14px; box-shadow:0 8px 32px rgba(0,0,0,0.25); z-index:200; font-family:'Source Sans 3',sans-serif; font-size:14px; animation:slideUp 0.25s ease; }
-  @keyframes slideUp { from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)} }
-  .sel-bar-count { font-weight:600; white-space:nowrap; }
-  .sel-bar-btn { background:#fff; color:var(--au-navy); border:none; border-radius:8px; padding:7px 16px; font-family:'Source Sans 3',sans-serif; font-size:13px; font-weight:600; cursor:pointer; transition:background 0.18s; white-space:nowrap; }
-  .sel-bar-btn:hover { background:#E8EFF8; }
-  .sel-bar-clear { background:transparent; color:rgba(255,255,255,0.7); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:7px 14px; font-family:'Source Sans 3',sans-serif; font-size:13px; cursor:pointer; transition:all 0.18s; white-space:nowrap; }
-  .sel-bar-clear:hover { color:#fff; border-color:rgba(255,255,255,0.6); }
-  .sel-all-wrap { display:flex; align-items:center; gap:6px; margin-left:8px; }
-  .sel-all-btn { background:transparent; border:1.5px solid var(--border); border-radius:7px; padding:6px 12px; font-family:'Source Sans 3',sans-serif; font-size:12px; color:var(--text2); cursor:pointer; transition:all 0.18s; white-space:nowrap; }
+  .sel-all-btn { background:transparent; border:1.5px solid var(--border); border-radius:7px; padding:7px 13px; font-family:'Source Sans 3',sans-serif; font-size:12px; color:var(--text2); cursor:pointer; transition:all 0.18s; white-space:nowrap; }
   .sel-all-btn:hover { border-color:var(--accent); color:var(--accent); }
   .sel-all-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .view-toggle { display:inline-flex; border:1.5px solid var(--border); border-radius:9px; overflow:hidden; flex-shrink:0; }
+  .view-btn { padding:7px 13px; font-family:'Source Sans 3',sans-serif; font-size:12px; font-weight:600; cursor:pointer; border:none; background:var(--bg); color:var(--text2); transition:all 0.18s; white-space:nowrap; display:flex; align-items:center; gap:5px; }
+  .view-btn:first-child { border-right:1.5px solid var(--border); }
+  .view-btn:hover { color:var(--accent); }
+  .view-btn.active { background:var(--accent); color:#fff; }
+
+  /* Source tabs */
   .source-tabs { background:var(--surface); border-bottom:1px solid var(--border); padding:0 24px; display:flex; gap:0; overflow-x:auto; }
-  .stab { padding:11px 18px; font-size:13px; font-weight:500; cursor:pointer; border:none; background:transparent; color:var(--text2); font-family:'Source Sans 3',sans-serif; border-bottom:3px solid transparent; transition:all 0.18s; display:flex; align-items:center; gap:7px; white-space:nowrap; }
+  .stab { padding:10px 18px; font-size:13px; font-weight:500; cursor:pointer; border:none; background:transparent; color:var(--text2); font-family:'Source Sans 3',sans-serif; border-bottom:3px solid transparent; transition:all 0.18s; display:flex; align-items:center; gap:7px; white-space:nowrap; }
   .stab:hover { color:var(--text); }
   .stab.active { color:#004FA2; border-bottom-color:#004FA2; }
   .stab.fed.active { color:#182449; border-bottom-color:#182449; }
   .tcnt { background:var(--border); color:var(--text2); border-radius:10px; padding:1px 7px; font-size:11px; font-weight:600; transition:all 0.18s; }
   .stab.active .tcnt { background:#004FA2; color:#fff; }
   .stab.fed.active .tcnt { background:#182449; color:#fff; }
-  .filter-chips { padding:10px 24px; display:flex; gap:8px; flex-wrap:wrap; background:var(--surface); border-bottom:1px solid var(--border); align-items:center; }
-  .chip-label { font-size:11px; color:var(--text3); white-space:nowrap; }
-  .chip { padding:4px 13px; border-radius:20px; font-size:12px; font-weight:500; cursor:pointer; border:1.5px solid var(--border); background:transparent; color:var(--text2); font-family:'Source Sans 3',sans-serif; transition:all 0.18s; white-space:nowrap; }
-  .chip:hover { border-color:#004FA2; color:#004FA2; }
-  .chip.active { background:#004FA2; border-color:#004FA2; color:#fff; }
+
+  /* Loading */
   .loading-screen { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 24px; gap:14px; }
   .spinner { width:34px; height:34px; border:3px solid var(--border); border-top-color:#004FA2; border-radius:50%; animation:spin 0.8s linear infinite; }
   @keyframes spin { to{transform:rotate(360deg)} }
   .loading-text { font-size:14px; color:var(--text2); }
   .loading-sub  { font-size:12px; color:var(--text3); }
   .warn-banner { background:#FEF2F4; border:1px solid #F5C6CC; border-left:4px solid #E0263C; border-radius:8px; padding:12px 18px; margin:16px 24px 0; font-size:13px; color:var(--text2); line-height:1.6; display:none; }
+
+  /* ===== CARD VIEW ===== */
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:18px; padding:22px 24px; }
   .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:transform 0.2s,box-shadow 0.2s; display:flex; flex-direction:column; animation:fadeUp 0.3s ease both; cursor:pointer; }
   .card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
@@ -103,18 +92,15 @@
   .cab.tech    { background:linear-gradient(90deg,#004FA2,#6995DD); }
   .card-body { padding:16px 18px; flex:1; }
   .card-top { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px; }
-  .funder-badge { font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:var(--text3); font-weight:700; color:var(--text); overflow:hidden; text-overflow:ellipsis; max-width:65%; white-space:nowrap; }
+  .funder-badge { font-size:13px; letter-spacing:0.05em; text-transform:uppercase; font-weight:700; color:var(--text); overflow:hidden; text-overflow:ellipsis; max-width:65%; white-space:nowrap; }
   .src-badge { font-size:10px; font-weight:600; padding:2px 8px; border-radius:4px; white-space:nowrap; flex-shrink:0; }
   .src-badge.federal { background:#EDF1F8; color:#182449; }
   .src-badge.curated { background:#E8EFF8; color:#004FA2; }
   .dl-badge { font-size:11px; font-weight:500; padding:3px 9px; border-radius:6px; white-space:nowrap; }
   .dl-badge.urgent   { background:#FEF2F4; color:#961E28; border:1px solid #F5C6CC; }
-  .new-badge { background:#E8F5E9; color:#2E7D32; border:1px solid #A5D6A7; font-size:10px; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:0.08em; text-transform:uppercase; margin-left:4px; }
-  .dl-chip { padding:4px 12px; border-radius:20px; font-size:12px; font-weight:500; cursor:pointer; border:1.5px solid var(--border); background:transparent; color:var(--text2); font-family:"Source Sans 3",sans-serif; transition:all 0.18s; white-space:nowrap; }
-  .dl-chip:hover { border-color:#004FA2; color:#004FA2; }
-  .dl-chip.active { background:#004FA2; border-color:#004FA2; color:#fff; }
   .dl-badge.soon     { background:#FEF9EC; color:#7A5C00; border:1px solid #EDD870; }
   .dl-badge.upcoming { background:#EDF1F8; color:#004FA2; border:1px solid #B8CCE8; }
+  .new-badge { background:#E8F5E9; color:#2E7D32; border:1px solid #A5D6A7; font-size:10px; font-weight:700; padding:2px 7px; border-radius:4px; letter-spacing:0.08em; text-transform:uppercase; margin-left:4px; }
   .card-title { font-family:'Playfair Display',serif; font-size:16px; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:5px; margin-top:4px; }
   .card-desc { font-size:12px; color:var(--text2); line-height:1.6; margin-bottom:12px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
   .card-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:12px; }
@@ -127,9 +113,53 @@
   .apply-btn:hover { background:#003882; }
   .apply-btn.fb { background:#182449; }
   .apply-btn.fb:hover { background:#0d1a35; }
+  .card-check { width:20px; height:20px; min-width:20px; border-radius:4px; border:2px solid var(--border); background:#fff; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:all 0.18s; flex-shrink:0; }
+  .card-check:hover { border-color:var(--accent); }
+  .card-check.checked { background:var(--accent); border-color:var(--accent); }
+  .card-check.checked::after { content:'\2713'; color:#fff; font-size:12px; font-weight:700; line-height:1; }
+
+  /* ===== LIST VIEW ===== */
+  .list-wrap { padding:16px 24px 32px; overflow-x:auto; }
+  .list-table { width:100%; border-collapse:collapse; background:var(--surface); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); font-size:13px; min-width:700px; }
+  .list-table thead { background:var(--au-navy); color:#fff; }
+  .list-table thead th { padding:11px 14px; text-align:left; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; white-space:nowrap; border-right:1px solid rgba(255,255,255,0.1); cursor:pointer; user-select:none; }
+  .list-table thead th:last-child { border-right:none; }
+  .list-table thead th:hover { background:#0d1a35; }
+  .sort-arrow { font-size:10px; margin-left:4px; opacity:0.5; }
+  .list-table thead th.sorted .sort-arrow { opacity:1; }
+  .list-table tbody tr { border-bottom:1px solid var(--border); cursor:pointer; transition:background 0.15s; animation:fadeUp 0.25s ease both; }
+  .list-table tbody tr:last-child { border-bottom:none; }
+  .list-table tbody tr:hover { background:#EDF5FF; }
+  .list-table tbody td { padding:11px 14px; vertical-align:middle; border-right:1px solid var(--border); }
+  .list-table tbody td:last-child { border-right:none; }
+  .lt-check-cell { width:36px; text-align:center; }
+  .lt-name-title { font-family:'Playfair Display',serif; font-size:14px; font-weight:600; color:var(--text); line-height:1.3; }
+  .lt-name-funder { font-size:11px; color:var(--text3); margin-top:2px; text-transform:uppercase; letter-spacing:0.05em; }
+  .lt-stripe { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:4px; vertical-align:middle; flex-shrink:0; }
+  .lt-stripe.federal { background:#182449; }
+  .lt-stripe.curated { background:#004FA2; }
+  .lt-amount-val { font-family:'Playfair Display',serif; font-weight:700; font-size:14px; color:var(--text); white-space:nowrap; }
+  .lt-action-btn { background:var(--accent); color:#fff; border:none; border-radius:6px; padding:6px 12px; font-family:'Source Sans 3',sans-serif; font-size:11px; font-weight:600; cursor:pointer; transition:background 0.18s; white-space:nowrap; }
+  .lt-action-btn:hover { background:#003882; }
+  .lt-action-btn.fb { background:#182449; }
+  .lt-action-btn.fb:hover { background:#0d1a35; }
+
+  /* Misc */
   .lm-wrap { text-align:center; padding:12px 24px 32px; }
   .lm-btn { background:var(--surface); border:1.5px solid var(--border); color:var(--text2); border-radius:8px; padding:10px 30px; font-family:'Source Sans 3',sans-serif; font-size:13px; cursor:pointer; transition:all 0.18s; }
   .lm-btn:hover { border-color:#004FA2; color:#004FA2; }
+  .empty { text-align:center; padding:60px 24px; color:var(--text3); display:none; }
+  .empty-icon { font-size:40px; margin-bottom:12px; }
+  .empty h3 { font-family:'Playfair Display',serif; font-size:19px; color:var(--text2); margin-bottom:6px; }
+  .sel-bar { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--au-navy); color:#fff; border-radius:14px; padding:10px 20px; display:flex; align-items:center; gap:14px; box-shadow:0 8px 32px rgba(0,0,0,0.25); z-index:200; font-family:'Source Sans 3',sans-serif; font-size:14px; animation:slideUp 0.25s ease; }
+  @keyframes slideUp { from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)} }
+  .sel-bar-count { font-weight:600; white-space:nowrap; }
+  .sel-bar-btn { background:#fff; color:var(--au-navy); border:none; border-radius:8px; padding:7px 16px; font-family:'Source Sans 3',sans-serif; font-size:13px; font-weight:600; cursor:pointer; white-space:nowrap; }
+  .sel-bar-btn:hover { background:#E8EFF8; }
+  .sel-bar-clear { background:transparent; color:rgba(255,255,255,0.7); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:7px 14px; font-family:'Source Sans 3',sans-serif; font-size:13px; cursor:pointer; white-space:nowrap; }
+  .sel-bar-clear:hover { color:#fff; border-color:rgba(255,255,255,0.6); }
+
+  /* Modal */
   .overlay { display:none; position:fixed; inset:0; background:rgba(10,10,10,0.55); backdrop-filter:blur(3px); z-index:500; align-items:center; justify-content:center; padding:20px; }
   .overlay.open { display:flex; }
   .modal { background:var(--surface); border-radius:16px; max-width:620px; width:100%; max-height:90vh; overflow-y:auto; box-shadow:0 20px 80px rgba(0,0,0,0.3); animation:modalIn 0.22s ease; }
@@ -138,14 +168,14 @@
   .modal-header { padding:22px 26px 18px; border-bottom:1px solid var(--border); position:relative; }
   .modal-close { position:absolute; top:18px; right:18px; background:var(--surface2); border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center; color:var(--text2); }
   .modal-close:hover { background:var(--border); }
-  .modal-src   { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text3); margin-bottom:3px; }
-  .modal-funder{ font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text3); margin-bottom:5px; }
+  .modal-src { font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text3); margin-bottom:3px; }
+  .modal-funder { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text3); margin-bottom:5px; }
   .modal-title { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--text); line-height:1.2; }
-  .modal-body  { padding:22px 26px; }
-  .modal-row   { display:flex; gap:14px; margin-bottom:18px; flex-wrap:wrap; }
+  .modal-body { padding:22px 26px; }
+  .modal-row { display:flex; gap:14px; margin-bottom:18px; flex-wrap:wrap; }
   .mbox { flex:1; min-width:110px; background:var(--surface2); border:1px solid var(--border); border-radius:9px; padding:12px 14px; }
   .mbox-label { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text3); margin-bottom:3px; }
-  .mbox-val   { font-size:15px; font-family:'Playfair Display',serif; font-weight:600; color:var(--text); }
+  .mbox-val { font-size:15px; font-family:'Playfair Display',serif; font-weight:600; color:var(--text); }
   .msec { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text3); margin-bottom:7px; font-weight:500; }
   .mdesc { font-size:13px; color:var(--text2); line-height:1.75; margin-bottom:18px; }
   .mtags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:18px; }
@@ -158,88 +188,92 @@
   .mbtn-pri:hover { background:#003882; }
   .mbtn-pri.fed { background:#182449; }
   .mbtn-pri.fed:hover { background:#0d1a35; }
-  .empty { text-align:center; padding:60px 24px; color:var(--text3); display:none; }
-  .empty-icon { font-size:40px; margin-bottom:12px; }
-  .empty h3 { font-family:'Playfair Display',serif; font-size:19px; color:var(--text2); margin-bottom:6px; }
-  @media(max-width:680px){.header{padding:20px 18px 16px;}.controls{padding:12px 16px;gap:8px;}.filter-chips{padding:8px 16px;}.grid{grid-template-columns:1fr;gap:14px;padding:16px;}.results-count{display:none;}.modal-header,.modal-body,.modal-footer{padding-left:18px;padding-right:18px;}select{min-width:0;flex:1;}.sync-row{display:none;}.dl-btn span{display:none;}.sel-bar{left:12px;right:12px;transform:none;border-radius:12px;padding:10px 14px;gap:10px;font-size:13px;}}
+
+  @media(max-width:680px){
+    .toolbar-row1,.toolbar-row2{padding:10px 14px;gap:7px;}
+    .grid{grid-template-columns:1fr;gap:14px;padding:14px;}
+    .list-wrap{padding:10px 8px 24px;}
+    .results-count{display:none;}
+    .modal-header,.modal-body,.modal-footer{padding-left:16px;padding-right:16px;}
+    select{min-width:0;}
+    .sel-bar{left:10px;right:10px;transform:none;border-radius:12px;padding:10px 12px;gap:8px;}
+    #funder-select{max-width:130px;}
+    .lt-elig-col,.lt-cat-col{display:none;}
+  }
   @media(min-width:681px) and (max-width:940px){.grid{grid-template-columns:repeat(2,1fr);}}
-  .search-mode { display:inline-flex; border:1.5px solid var(--border); border-radius:9px; overflow:hidden; flex-shrink:0; }
-  .search-mode-btn { padding:8px 14px; font-family:'Source Sans 3',sans-serif; font-size:12px; font-weight:600; cursor:pointer; border:none; background:var(--bg); color:var(--text2); transition:all 0.18s; white-space:nowrap; }
-  .search-mode-btn:first-child { border-right:1.5px solid var(--border); }
-  .search-mode-btn:hover { color:var(--accent); }
-  .search-mode-btn.active { background:var(--accent); color:#fff; }
-  /* Funder select — matches existing select style, max-width for long names */
-  #funder-select { max-width:260px; }
 </style>
 </head>
-<body>
+<body style="">
 <div class="app-shell">
 
-  <!-- Hidden elements required by JavaScript - do not remove -->
   <div style="display:none" aria-hidden="true">
-    <strong id="fed-count">856</strong>
-    <strong id="cur-count">109</strong>
-    <strong id="total-count">965</strong>
-    <span id="dot-fed" class="sync-dot"></span><span id="lbl-fed">856 federal grants</span>
-    <span id="dot-cur" class="sync-dot"></span><span id="lbl-cur">109 curated grants</span>
+    <strong id="fed-count">837</strong><strong id="cur-count">148</strong><strong id="total-count">985</strong>
+    <span id="dot-fed" class="sync-dot"></span><span id="lbl-fed">837 federal grants</span>
+    <span id="dot-cur" class="sync-dot"></span><span id="lbl-cur">148 curated grants</span>
   </div>
 
-  <div class="controls" id="controls" style="display: flex;">
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search" placeholder="Search by keyword, agency, topic, eligibility…" oninput="render()">
+  <!-- ===== TOOLBAR ===== -->
+  <div class="toolbar" id="toolbar" style="display: block;">
+
+    <!-- Row 1: Search + all filters -->
+    <div class="toolbar-row1">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Search by keyword, agency, topic…" oninput="render()">
+      </div>
+      <div class="search-mode" id="search-mode">
+        <button class="search-mode-btn active" data-mode="any" onclick="setSearchMode(&#39;any&#39;)">Any</button>
+        <button class="search-mode-btn" data-mode="all" onclick="setSearchMode(&#39;all&#39;)">All</button>
+      </div>
+      <span class="filter-label">Category:</span>
+      <select id="cat-select" onchange="setCat(this.value)">
+        <option value="">All</option>
+        <option value="STEM">Science</option>
+        <option value="Health">Health</option>
+        <option value="Social">Social Sciences</option>
+        <option value="Arts">Art</option>
+        <option value="Business">Economics</option>
+        <option value="DataScience">Data Science &amp; AI</option>
+        <option value="Education">Education</option>
+        <option value="Media">Journalism</option>
+      </select>
+      <span class="filter-label">Funder:</span>
+      <select id="funder-select" onchange="setFunder(this.value)"><option value="">All Funders</option><option value="Adobe Research">Adobe Research</option><option value="Alexander von Humboldt Foundation">Alexander von Humboldt Foundation</option><option value="Alfred P. Sloan Foundation">Alfred P. Sloan Foundation</option><option value="Allard Prize Foundation">Allard Prize Foundation</option><option value="American Antiquarian Society (AAS)">American Antiquarian Society (AAS)</option><option value="American Association of Law Libraries (AALL)">American Association of Law Libraries (AALL)</option><option value="American Council of Learned Societies (ACLS)">American Council of Learned Societies (ACLS)</option><option value="American Heritage Center (AHC)  University of Wyoming">American Heritage Center (AHC)  University of Wyoming</option><option value="American Historical Association (AHA)">American Historical Association (AHA)</option><option value="American Physical Society (APS)">American Physical Society (APS)</option><option value="American Psychological Association (APA)">American Psychological Association (APA)</option><option value="American Psychological Foundation (APF)">American Psychological Foundation (APF)</option><option value="American Society for Legal History (ASLH)">American Society for Legal History (ASLH)</option><option value="American Society of Civil Engineers (ASCE)">American Society of Civil Engineers (ASCE)</option><option value="American Society of Mechanical Engineers (ASME)">American Society of Mechanical Engineers (ASME)</option><option value="American Studies Association (ASA)">American Studies Association (ASA)</option><option value="Amgen Foundation">Amgen Foundation</option><option value="Andrew W. Mellon Foundation">Andrew W. Mellon Foundation</option><option value="Andy Warhol Foundation for the Visual Arts">Andy Warhol Foundation for the Visual Arts</option><option value="Archaeological Institute of America (AIA)">Archaeological Institute of America (AIA)</option><option value="Arnold and Mabel Beckman Foundation">Arnold and Mabel Beckman Foundation</option><option value="Association for Education in Journalism and Mass Communications (AEJMC)">Association for Education in Journalism and Mass Communications (AEJMC)</option><option value="Berggruen Institute">Berggruen Institute</option><option value="Boeing">Boeing</option><option value="Breakthrough Prize Foundation">Breakthrough Prize Foundation</option><option value="British Society for the History of Philosophy (BSHP)">British Society for the History of Philosophy (BSHP)</option><option value="Broermann Medical Innovation Award">Broermann Medical Innovation Award</option><option value="Calvin K. Kazanjian Economics Foundation">Calvin K. Kazanjian Economics Foundation</option><option value="Canadian Institutes of Health Research - Instituts de Recherche en Sante du Canada (CIHR-IRSC)">Canadian Institutes of Health Research - Instituts de Recherche en Sante du Canada (CIHR-IRSC)</option><option value="Caplan Foundation for Early Childhood">Caplan Foundation for Early Childhood</option><option value="Carnegie Corporation of New York">Carnegie Corporation of New York</option><option value="Center for Craft">Center for Craft</option><option value="Chiang Ching-Kuo Foundation for International Scholarly Exchange (CCKF)">Chiang Ching-Kuo Foundation for International Scholarly Exchange (CCKF)</option><option value="Clare Boothe Luce Program for Women">Clare Boothe Luce Program for Women</option><option value="CNV Stiftung">CNV Stiftung</option><option value="Columbia University">Columbia University</option><option value="D. Kim Foundation for the History of Science and Technology in East Asia">D. Kim Foundation for the History of Science and Technology in East Asia</option><option value="Damon Runyon Cancer Research Foundation">Damon Runyon Cancer Research Foundation</option><option value="Edward E. Ford Foundation">Edward E. Ford Foundation</option><option value="Edward Mallinckrodt">Edward Mallinckrodt</option><option value="European Research Council (ERC)">European Research Council (ERC)</option><option value="Fidelity Foundation">Fidelity Foundation</option><option value="FINRA Investor Education Foundation">FINRA Investor Education Foundation</option><option value="Fish Publishing">Fish Publishing</option><option value="Floral Design">Floral Design</option><option value="Ford Foundation">Ford Foundation</option><option value="Foundation for Educational Exchange Between Canada and the US">Foundation for Educational Exchange Between Canada and the US</option><option value="Foundation for Individual Rights and Expression (FIRE)">Foundation for Individual Rights and Expression (FIRE)</option><option value="Friedreich’s Ataxia Research Alliance (FARA)">Friedreich’s Ataxia Research Alliance (FARA)</option><option value="Fund for American Studies">Fund for American Studies</option><option value="Gates Foundation">Gates Foundation</option><option value="Gerda Henkel Stiftung">Gerda Henkel Stiftung</option><option value="Gladys Krieble Delmas Foundation">Gladys Krieble Delmas Foundation</option><option value="Golden LEAF Foundation">Golden LEAF Foundation</option><option value="GoodAI">GoodAI</option><option value="Grace and Harold Sewell Memorial Fund">Grace and Harold Sewell Memorial Fund</option><option value="Hearst Foundations">Hearst Foundations</option><option value="Hilda &amp; Preston Davis Foundation">Hilda &amp; Preston Davis Foundation</option><option value="Hofstra University">Hofstra University</option><option value="Human Frontier Science Program Organization">Human Frontier Science Program Organization</option><option value="Humanities Iowa">Humanities Iowa</option><option value="Inc. Medal">Inc. Medal</option><option value="Infinity Foundation">Infinity Foundation</option><option value="Institute for Humane Studies">Institute for Humane Studies</option><option value="Institute for Humane Studies (IHS)  George Mason University">Institute for Humane Studies (IHS)  George Mason University</option><option value="Institute of Chartered Accountants of Scotland (ICAS)">Institute of Chartered Accountants of Scotland (ICAS)</option><option value="International Foundation">International Foundation</option><option value="J.M. Kaplan Fund">J.M. Kaplan Fund</option><option value="Japan Art Association">Japan Art Association</option><option value="John Templeton Foundation">John Templeton Foundation</option><option value="Josiah Macy Jr. Foundation">Josiah Macy Jr. Foundation</option><option value="King Faisal Prize">King Faisal Prize</option><option value="Klingenstein-Simons Fellowship Program">Klingenstein-Simons Fellowship Program</option><option value="Law School Admission Council (LSAC)">Law School Admission Council (LSAC)</option><option value="Michael &amp; Susan Dell Foundation">Michael &amp; Susan Dell Foundation</option><option value="Minor Foundation for Major Challenges">Minor Foundation for Major Challenges</option><option value="Modern Language Association of America (MLA)">Modern Language Association of America (MLA)</option><option value="Monticello College Foundation">Monticello College Foundation</option><option value="Motorola Solutions">Motorola Solutions</option><option value="Multidisciplinary Digital Publishing Institute (MDPI)">Multidisciplinary Digital Publishing Institute (MDPI)</option><option value="NACADA: The Global Community for Academic Advising">NACADA: The Global Community for Academic Advising</option><option value="Nathan Cummings Foundation">Nathan Cummings Foundation</option><option value="National Academy of Engineering (NAE)">National Academy of Engineering (NAE)</option><option value="National Endowment for Financial Education (NEFE)">National Endowment for Financial Education (NEFE)</option><option value="National Institute on Drug Abuse (NIDA)">National Institute on Drug Abuse (NIDA)</option><option value="National Science Foundation">National Science Foundation</option><option value="Network for Studies on Pensions">Network for Studies on Pensions</option><option value="North American Association for Environmental Education">North American Association for Environmental Education</option><option value="Online News Association (ONA)">Online News Association (ONA)</option><option value="Open Philanthropy">Open Philanthropy</option><option value="Open Society Foundations">Open Society Foundations</option><option value="Open Technology Fund (OTF)">Open Technology Fund (OTF)</option><option value="Oral History Association (OHA)">Oral History Association (OHA)</option><option value="Pew Charitable Trusts">Pew Charitable Trusts</option><option value="Prince Mahidol Award Foundation">Prince Mahidol Award Foundation</option><option value="Public Relations Student Society of America (PRSSA)">Public Relations Student Society of America (PRSSA)</option><option value="Public Welfare Foundation">Public Welfare Foundation</option><option value="RAAIS Foundation">RAAIS Foundation</option><option value="Rising Tide Foundation">Rising Tide Foundation</option><option value="Rogovy Foundation">Rogovy Foundation</option><option value="Rotary International">Rotary International</option><option value="Samuel H. Kress Foundation">Samuel H. Kress Foundation</option><option value="seminar and workshop grants - American region">seminar and workshop grants - American region</option><option value="Smith Richardson Foundation">Smith Richardson Foundation</option><option value="Society for Academic Emergency Medicine Foundation">Society for Academic Emergency Medicine Foundation</option><option value="Society for Historians of American Foreign Relations (SHAFR)">Society for Historians of American Foreign Relations (SHAFR)</option><option value="Society of Professional Journalists (SPJ)">Society of Professional Journalists (SPJ)</option><option value="Sociologists for Women in Society (SWS)">Sociologists for Women in Society (SWS)</option><option value="Spencer Foundation">Spencer Foundation</option><option value="Technology">Technology</option><option value="Technology &amp; Economics">Technology &amp; Economics</option><option value="The Franklin Institute">The Franklin Institute</option><option value="The Hearst Foundations">The Hearst Foundations</option><option value="The Pew Charitable Trusts">The Pew Charitable Trusts</option><option value="The Royal Society">The Royal Society</option><option value="United Engineering Foundation">United Engineering Foundation</option><option value="United Methodist Communications">United Methodist Communications</option><option value="University of Louisville">University of Louisville</option><option value="Urban Communication Foundation (UCF)">Urban Communication Foundation (UCF)</option><option value="Urban History Association (UHA)">Urban History Association (UHA)</option><option value="Wallace Global Fund">Wallace Global Fund</option><option value="Welcome Trust">Welcome Trust</option><option value="Wellcome Trust">Wellcome Trust</option><option value="Western History Association (WHA)  University of Nebraska">Western History Association (WHA)  University of Nebraska</option><option value="Westinghouse Electric Company">Westinghouse Electric Company</option><option value="William R. Grant Foundation">William R. Grant Foundation</option><option value="Yad Vashem The International Institute for Holocaust Research">Yad Vashem The International Institute for Holocaust Research</option></select>
+      <span class="filter-label">Deadline:</span>
+      <select id="dl-select" onchange="setDeadline(parseInt(this.value))">
+        <option value="0">All</option>
+        <option value="30">30 days</option>
+        <option value="60">60 days</option>
+        <option value="90">90 days</option>
+        <option value="180">6 months</option>
+      </select>
+      <span class="filter-label">Sort:</span>
+      <select id="sort" onchange="render()">
+        <option value="deadline">Deadline ↑</option>
+        <option value="amount">Amount ↓</option>
+        <option value="name">Name A–Z</option>
+      </select>
     </div>
-    <div class="search-mode" id="search-mode"><button class="search-mode-btn active" data-mode="any" onclick="setSearchMode(&#39;any&#39;)">Contains Any</button><button class="search-mode-btn" data-mode="all" onclick="setSearchMode(&#39;all&#39;)">Contains All</button></div>
-    <select id="sort" onchange="render()">
-      <option value="deadline">Deadline (soonest)</option>
-      <option value="amount">Amount (largest)</option>
-      <option value="name">Name A–Z</option>
-    </select>
-    <button class="dl-btn" id="download-btn" onclick="downloadCSV()">⬇ <span>Download All</span></button>
-    <div class="sel-all-wrap">
+
+    <!-- Row 2: Actions + view toggle -->
+    <div class="toolbar-row2">
+      <span class="results-count" id="results-count">148 results</span>
+      <button class="dl-btn" id="download-btn" onclick="downloadCSV()">⬇ Download All</button>
       <button class="sel-all-btn" id="sel-all-btn" onclick="toggleSelectAll()">Select All</button>
+      <div style="margin-left:auto;">
+        <div class="view-toggle">
+          <button class="view-btn" id="view-card-btn" onclick="setView(&#39;cards&#39;)">⊞ Cards</button>
+          <button class="view-btn active" id="view-list-btn" onclick="setView(&#39;list&#39;)">☰ List</button>
+        </div>
+      </div>
     </div>
-    <span class="results-count" id="results-count">965 results</span>
   </div>
 
+  <!-- Source tabs -->
   <div class="source-tabs" id="source-tabs" style="display: flex;">
-    <button class="stab" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">965</span></button>
-    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">856</span></button>
-    <button class="stab active" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">109</span></button>
-  </div>
-
-  <!-- Filter row: Category + Funder side by side -->
-  <div class="filter-chips" id="filter-chips" style="display: flex;">
-    <span class="chip-label">Category:</span>
-    <select id="cat-select" onchange="setCat(this.value)" style="flex:0 1 auto;">
-      <option value="">All Categories</option>
-      <option value="STEM">Science &amp; Engineering</option>
-      <option value="Health">Health &amp; Bio</option>
-      <option value="Humanities">Humanities</option>
-      <option value="Education">Education</option>
-      <option value="Environment">Environment &amp; Energy</option>
-      <option value="Social">Social Sciences</option>
-      <option value="Arts">Arts &amp; Culture</option>
-      <option value="Law">Law &amp; Policy</option>
-      <option value="Business">Business &amp; Economics</option>
-      <option value="International">International Affairs</option>
-      <option value="Media">Communication &amp; Media</option>
-      <option value="PublicHealth">Public Health</option>
-      <option value="DataScience">Data Science &amp; AI</option>
-    </select>
-
-    <!-- NEW: Funder dropdown -->
-    <span class="chip-label" style="margin-left:16px;">Funder:</span>
-    <select id="funder-select" onchange="setFunder(this.value)" style="flex:0 1 auto;"><option value="">All Funders</option><option value="ACC APG - Natick">ACC APG - Natick</option><option value="Action &amp;amp; Cognition">Action &amp;amp; Cognition</option><option value="Administration for Community Living">Administration for Community Living</option><option value="Adobe Research">Adobe Research</option><option value="Advanced Manufacturing">Advanced Manufacturing</option><option value="Advanced Research Projects Agency Energy">Advanced Research Projects Agency Energy</option><option value="Agency for Health Care Research and Quality">Agency for Health Care Research and Quality</option><option value="Air Force -- Research Lab">Air Force -- Research Lab</option><option value="Air Force Academy">Air Force Academy</option><option value="Air Force Office of Scientific Research">Air Force Office of Scientific Research</option><option value="Alcohol">Alcohol</option><option value="Alexander von Humboldt Foundation">Alexander von Humboldt Foundation</option><option value="Alfred P. Sloan Foundation">Alfred P. Sloan Foundation</option><option value="Allard Prize Foundation">Allard Prize Foundation</option><option value="American Association of Law Libraries (AALL)">American Association of Law Libraries (AALL)</option><option value="American Council of Learned Societies (ACLS)">American Council of Learned Societies (ACLS)</option><option value="American Physical Society (APS)">American Physical Society (APS)</option><option value="American Psychological Foundation (APF)">American Psychological Foundation (APF)</option><option value="AmeriCorps">AmeriCorps</option><option value="Amgen Foundation">Amgen Foundation</option><option value="Andrew W. Mellon Foundation">Andrew W. Mellon Foundation</option><option value="Applications">Applications</option><option value="APPLIED">APPLIED</option><option value="Arnold and Mabel Beckman Foundation">Arnold and Mabel Beckman Foundation</option><option value="Assistance Listing Number 84.235E">Assistance Listing Number 84.235E</option><option value="Assistance Listing Number 84.326T">Assistance Listing Number 84.326T</option><option value="Behavioral and Social Mechanisms Contributing to HIV Pathogenesis Within the Mission of NIDDK (R21 Clinical Trial Not Allowed)">Behavioral and Social Mechanisms Contributing to HIV Pathogenesis Within the Mission of NIDDK (R21 Clinical Trial Not Allowed)</option><option value="Berggruen Institute">Berggruen Institute</option><option value="Biologic">Biologic</option><option value="Biologics">Biologics</option><option value="Biologics and Combination Products - Target Identification and Validation">Biologics and Combination Products - Target Identification and Validation</option><option value="Boeing">Boeing</option><option value="Breakthrough Prize Foundation">Breakthrough Prize Foundation</option><option value="Brief Intervention and Referral to Treatment or Prevention (SBIRT/P) for alcohol">Brief Intervention and Referral to Treatment or Prevention (SBIRT/P) for alcohol</option><option value="Bureau Of Educational and Cultural Affairs">Bureau Of Educational and Cultural Affairs</option><option value="Bureau of Global Health Security and Diplomacy">Bureau of Global Health Security and Diplomacy</option><option value="Bureau of Indian Affairs">Bureau of Indian Affairs</option><option value="Bureau of International Narcotics-Law Enforcement">Bureau of International Narcotics-Law Enforcement</option><option value="Bureau of Reclamation">Bureau of Reclamation</option><option value="CA">CA</option><option value="Canadian Institutes of Health Research - Instituts de Recherche en Sante du Canada (CIHR-IRSC)">Canadian Institutes of Health Research - Instituts de Recherche en Sante du Canada (CIHR-IRSC)</option><option value="Carnegie Corporation of New York">Carnegie Corporation of New York</option><option value="Center for Craft">Center for Craft</option><option value="Center for Medicare and Medicaid Services">Center for Medicare and Medicaid Services</option><option value="Centers for Disease Control - NCIPC">Centers for Disease Control - NCIPC</option><option value="Centers for Disease Control - OPHPR">Centers for Disease Control - OPHPR</option><option value="Centers for Disease Control and Prevention - ERA">Centers for Disease Control and Prevention - ERA</option><option value="Charles Koch Foundation">Charles Koch Foundation</option><option value="Children">Children</option><option value="Circuits">Circuits</option><option value="Clare Boothe Luce Program for Women">Clare Boothe Luce Program for Women</option><option value="Clinical Trial Not Allowed)">Clinical Trial Not Allowed)</option><option value="Clinical Trial Required)">Clinical Trial Required)</option><option value="Clinical Trials Not-Allowed)">Clinical Trials Not-Allowed)</option><option value="CNV Stiftung">CNV Stiftung</option><option value="Columbia University">Columbia University</option><option value="Communication and Impact">Communication and Impact</option><option value="Construction of State Home Facilities">Construction of State Home Facilities</option><option value="Control and Systems Diagnostics">Control and Systems Diagnostics</option><option value="Coordination and Service Center for the Mutant Mouse Resource and Research Centers (U42 Clinical Trial Not Allowed)">Coordination and Service Center for the Mutant Mouse Resource and Research Centers (U42 Clinical Trial Not Allowed)</option><option value="D. Kim Foundation for the History of Science and Technology in East Asia">D. Kim Foundation for the History of Science and Technology in East Asia</option><option value="Damon Runyon Cancer Research Foundation">Damon Runyon Cancer Research Foundation</option><option value="DARPA - Biological Technologies Office">DARPA - Biological Technologies Office</option><option value="DARPA - Defense Sciences Office">DARPA - Defense Sciences Office</option><option value="DARPA - Information Innovation Office">DARPA - Information Innovation Office</option><option value="DARPA - Tactical Technology Office">DARPA - Tactical Technology Office</option><option value="Defense Threat Reduction Agency">Defense Threat Reduction Agency</option><option value="Defense Threat Reduction Agency (DTRA)">Defense Threat Reduction Agency (DTRA)</option><option value="Department of Commerce">Department of Commerce</option><option value="Department of Defense (DoD)">Department of Defense (DoD)</option><option value="Department of Housing and Urban Development">Department of Housing and Urban Development</option><option value="Dept of the Army -- Materiel Command">Dept of the Army -- Materiel Command</option><option value="Dept. of the Army -- USAMRAA">Dept. of the Army -- USAMRAA</option><option value="Development">Development</option><option value="Directorate for Computer and Information Science and Engineering (CISE)">Directorate for Computer and Information Science and Engineering (CISE)</option><option value="Directorate for Engineering (ENG)">Directorate for Engineering (ENG)</option><option value="Disorders">Disorders</option><option value="Division of Astronomical Sciences (AST)">Division of Astronomical Sciences (AST)</option><option value="Division of Behavioral and Cognitive Sciences (BCS)">Division of Behavioral and Cognitive Sciences (BCS)</option><option value="Division of Engineering Education and Centers (EEC)">Division of Engineering Education and Centers (EEC)</option><option value="Division of Mathematical Sciences (DMS)">Division of Mathematical Sciences (DMS)</option><option value="Division of Physics (PHY)">Division of Physics (PHY)</option><option value="DOC NOAA - ERA Production">DOC NOAA - ERA Production</option><option value="DOT - FAA Aviation Research Grants">DOT - FAA Aviation Research Grants</option><option value="DOT/Federal Transit Administration">DOT/Federal Transit Administration</option><option value="drugs or immunomodulators (R01 Clinical Trial Not Allowed)">drugs or immunomodulators (R01 Clinical Trial Not Allowed)</option><option value="Economic Development Administration">Economic Development Administration</option><option value="Edward Mallinckrodt">Edward Mallinckrodt</option><option value="Electronic Research Administration">Electronic Research Administration</option><option value="Employment and Training Administration">Employment and Training Administration</option><option value="Engineer Research and Development Center">Engineer Research and Development Center</option><option value="Engineering and Research (PACER)">Engineering and Research (PACER)</option><option value="Environmental Protection Agency">Environmental Protection Agency</option><option value="European Research Council (ERC)">European Research Council (ERC)</option><option value="FAA-COE-AJFE">FAA-COE-AJFE</option><option value="FAA-COE-JAMS">FAA-COE-JAMS</option><option value="FAA-COE-TTHP">FAA-COE-TTHP</option><option value="Fish and Wildlife Service">Fish and Wildlife Service</option><option value="Fish Publishing">Fish Publishing</option><option value="FL">FL</option><option value="Food and Drug Administration">Food and Drug Administration</option><option value="Ford Foundation">Ford Foundation</option><option value="Forest Service">Forest Service</option><option value="Fort Worth District">Fort Worth District</option><option value="Foundation for Individual Rights and Expression (FIRE)">Foundation for Individual Rights and Expression (FIRE)</option><option value="Friedreich’s Ataxia Research Alliance (FARA)">Friedreich’s Ataxia Research Alliance (FARA)</option><option value="FY 2027">FY 2027</option><option value="Gates Foundation">Gates Foundation</option><option value="Genentech">Genentech</option><option value="Geological Survey">Geological Survey</option><option value="Gerda Henkel Stiftung">Gerda Henkel Stiftung</option><option value="Gladys Krieble Delmas Foundation">Gladys Krieble Delmas Foundation</option><option value="GoodAI">GoodAI</option><option value="Google">Google</option><option value="Headquarters">Headquarters</option><option value="Health Resources and Services Administration">Health Resources and Services Administration</option><option value="Hearst Foundations">Hearst Foundations</option><option value="Hilda &amp; Preston Davis Foundation">Hilda &amp; Preston Davis Foundation</option><option value="Hofstra University">Hofstra University</option><option value="Human Frontier Science Program Organization">Human Frontier Science Program Organization</option><option value="Idaho Field Office">Idaho Field Office</option><option value="Inc. Medal">Inc. Medal</option><option value="Incarcerated Veterans&amp;rsquo; Transition Program (IVTP)">Incarcerated Veterans&amp;rsquo; Transition Program (IVTP)</option><option value="Installations">Installations</option><option value="Institute for Humane Studies">Institute for Humane Studies</option><option value="Institute of Museum and Library Services">Institute of Museum and Library Services</option><option value="International Foundation">International Foundation</option><option value="Japan Art Association">Japan Art Association</option><option value="Josiah Macy Jr. Foundation">Josiah Macy Jr. Foundation</option><option value="King Faisal Prize">King Faisal Prize</option><option value="Klingenstein-Simons Fellowship Program">Klingenstein-Simons Fellowship Program</option><option value="Landscape">Landscape</option><option value="Legal">Legal</option><option value="Legal and Social Implications (ELSI) Exploratory/Developmental Research Grant (R21 Clinical Trial Optional)">Legal and Social Implications (ELSI) Exploratory/Developmental Research Grant (R21 Clinical Trial Optional)</option><option value="Legal and Social Implications (ELSI) Research (R01 Clinical Trial Optional)">Legal and Social Implications (ELSI) Research (R01 Clinical Trial Optional)</option><option value="Legal and Social Implications (ELSI) Small Research Grant (R03 Clinical Trial Optional)">Legal and Social Implications (ELSI) Small Research Grant (R03 Clinical Trial Optional)</option><option value="Library of Congress">Library of Congress</option><option value="Lung">Lung</option><option value="Machine and Motor Nexus">Machine and Motor Nexus</option><option value="Measurement">Measurement</option><option value="Michael &amp; Susan Dell Foundation">Michael &amp; Susan Dell Foundation</option><option value="Minor Foundation for Major Challenges">Minor Foundation for Major Challenges</option><option value="Models and Methods for Analysis of Complex Data from the Brain (R01 Clinical Trial Not Allowed)">Models and Methods for Analysis of Complex Data from the Brain (R01 Clinical Trial Not Allowed)</option><option value="Motorola Solutions">Motorola Solutions</option><option value="Multidisciplinary Digital Publishing Institute (MDPI)">Multidisciplinary Digital Publishing Institute (MDPI)</option><option value="Munitions Directorate">Munitions Directorate</option><option value="NASA Headquarters">NASA Headquarters</option><option value="Nathan Cummings Foundation">Nathan Cummings Foundation</option><option value="National Academy of Engineering (NAE)">National Academy of Engineering (NAE)</option><option value="National Aeronautics and Space Administration">National Aeronautics and Space Administration</option><option value="National Endowment for the Humanities">National Endowment for the Humanities</option><option value="National Energy Technology Laboratory">National Energy Technology Laboratory</option><option value="National Geospatial-Intelligence Agency">National Geospatial-Intelligence Agency</option><option value="National Ground-Water Monitoring Network">National Ground-Water Monitoring Network</option><option value="National Institute of Corrections">National Institute of Corrections</option><option value="National Institute of Food and Agriculture">National Institute of Food and Agriculture</option><option value="National Institute of Standards and Technology">National Institute of Standards and Technology</option><option value="National Institute on Drug Abuse (NIDA)">National Institute on Drug Abuse (NIDA)</option><option value="National Institutes of Health">National Institutes of Health</option><option value="National Institutes of Health (NIH)">National Institutes of Health (NIH)</option><option value="National Marine Fisheries Service">National Marine Fisheries Service</option><option value="National Park Service">National Park Service</option><option value="National Science Foundation">National Science Foundation</option><option value="National Science Foundation (NSF)">National Science Foundation (NSF)</option><option value="NAVAIR">NAVAIR</option><option value="Naval Research Laboratory">Naval Research Laboratory</option><option value="Naval Supply Systems Command">Naval Supply Systems Command</option><option value="NCA Contracting">NCA Contracting</option><option value="NNSA">NNSA</option><option value="North American Association for Environmental Education">North American Association for Environmental Education</option><option value="NSWC CRANE - N00164">NSWC CRANE - N00164</option><option value="Office for Victims of Crime (OVC)">Office for Victims of Crime (OVC)</option><option value="Office of Global Food Security">Office of Global Food Security</option><option value="Office of National Drug Control Policy">Office of National Drug Control Policy</option><option value="Office of Naval Research">Office of Naval Research</option><option value="Office of Oceanic and Atmospheric Research (OAR)">Office of Oceanic and Atmospheric Research (OAR)</option><option value="Office of Science">Office of Science</option><option value="Office of the National Coordinator">Office of the National Coordinator</option><option value="Office of Wildland Fire (OWF) - Slip-On Tanker Units">Office of Wildland Fire (OWF) - Slip-On Tanker Units</option><option value="Office to Monitor-Combat Trafficking in Persons">Office to Monitor-Combat Trafficking in Persons</option><option value="Open Philanthropy">Open Philanthropy</option><option value="Open Society Foundations">Open Society Foundations</option><option value="Open Technology Fund (OTF)">Open Technology Fund (OTF)</option><option value="Partnership and Academic Success in Science">Partnership and Academic Success in Science</option><option value="Pharmacotherapy">Pharmacotherapy</option><option value="Photonics and Magnetic Devices">Photonics and Magnetic Devices</option><option value="Power">Power</option><option value="Prince Mahidol Award Foundation">Prince Mahidol Award Foundation</option><option value="Privacy">Privacy</option><option value="Public Welfare Foundation">Public Welfare Foundation</option><option value="RAAIS Foundation">RAAIS Foundation</option><option value="Reaction Engineering">Reaction Engineering</option><option value="Recovery">Recovery</option><option value="Region 4">Region 4</option><option value="Rheumatic">Rheumatic</option><option value="Rising Tide Foundation">Rising Tide Foundation</option><option value="Risk and Management Sciences">Risk and Management Sciences</option><option value="Robert Wood Johnson Foundation">Robert Wood Johnson Foundation</option><option value="Rogovy Foundation">Rogovy Foundation</option><option value="Rotary International">Rotary International</option><option value="Rural Business-Cooperative Service">Rural Business-Cooperative Service</option><option value="Rural Housing Service">Rural Housing Service</option><option value="Rural Utilities Service">Rural Utilities Service</option><option value="Security">Security</option><option value="Small Grants Program">Small Grants Program</option><option value="Smith Richardson Foundation">Smith Richardson Foundation</option><option value="Sociologists for Women in Society (SWS)">Sociologists for Women in Society (SWS)</option><option value="Specialist">Specialist</option><option value="Spencer Foundation">Spencer Foundation</option><option value="Substance Abuse and Mental Health Services Adminis">Substance Abuse and Mental Health Services Adminis</option><option value="Symposiums">Symposiums</option><option value="Technology">Technology</option><option value="The Franklin Institute">The Franklin Institute</option><option value="The Hearst Foundations">The Hearst Foundations</option><option value="The Pew Charitable Trusts">The Pew Charitable Trusts</option><option value="The Royal Society">The Royal Society</option><option value="Translational Bioinformatics and Computational Biology Research (R01 Clinical Trial Optional)">Translational Bioinformatics and Computational Biology Research (R01 Clinical Trial Optional)</option><option value="Treatment">Treatment</option><option value="Two Sigma">Two Sigma</option><option value="U.S. Dept. of Treasury RESTORE Act Program">U.S. Dept. of Treasury RESTORE Act Program</option><option value="U.S. Mission to Australia">U.S. Mission to Australia</option><option value="U.S. Mission to Cape Verde">U.S. Mission to Cape Verde</option><option value="U.S. Mission to Gabon">U.S. Mission to Gabon</option><option value="U.S. Mission to Georgia">U.S. Mission to Georgia</option><option value="U.S. Mission to Italy">U.S. Mission to Italy</option><option value="U.S. Mission to South Africa">U.S. Mission to South Africa</option><option value="U.S. Mission to Spain">U.S. Mission to Spain</option><option value="U.S. Mission to the United Nations">U.S. Mission to the United Nations</option><option value="U.S. Mission to Tunisia">U.S. Mission to Tunisia</option><option value="U.S. National Science Foundation">U.S. National Science Foundation</option><option value="United Engineering Foundation">United Engineering Foundation</option><option value="University of Louisville">University of Louisville</option><option value="Urologic">Urologic</option><option value="USAF 347 Contracting Squadron">USAF 347 Contracting Squadron</option><option value="VA National Cemetery Administration">VA National Cemetery Administration</option><option value="Veterans Employment and Training Service">Veterans Employment and Training Service</option><option value="VinFuture Foundation">VinFuture Foundation</option><option value="Wallace Global Fund">Wallace Global Fund</option><option value="Washington Headquarters Services">Washington Headquarters Services</option><option value="Wellcome">Wellcome</option><option value="Wellcome Trust">Wellcome Trust</option><option value="Westinghouse Electric Company">Westinghouse Electric Company</option><option value="with Mutual Reliance Initiatives Clinical Trials Not Allowed">with Mutual Reliance Initiatives Clinical Trials Not Allowed</option><option value="Yad Vashem The International Institute for Holocaust Research">Yad Vashem The International Institute for Holocaust Research</option></select>
-
-    <span class="chip-label" style="margin-left:16px;">Deadline:</span>
-    <select id="dl-select" onchange="setDeadline(parseInt(this.value))" style="flex:0 1 auto;">
-      <option value="0">All Deadlines</option>
-      <option value="30">Next 30 days</option>
-      <option value="60">Next 60 days</option>
-      <option value="90">Next 90 days</option>
-      <option value="180">Next 6 months</option>
-    </select>
+    <button class="stab" onclick="setSrc(&#39;all&#39;)" data-s="all">All Sources <span class="tcnt" id="tc-all">985</span></button>
+    <button class="stab fed" onclick="setSrc(&#39;federal&#39;)" data-s="federal">🏛 Federal (Grants.gov) <span class="tcnt" id="tc-fed">837</span></button>
+    <button class="stab active" onclick="setSrc(&#39;curated&#39;)" data-s="curated">⭐ Curated (Non-federal) <span class="tcnt" id="tc-cur">148</span></button>
   </div>
 
   <div class="loading-screen" id="loading-screen" style="display: none;">
@@ -248,9 +282,31 @@
     <div class="loading-sub">Fetching federal grants and curated database</div>
   </div>
   <div class="warn-banner" id="warn-banner"></div>
-  <div class="grid" id="grid"><div class="card" style="animation-delay:0s" onclick="openModal(&#39;federal_57&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">DOC NOAA - ERA Production</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">FY 2024 Atlantic Salmon Habitat Restoration Partnership Grants</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">11.463</span><span class="tag fed-tag">NOAA-NMFS-HCPO-2024-25198</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_57&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_57&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.04s" onclick="openModal(&#39;federal_58&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">NASA Headquarters</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">ROSES 2025: B.3 Living with a Star Science</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">43.001</span><span class="tag fed-tag">NNH25ZDA001N-LWS</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_58&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_58&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.08s" onclick="openModal(&#39;federal_59&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Health Resources and Services Administration</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Fiscal Year (FY) 2026 National Technical Assistance Programs (NTAP) Cooperative Agreements</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">93.129</span><span class="tag fed-tag">HRSA-26-009</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_59&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_59&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.12s" onclick="openModal(&#39;federal_60&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Environmental Protection Agency</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">PRIA 5 Training Development</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">66.722</span><span class="tag fed-tag">EPA-HQ-OCSPP-OPP-2025-001</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_60&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_60&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.16s" onclick="openModal(&#39;federal_61&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">AmeriCorps</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Fiscal Year (FY) 2026 AmeriCorps State and National Competitive Grants</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">94.006</span><span class="tag fed-tag">AC-01-31-26</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_61&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_61&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.2s" onclick="openModal(&#39;federal_62&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">NASA Headquarters</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">ROSES25: F.6 Science Activation Program</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">43.001</span><span class="tag fed-tag">NNH25ZDA001N-SCIACT</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_62&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_62&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.24s" onclick="openModal(&#39;federal_63&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Naval Research Laboratory</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">NRL Long Range Broad Agency Announcement (BAA) for Basic and Applied Research</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">12.3</span><span class="tag fed-tag">N00173-24-S-BA01</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_63&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_63&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.28s" onclick="openModal(&#39;curated_48&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">VinFuture Foundation</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">1d left</span></div><div class="card-title">VinFuture Prize</div><div class="card-desc">Honors breakthrough innovations in science and technology that improve millions of lives worldwide.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">engineering</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_48&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$3,000,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_48&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.32s" onclick="openModal(&#39;federal_64&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">U.S. National Science Foundation</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">1d left</span></div><div class="card-title">Tribal Colleges and Universities Program</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">47.076</span><span class="tag fed-tag">21-595</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_64&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_64&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.36s" onclick="openModal(&#39;federal_65&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">NASA Headquarters</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">2d left</span></div><div class="card-title">ROSES 2025: D.5 Astrophysics Pioneers</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">43.001</span><span class="tag fed-tag">NNH25ZDA001N-PIONEERS</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_65&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_65&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.4s" onclick="openModal(&#39;federal_66&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Institutes of Health</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">3d left</span></div><div class="card-title">Chemical Screening and Optimization Facility (X01 Clinical Trial Not Allowed)</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">93.865</span><span class="tag fed-tag">PAR-23-193</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_66&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_66&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.44s" onclick="openModal(&#39;federal_67&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Employment and Training Administration</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">3d left</span></div><div class="card-title">Pay-for-Performance (PfP) Incentive Payments Program</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">17.285</span><span class="tag fed-tag">FOA-ETA-26-19</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_67&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_67&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_68&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">U.S. National Science Foundation</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">3d left</span></div><div class="card-title">CyberAICorps Scholarship for Service</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">47.076</span><span class="tag fed-tag">26-503</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_68&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_68&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_69&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">U.S. Mission to Georgia</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">3d left</span></div><div class="card-title">Ambassador's Fund for Cultural Preservation</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">19.022</span><span class="tag fed-tag">PDS-DOS-GEO-FY26-01</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_69&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_69&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_70&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Environmental Protection Agency</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">6d left</span></div><div class="card-title">Region 7 Fiscal Year 2025 Wetland Program Development Grants</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">66.461</span><span class="tag fed-tag">EPA-REG7-WPDG-25</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_70&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_70&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_71&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Environmental Protection Agency</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">6d left</span></div><div class="card-title">Region 06 Fiscal Year 2025 Wetland Program Development Grants</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">66.461</span><span class="tag fed-tag">EPA-REG06-WPDG-25</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_71&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_71&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_72&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Environmental Protection Agency</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">6d left</span></div><div class="card-title">Region 5 Fiscal Year 2025 Wetland Program Development Grants</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">66.461</span><span class="tag fed-tag">EPA-REG5-WPDG-25</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_72&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_72&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_73&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Environmental Protection Agency</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">6d left</span></div><div class="card-title">FY 2025 Region 4 Wetlands Program</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">66.461</span><span class="tag fed-tag">EPA-REG4-WPDG-25</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_73&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_73&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_74&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Bureau of International Narcotics-Law Enforcement</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">6d left</span></div><div class="card-title">Countering Cartel Recruitment in Mexico</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">19.705</span><span class="tag fed-tag">OFOP0002496</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_74&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_74&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_75&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Endowment for the Humanities</span><span class="src-badge federal">Federal</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">6d left</span></div><div class="card-title">State and Jurisdictional Humanities CouncilsGeneral Operating Support Grants</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">45.129</span><span class="tag fed-tag">20260406-SO</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_75&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_75&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_76&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">U.S. National Science Foundation</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">7d left</span></div><div class="card-title">NSF National Quantum Virtual Laboratory - Quantum Testbeds</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">stem</span><span class="tag fed-tag">24-586</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_76&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_76&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_77&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">U.S. National Science Foundation</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">7d left</span></div><div class="card-title">Fire Science Innovations through Research and Education</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">education</span><span class="tag fed-tag">PD-25-345Y</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_77&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_77&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_78&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">U.S. National Science Foundation</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">8d left</span></div><div class="card-title">Findable Accessible Interoperable Reusable Open Science</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">stem</span><span class="tag fed-tag">25-533</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_78&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_78&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;federal_79&#39;)"><div class="cab federal"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Energy Technology Laboratory</span><span class="src-badge federal">Federal</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">9d left</span></div><div class="card-title">HARMONY: Human-Centric Analytics for Resilient &amp;amp; Modernized Power sYstems</div><div class="card-desc">Visit the grant listing for full details.</div><div class="card-tags"><span class="tag">81.122</span><span class="tag fed-tag">DE-FOA-0003446</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;federal_79&#39;)" title="Select for download"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn fb" onclick="event.stopPropagation();openModal(&#39;federal_79&#39;)">View Details</button></div></div></div>
+
+  <!-- Card view -->
+  <div class="grid" id="grid" style="display: none;"><div class="card" style="animation-delay:0s" onclick="openModal(&#39;curated_83&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">The Pew Charitable Trusts</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">24d left</span></div><div class="card-title">Pew Scholars Program in Biomedical Sciences</div><div class="card-desc">Supports young investigators of outstanding promise in biomedical sciences.</div><div class="card-tags"><span class="tag">health</span><span class="tag">stem</span><span class="tag">earlycareer</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_83&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$300,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_83&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.04s" onclick="openModal(&#39;curated_84&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">The Pew Charitable Trusts</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">24d left</span></div><div class="card-title">Pew-Stewart Scholars for Cancer Research</div><div class="card-desc">Supports early-career scientists in innovative cancer research.</div><div class="card-tags"><span class="tag">health</span><span class="tag">stem</span><span class="tag">cancerresearch</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_84&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$300,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_84&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.08s" onclick="openModal(&#39;curated_112&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">American Physical Society (APS)</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">24d left</span></div><div class="card-title">APS Medal for Exceptional Achievement in Research</div><div class="card-desc">Recognizes exceptional achievements in physics research. APS’s highest honor for scientific contributions.</div><div class="card-tags"><span class="tag">physics</span><span class="tag">stem</span><span class="tag">scienceawards</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_112&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$50,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_112&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.12s" onclick="openModal(&#39;curated_52&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">American Association of Law Libraries (AALL)</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge urgent">41d left</span></div><div class="card-title">AALL/Bloomberg Law Continuing Education Grants Program</div><div class="card-desc">The purpose of the AALL/Bloomberg Law Continuing Education Grant Program is to encourage educational program development and promote program sharing among AALL entities.</div><div class="card-tags"><span class="tag">siss</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_52&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_52&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.16s" onclick="openModal(&#39;curated_71&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">American Society for Legal History (ASLH)</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">55d left</span></div><div class="card-title">Cromwell Fellowships</div><div class="card-desc">The William Nelson Cromwell Foundation makes available a number of fellowships to support research and writing in American legal history by early-career scholars.</div><div class="card-tags"><span class="tag">americanhistory</span><span class="tag">lawhistory</span><span class="tag">northamerica</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_71&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_71&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.2s" onclick="openModal(&#39;curated_93&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Klingenstein-Simons Fellowship Program</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">55d left</span></div><div class="card-title">Klingenstein-Simons Fellowship Awards in Neuroscience</div><div class="card-desc">Provides funding to early-career scientists engaged in neuroscience research.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">neuroscience</span><span class="tag">earlycareer</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_93&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$225,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_93&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.24s" onclick="openModal(&#39;curated_107&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Arnold and Mabel Beckman Foundation</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">85d left</span></div><div class="card-title">Arnold O. Beckman Postdoctoral Fellowship</div><div class="card-desc">Supports postdoctoral fellows with potential for independent research careers in chemical and life sciences.</div><div class="card-tags"><span class="tag">stem</span><span class="tag">chemicalsciences</span><span class="tag">lifesciences</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_107&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$224,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_107&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.28s" onclick="openModal(&#39;curated_80&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Wellcome Trust</span><span class="src-badge curated">Curated</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge soon">105d left</span></div><div class="card-title">Wellcome Early-Career Awards</div><div class="card-desc">Funds early-career researchers to establish independence and lead innovative projects in health-related fields.</div><div class="card-tags"><span class="tag">health</span><span class="tag">stem</span><span class="tag">healthsciences</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_80&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$100,000,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_80&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.32s" onclick="openModal(&#39;curated_90&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Academy of Engineering (NAE)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Jan 2027</span></div><div class="card-title">Charles Stark Draper Prize for Engineering</div><div class="card-desc">Recognizes engineers whose accomplishments have significantly impacted society. Considered the Nobel Prize of engineering.</div><div class="card-tags"><span class="tag">engineering</span><span class="tag">stem</span><span class="tag">engineers</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_90&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$500,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_90&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.36s" onclick="openModal(&#39;curated_1&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Wellcome Trust</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Establishing infrastructure hubs to power evidence synthesis in low- and middle-income countries</div><div class="card-desc">Wellcome will fund five new global infrastructure hubs to enable more timely</div><div class="card-tags"><span class="tag">you</span><span class="tag">can</span><span class="tag">apply</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_1&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$150,000,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_1&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.4s" onclick="openModal(&#39;curated_2&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Samuel H. Kress Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">History of Arts Grants Program</div><div class="card-desc">The History of Art Grants program supports scholarly projects that will enhance the appreciation and understanding of European works of art and architecture from antiquity to the early 19th century. Grants are awarded to projects</div><div class="card-tags"><span class="tag">development</span><span class="tag">and</span><span class="tag">dissemination</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_2&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_2&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.44s" onclick="openModal(&#39;curated_3&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Open Philanthropy</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Open Philanthropy Technical AI Safety Research</div><div class="card-desc">Aims to accelerate highly impactful technical research in the following areas: Adversarial machine learning; Exploring sophisticated misbehavior in LLMs; Model transparency; Trust from first principles; and Alternative approaches to mitigating AI risks.</div><div class="card-tags"><span class="tag">researchers</span><span class="tag">(u.s.</span><span class="tag">institutions</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_3&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_3&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_4&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">National Science Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Foundational Research in Robotics</div><div class="card-desc">Supports research on robotic systems that exhibit significant levels of both computational capability and physical complexity; for the purposes of this program</div><div class="card-tags"><span class="tag">plan</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_4&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_4&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_5&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">J.M. Kaplan Fund</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Furthermore Grants in Publishing</div><div class="card-desc">500 to $12</div><div class="card-tags"><span class="tag">and</span><span class="tag">design;</span><span class="tag">cultural</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_5&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$12,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_5&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_6&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">GoodAI</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">GoodAI</div><div class="card-desc">Awards grants to research projects that advance the field of artificial intelligence; current opportunities are closed</div><div class="card-tags"><span class="tag">grants</span><span class="tag">are</span><span class="tag">open</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_6&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$24,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_6&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_7&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Humanities Iowa</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Grants for Humanities Programs - Mini grants</div><div class="card-desc">000) Major grants (award amounts from $3</div><div class="card-tags"><span class="tag">critical</span><span class="tag">thinking</span><span class="tag">and</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_7&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$10,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_7&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_8&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Technology &amp; Economics</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Public Understanding of Science</div><div class="card-desc">Varies</div><div class="card-tags"><span class="tag">television</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_8&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">Alfred P. Sloan Foundation</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_8&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_9&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">University of Louisville</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Grawemeyer Awards</div><div class="card-desc">Annual prizes awarded in music</div><div class="card-tags"><span class="tag">and</span><span class="tag">religion.</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_9&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$100,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_9&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_13&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">RAAIS Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">RAAIS Foundation</div><div class="card-desc">Awards financial grants for open source AI research and projects anywhere in the world on the basis of their potential for common good impact; each grant is for a discrete 3 month project and awards are given on a rolling basis during the year.</div><div class="card-tags"><span class="tag">nonprofits</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_13&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_13&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_14&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Modern Language Association of America (MLA)</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">MLA Price for an Edited Collection</div><div class="card-desc">which consists of a cash award and a certificate</div><div class="card-tags"><span class="tag">modern</span><span class="tag">languages</span><span class="tag">and</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_14&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_14&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_15&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Japan Art Association</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Praemium Imperiale</div><div class="card-desc">One of the world’s most prestigious international art prizes</div><div class="card-tags"><span class="tag">music</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_15&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$150,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_15&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_16&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Hofstra University</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Guru Nanak Interfaith Prize</div><div class="card-desc">000</div><div class="card-tags"><span class="tag">datascience</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_16&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$50,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_16&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_17&#39;)"><div class="cab tech"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Gladys Krieble Delmas Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">Research Library Program</div><div class="card-desc">000; awards vary by scope.</div><div class="card-tags"><span class="tag">exhibitions</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_17&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">$20,000</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_17&#39;)">View Details</button></div></div><div class="card" style="animation-delay:0.48s" onclick="openModal(&#39;curated_18&#39;)"><div class="cab humanity"></div><div class="card-body"><div class="card-top"><span class="funder-badge">Ford Foundation</span><span class="src-badge curated">Curated</span><span class="new-badge">New</span></div><div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge upcoming">Open</span></div><div class="card-title">JustFilms</div><div class="card-desc">Supports artist-driven documentary film and emerging media projects that address inequality and advance social justice.</div><div class="card-tags"><span class="tag">media</span><span class="tag">organizations</span></div></div><div class="card-footer"><div class="card-check" onclick="event.stopPropagation();toggleSelect(&#39;curated_18&#39;)" title="Select"></div><div style="flex:1"><div class="amount-label">Award</div><div class="amount">See listing</div></div><button class="apply-btn " onclick="event.stopPropagation();openModal(&#39;curated_18&#39;)">View Details</button></div></div></div>
+
+  <!-- List view -->
+  <div class="list-wrap" id="list-wrap" style="display: block;">
+    <table class="list-table" id="list-table">
+      <thead>
+        <tr>
+          <th class="lt-check-cell"></th>
+          <th onclick="setSortCol(&#39;name&#39;)">Grant / Funder <span class="sort-arrow">↕</span></th>
+          <th onclick="setSortCol(&#39;source&#39;)" class="sorted">Source <span class="sort-arrow">↓</span></th>
+          <th class="lt-cat-col" onclick="setSortCol(&#39;category&#39;)">Category <span class="sort-arrow">↕</span></th>
+          <th onclick="setSortCol(&#39;amount&#39;)">Amount <span class="sort-arrow">↕</span></th>
+          <th onclick="setSortCol(&#39;deadline&#39;)">Deadline <span class="sort-arrow">↕</span></th>
+          <th class="lt-elig-col">Eligibility</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="list-body"><tr style="animation-delay:0s" onclick="openModal(&#39;curated_83&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_83&#39;)"></div></td><td><div class="lt-name-title">Pew Scholars Program in Biomedical Sciences</div><div class="lt-name-funder">The Pew Charitable Trusts</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$300,000</span></td><td style="white-space:nowrap;"><span class="dl-badge urgent" style="font-size:11px;">May 1, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Early-career biomedical researchers</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_83&#39;)">Details</button></td></tr><tr style="animation-delay:0.02s" onclick="openModal(&#39;curated_84&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_84&#39;)"></div></td><td><div class="lt-name-title">Pew-Stewart Scholars for Cancer Research</div><div class="lt-name-funder">The Pew Charitable Trusts</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$300,000</span></td><td style="white-space:nowrap;"><span class="dl-badge urgent" style="font-size:11px;">May 1, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Assistant professors within first 3 years of appointment in cancer research fiel…</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_84&#39;)">Details</button></td></tr><tr style="animation-delay:0.04s" onclick="openModal(&#39;curated_112&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_112&#39;)"></div></td><td><div class="lt-name-title">APS Medal for Exceptional Achievement in Research</div><div class="lt-name-funder">American Physical Society (APS)</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$50,000</span></td><td style="white-space:nowrap;"><span class="dl-badge urgent" style="font-size:11px;">May 1, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Researchers in physics</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_112&#39;)">Details</button></td></tr><tr style="animation-delay:0.06s" onclick="openModal(&#39;curated_52&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_52&#39;)"></div></td><td><div class="lt-name-title">AALL/Bloomberg Law Continuing Education Grants Program</div><div class="lt-name-funder">American Association of Law Libraries (AALL)</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge urgent" style="font-size:11px;">May 18, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">The AALL/Bloomberg Law Continuing Education Grant Program is open to AALL chapte…</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_52&#39;)">Details</button></td></tr><tr style="animation-delay:0.08s" onclick="openModal(&#39;curated_71&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_71&#39;)"></div></td><td><div class="lt-name-title">Cromwell Fellowships</div><div class="lt-name-funder">American Society for Legal History (ASLH)</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Art</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge soon" style="font-size:11px;">Jun 1, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Early-career generally includes those researching or writing a PhD dissertation …</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_71&#39;)">Details</button></td></tr><tr style="animation-delay:0.1s" onclick="openModal(&#39;curated_93&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_93&#39;)"></div></td><td><div class="lt-name-title">Klingenstein-Simons Fellowship Awards in Neuroscience</div><div class="lt-name-funder">Klingenstein-Simons Fellowship Program</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$225,000</span></td><td style="white-space:nowrap;"><span class="dl-badge soon" style="font-size:11px;">Jun 1, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Early-career faculty within 4 years of appointment in neuroscience</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_93&#39;)">Details</button></td></tr><tr style="animation-delay:0.12s" onclick="openModal(&#39;curated_107&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_107&#39;)"></div></td><td><div class="lt-name-title">Arnold O. Beckman Postdoctoral Fellowship</div><div class="lt-name-funder">Arnold and Mabel Beckman Foundation</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$224,000</span></td><td style="white-space:nowrap;"><span class="dl-badge soon" style="font-size:11px;">Jul 1, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Postdoctoral scholars in chemical and life sciences</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_107&#39;)">Details</button></td></tr><tr style="animation-delay:0.14s" onclick="openModal(&#39;curated_80&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_80&#39;)"></div></td><td><div class="lt-name-title">Wellcome Early-Career Awards</div><div class="lt-name-funder">Wellcome Trust</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated</td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$100,000,000</span></td><td style="white-space:nowrap;"><span class="dl-badge soon" style="font-size:11px;">Jul 21, 2026</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Early-career researchers in health sciences</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_80&#39;)">Details</button></td></tr><tr style="animation-delay:0.16s" onclick="openModal(&#39;curated_90&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_90&#39;)"></div></td><td><div class="lt-name-title">Charles Stark Draper Prize for Engineering</div><div class="lt-name-funder">National Academy of Engineering (NAE)</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$500,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Jan 1, 2027</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Engineers with transformative contributions</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_90&#39;)">Details</button></td></tr><tr style="animation-delay:0.18s" onclick="openModal(&#39;curated_1&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_1&#39;)"></div></td><td><div class="lt-name-title">Establishing infrastructure hubs to power evidence synthesis in low- and middle-income countries</div><div class="lt-name-funder">Wellcome Trust</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$150,000,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">5/7/2026</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_1&#39;)">Details</button></td></tr><tr style="animation-delay:0.2s" onclick="openModal(&#39;curated_2&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_2&#39;)"></div></td><td><div class="lt-name-title">History of Arts Grants Program</div><div class="lt-name-funder">Samuel H. Kress Foundation</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">such as archival projects</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_2&#39;)">Details</button></td></tr><tr style="animation-delay:0.22s" onclick="openModal(&#39;curated_3&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_3&#39;)"></div></td><td><div class="lt-name-title">Open Philanthropy Technical AI Safety Research</div><div class="lt-name-funder">Open Philanthropy</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Data Science &amp; AI</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Faculty</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_3&#39;)">Details</button></td></tr><tr style="animation-delay:0.24s" onclick="openModal(&#39;curated_4&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_4&#39;)"></div></td><td><div class="lt-name-title">Foundational Research in Robotics</div><div class="lt-name-funder">National Science Foundation</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">sense</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_4&#39;)">Details</button></td></tr><tr style="animation-delay:0.26s" onclick="openModal(&#39;curated_5&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_5&#39;)"></div></td><td><div class="lt-name-title">Furthermore Grants in Publishing</div><div class="lt-name-funder">J.M. Kaplan Fund</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$12,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">architecture</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_5&#39;)">Details</button></td></tr><tr style="animation-delay:0.28s" onclick="openModal(&#39;curated_6&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_6&#39;)"></div></td><td><div class="lt-name-title">GoodAI</div><div class="lt-name-funder">GoodAI</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Data Science &amp; AI</td><td><span class="lt-amount-val">$24,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">See listing</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_6&#39;)">Details</button></td></tr><tr style="animation-delay:0.3s" onclick="openModal(&#39;curated_7&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_7&#39;)"></div></td><td><div class="lt-name-title">Grants for Humanities Programs - Mini grants</div><div class="lt-name-funder">Humanities Iowa</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Art</td><td><span class="lt-amount-val">$10,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">A key component of a Humanities Iowa grant is the active participation of humani…</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_7&#39;)">Details</button></td></tr><tr style="animation-delay:0.32s" onclick="openModal(&#39;curated_8&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_8&#39;)"></div></td><td><div class="lt-name-title">Public Understanding of Science</div><div class="lt-name-funder">Technology &amp; Economics</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">Alfred P. Sloan Foundation</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">film</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_8&#39;)">Details</button></td></tr><tr style="animation-delay:0.34s" onclick="openModal(&#39;curated_9&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_9&#39;)"></div></td><td><div class="lt-name-title">Grawemeyer Awards</div><div class="lt-name-funder">University of Louisville</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$100,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">education</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_9&#39;)">Details</button></td></tr><tr style="animation-delay:0.36s" onclick="openModal(&#39;curated_13&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_13&#39;)"></div></td><td><div class="lt-name-title">RAAIS Foundation</div><div class="lt-name-funder">RAAIS Foundation</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Institutions of higher education</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_13&#39;)">Details</button></td></tr><tr style="animation-delay:0.38s" onclick="openModal(&#39;curated_14&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_14&#39;)"></div></td><td><div class="lt-name-title">MLA Price for an Edited Collection</div><div class="lt-name-funder">Modern Language Association of America (MLA)</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">the prize is given without regard to the language of the text presented in the w…</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_14&#39;)">Details</button></td></tr><tr style="animation-delay:0.4s" onclick="openModal(&#39;curated_15&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_15&#39;)"></div></td><td><div class="lt-name-title">Praemium Imperiale</div><div class="lt-name-funder">Japan Art Association</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Journalism</td><td><span class="lt-amount-val">$150,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">architecture</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_15&#39;)">Details</button></td></tr><tr style="animation-delay:0.4s" onclick="openModal(&#39;curated_16&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_16&#39;)"></div></td><td><div class="lt-name-title">Guru Nanak Interfaith Prize</div><div class="lt-name-funder">Hofstra University</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Data Science &amp; AI</td><td><span class="lt-amount-val">$50,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">https://www.hofstra.edu/guru-nanak/award.html</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_16&#39;)">Details</button></td></tr><tr style="animation-delay:0.4s" onclick="openModal(&#39;curated_17&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_17&#39;)"></div></td><td><div class="lt-name-title">Research Library Program</div><div class="lt-name-funder">Gladys Krieble Delmas Foundation</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Science</td><td><span class="lt-amount-val">$20,000</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">cataloging</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_17&#39;)">Details</button></td></tr><tr style="animation-delay:0.4s" onclick="openModal(&#39;curated_18&#39;)"><td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check" onclick="toggleSelect(&#39;curated_18&#39;)"></div></td><td><div class="lt-name-title">JustFilms</div><div class="lt-name-funder">Ford Foundation</div></td><td style="white-space:nowrap;"><span class="lt-stripe curated"></span>Curated&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span></td><td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">Journalism</td><td><span class="lt-amount-val">See listing</span></td><td style="white-space:nowrap;"><span class="dl-badge upcoming" style="font-size:11px;">Open</span></td><td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">Filmmakers</td><td style="text-align:center;"><button class="lt-action-btn " onclick="event.stopPropagation();openModal(&#39;curated_18&#39;)">Details</button></td></tr></tbody>
+    </table>
+  </div>
+
   <div class="lm-wrap" id="lm-wrap" style="display: block;"><button class="lm-btn" onclick="loadMore()">Load more opportunities</button></div>
-  <div class="empty" id="empty" style="display: none;"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
+  <div class="empty" id="empty" style="display:none;"><div class="empty-icon">🔭</div><h3>No opportunities found</h3><p>Try a different keyword or adjust your filters</p></div>
 </div>
 
 <div class="sel-bar" id="sel-bar" style="display: none;">
@@ -261,27 +317,27 @@
 
 <div class="overlay" id="overlay" onclick="closeModal(event)">
   <div class="modal">
-    <div class="modal-stripe" id="m-stripe"></div>
+    <div class="modal-stripe" id="m-stripe" style="background: linear-gradient(90deg, rgb(0, 79, 162), rgb(105, 149, 221));"></div>
     <div class="modal-header">
       <button class="modal-close" onclick="closeOverlay()">✕</button>
-      <div class="modal-src" id="m-src"></div>
-      <div class="modal-funder" id="m-funder"></div>
-      <div class="modal-title" id="m-title"></div>
+      <div class="modal-src" id="m-src">Curated Opportunity</div>
+      <div class="modal-funder" id="m-funder">The Pew Charitable Trusts</div>
+      <div class="modal-title" id="m-title">Pew Scholars Program in Biomedical Sciences</div>
     </div>
     <div class="modal-body">
       <div class="modal-row">
-        <div class="mbox"><div class="mbox-label">Award Amount</div><div class="mbox-val" id="m-amount"></div></div>
-        <div class="mbox"><div class="mbox-label">Deadline</div><div class="mbox-val" id="m-deadline"></div></div>
-        <div class="mbox"><div class="mbox-label">Eligibility</div><div class="mbox-val" id="m-elig" style="font-size:12px;font-family:&#39;Source Sans 3&#39;,sans-serif;font-weight:400;line-height:1.4;"></div></div>
+        <div class="mbox"><div class="mbox-label">Award Amount</div><div class="mbox-val" id="m-amount">$300,000</div></div>
+        <div class="mbox"><div class="mbox-label">Deadline</div><div class="mbox-val" id="m-deadline">May 1, 2026</div></div>
+        <div class="mbox"><div class="mbox-label">Eligibility</div><div class="mbox-val" id="m-elig" style="font-size:12px;font-family:&#39;Source Sans 3&#39;,sans-serif;font-weight:400;line-height:1.4;">Early-career biomedical researchers</div></div>
       </div>
       <div class="msec">About this opportunity</div>
-      <div class="mdesc" id="m-desc"></div>
+      <div class="mdesc" id="m-desc">Supports young investigators of outstanding promise in biomedical sciences.</div>
       <div class="msec">Research areas &amp; tags</div>
-      <div class="mtags" id="m-tags"></div>
+      <div class="mtags" id="m-tags"><span class="mtag">health</span><span class="mtag">stem</span><span class="mtag">earlycareer</span><span class="mtag">biomedicalsciences</span><span class="mtag">researchfunding</span></div>
     </div>
     <div class="modal-footer">
       <button class="mbtn-sec" onclick="closeOverlay()">Close</button>
-      <button class="mbtn-pri" id="m-apply">Learn More &amp; Apply →</button>
+      <button class="mbtn-pri" id="m-apply" style="opacity: 1;">Learn More &amp; Apply →</button>
     </div>
   </div>
 </div>
@@ -291,9 +347,12 @@ const SHEET_ID="1bdZ2UyQGuOkOK3fCwWq5dFnq-aWnJ_gehc80v06Qi7o";
 const CURATED_TAB="Curated Grants";
 const FEDERAL_TAB="Federal Grants";
 const PAGE_SIZE=24;
-let ALL=[],FILT=[],PAGE=0,curSrc="all",curCat="",curFunder="",curDeadline=0,searchMode="any";
+let ALL=[],FILT=[],PAGE=0,curSrc="curated",curCat="",curFunder="",curDeadline=0,searchMode="any",curView="cards",listSortCol="",listSortDir=1;
 const SELECTED=new Set();
 
+const CAT_LABELS={"STEM":"Science","Health":"Health","Social":"Social Sciences","Arts":"Art","Business":"Economics","DataScience":"Data Science & AI","Education":"Education","Media":"Journalism"};
+
+/* ===== PARSE HELPERS ===== */
 function cleanHeader(h){return String(h||"").toLowerCase().replace(/[\s_"]+/g,"").replace(/[^a-z0-9]/g,"");}
 function splitCSVRows(text){const rows=[];let cur="",inQ=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if((c==='\n'||c==='\r')&&!inQ){if(cur.trim())rows.push(cur);cur='';if(c==='\r'&&n==='\n')i++;}else cur+=c;}if(cur.trim())rows.push(cur);return rows;}
 function parseCSVLine(line,delim){delim=delim||",";const res=[];let cur="",inQ=false;for(let i=0;i<line.length;i++){const c=line[i],n=line[i+1];if(c==='"'){if(inQ&&n==='"'){cur+='"';i++;}else inQ=!inQ;}else if(c===delim&&!inQ){res.push(cur.trim());cur="";}else cur+=c;}res.push(cur.trim());return res;}
@@ -301,20 +360,19 @@ function detectDelimiter(line){return line.includes("\t")?"\t":",";}
 function getFirst(row,keys,fallback=""){for(const k of keys)if(row[k]!==undefined&&String(row[k]).trim()!=="")return String(row[k]).trim();return fallback;}
 function parseDateSafe(v){if(!v)return null;const d=new Date(v);return isNaN(d)?null:d;}
 function deadlineDays(d){const p=parseDateSafe(d);if(!p)return 9999;return Math.ceil((p-new Date())/86400000);}
-function normaliseCategory(raw){const t=String(raw||"").toLowerCase().replace(/\s/g,"");
-  if(/publichealth|epidem|globalhealth/.test(t))return"PublicHealth";
-  if(/health|bio|medic|clinical|cancer|disease/.test(t))return"Health";
-  if(/human|hist|liter|culture|archaeo|heritage|arthumanities/.test(t))return"Humanities";
+function amtNum(s){return parseInt(String(s||"0").replace(/[^0-9]/g,""))||0;}
+
+function normaliseCategory(raw){
+  const t=String(raw||"").toLowerCase().replace(/\s/g,"");
+  if(/publichealth|epidem|globalhealth|health|bio|medic|clinical|cancer|disease/.test(t))return"Health";
   if(/educat|teach|train|workforce/.test(t))return"Education";
-  if(/env|climat|energy|sustain|ecol/.test(t))return"Environment";
-  if(/law|legal|polic|justice|regulat/.test(t))return"Law";
-  if(/business|econom|financ|commerc|entrepreneur/.test(t))return"Business";
-  if(/international|global|foreign|diplomat|develop/.test(t))return"International";
   if(/communicat|media|journal|broadcast|film|press/.test(t))return"Media";
   if(/datascience|machinelearn|artificialintelligence|ai|computervision|nlp/.test(t))return"DataScience";
-  if(/social|communit|sociol|demograph/.test(t))return"Social";
-  if(/art|music|creativ/.test(t))return"Arts";
-  return"STEM";}
+  if(/art|music|creativ|human|hist|liter|culture|archaeo|heritage/.test(t))return"Arts";
+  if(/business|econom|financ|commerc|entrepreneur/.test(t))return"Business";
+  if(/law|legal|polic|justice|regulat|social|communit|sociol|demograph|international|global|foreign/.test(t))return"Social";
+  return"STEM";
+}
 
 function parseCSV(text,source){
   const lines=splitCSVRows(text);
@@ -325,7 +383,7 @@ function parseCSV(text,source){
   const isHeader=firstRowCells.some(h=>knownHeaders.includes(h));
   const startRow=isHeader?1:2;
   const headers=isHeader?firstRowCells:parseCSVLine(lines[1]?lines[1]:"",delim).map(cleanHeader);
-  const accentOf={STEM:"tech",Health:"health",Humanities:"humanity",Education:"social",Environment:"energy",Social:"social",Arts:"humanity",Law:"social",Business:"social",International:"social",Media:"humanity",PublicHealth:"health",DataScience:"tech"};
+  const accentOf={STEM:"tech",Health:"health",Arts:"humanity",Education:"social",Social:"social",Business:"social",Media:"humanity",DataScience:"tech"};
   const rows=[];
   for(let i=startRow;i<lines.length;i++){
     if(!lines[i].trim())continue;
@@ -342,13 +400,7 @@ function parseCSV(text,source){
     const item={id:`${source}_${i}`,source,name,
       funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
-      amount:(()=>{
-        const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");
-        if(!raw||raw.toLowerCase()==="see listing")return"See listing";
-        const num=parseFloat(raw.replace(/[$,]/g,""));
-        if(!isNaN(num)&&num>0)return"$"+num.toLocaleString("en-US");
-        return raw;
-      })(),
+      amount:(()=>{const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");if(!raw||raw.toLowerCase()==="see listing")return"See listing";const num=parseFloat(raw.replace(/[$,]/g,""));if(!isNaN(num)&&num>0)return"$"+num.toLocaleString("en-US");return raw;})(),
       description:getFirst(row,["description","summary","synopsis","opportunitydescription"],""),
       eligibility:getFirst(row,["eligibility","eligibleapplicants"],"See listing"),
       category:cat,keywords:kws,
@@ -358,7 +410,7 @@ function parseCSV(text,source){
       accentClass:source==="federal"?"federal":(accentOf[cat]||"curated")
     };
     const looksFederal=!!getFirst(row,["opportunitynumber","fundingopportunitynumber","cfdanumber","assistancelistingnumber","agencycode","categoryoffundingactivity"],"");
-    if(source==="curated"&&looksFederal){continue;}
+    if(source==="curated"&&looksFederal)continue;
     rows.push(item);
   }
   return rows;
@@ -367,15 +419,7 @@ function parseCSV(text,source){
 function gvizToCSV(data){
   if(!data||!data.table)return"";
   const t=data.table,heads=t.cols.map(c=>c.label||""),csvRows=[heads.join(",")];
-  for(const r of t.rows){
-    const vals=r.c.map((cell,i)=>{
-      if(!cell||cell.v===null||cell.v===undefined)return"";
-      let v=cell.f||String(cell.v);
-      if(v.includes(",")||v.includes('"')||v.includes("\n"))v='"'+v.replace(/"/g,'""')+'"';
-      return v;
-    });
-    csvRows.push(vals.join(","));
-  }
+  for(const r of t.rows){const vals=r.c.map(cell=>{if(!cell||cell.v===null||cell.v===undefined)return"";let v=cell.f||String(cell.v);if(v.includes(",")||v.includes('"')||v.includes("\n"))v='"'+v.replace(/"/g,'""')+'"';return v;});csvRows.push(vals.join(","));}
   return csvRows.join("\n");
 }
 
@@ -383,28 +427,8 @@ async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
   const GID=source==="curated"?"1152854448":"1347133722";
   const gvizUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&gid="+GID;
-  function tryFetch(url){
-    return fetch(url).then(r=>r.text()).then(text=>{
-      if(text.trim().startsWith("<")||text.length<10)throw new Error("bad response");
-      return text;
-    });
-  }
-  function tryJSONP(){
-    return new Promise((res,rej)=>{
-      const cbName="gvizCb_"+source+"_"+Date.now();
-      const script=document.createElement("script");
-      const timer=setTimeout(()=>{delete window[cbName];try{document.head.removeChild(script);}catch(e){} rej(new Error("timeout"));},15000);
-      window[cbName]=function(data){
-        clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){}
-        const csv=gvizToCSV(data);
-        if(csv.length<10){rej(new Error("empty"));return;}
-        res(csv);
-      };
-      script.onerror=function(){clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){} rej(new Error("script error"));};
-      script.src="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?gid="+GID+"&headers=1&tqx=responseHandler:"+cbName;
-      document.head.appendChild(script);
-    });
-  }
+  function tryFetch(url){return fetch(url).then(r=>r.text()).then(text=>{if(text.trim().startsWith("<")||text.length<10)throw new Error("bad response");return text;});}
+  function tryJSONP(){return new Promise((res,rej)=>{const cbName="gvizCb_"+source+"_"+Date.now();const script=document.createElement("script");const timer=setTimeout(()=>{delete window[cbName];try{document.head.removeChild(script);}catch(e){}rej(new Error("timeout"));},15000);window[cbName]=function(data){clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){}const csv=gvizToCSV(data);if(csv.length<10){rej(new Error("empty"));return;}res(csv);};script.onerror=function(){clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){}rej(new Error("script error"));};script.src="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?gid="+GID+"&headers=1&tqx=responseHandler:"+cbName;document.head.appendChild(script);});}
   try{
     let text;
     try{text=await tryJSONP();}catch(e){
@@ -424,137 +448,52 @@ async function loadTab(tabName,source){
 }
 
 async function init(){
-  const[federal,curated]=await Promise.all([
-    loadTab(FEDERAL_TAB,"federal").catch(()=>[]),
-    loadTab(CURATED_TAB,"curated").catch(()=>[])
-  ]);
+  const[federal,curated]=await Promise.all([loadTab(FEDERAL_TAB,"federal").catch(()=>[]),loadTab(CURATED_TAB,"curated").catch(()=>[])]);
   ALL=[...(curated||[]),...(federal||[])];
-  updateCounts();
-
-  // Build funder dropdown from loaded data
-  buildFunderDropdown();
-
+  updateCounts();buildFunderDropdown();
   document.getElementById("loading-screen").style.display="none";
-  document.getElementById("controls").style.display="flex";
+  document.getElementById("toolbar").style.display="block";
   document.getElementById("source-tabs").style.display="flex";
-  document.getElementById("filter-chips").style.display="flex";
   const btn=document.getElementById("download-btn");
   if(btn&&ALL.length>0)btn.disabled=false;
   render();
 }
 
 function buildFunderDropdown(){
-  const sel=document.getElementById("funder-select");
-  if(!sel)return;
-  // Collect unique non-empty funder names, sorted alphabetically
-  const funders=[...new Set(
-    ALL.map(g=>(g.funder||"").trim()).filter(f=>f&&f!=="Unknown funder")
-  )].sort((a,b)=>a.localeCompare(b));
-  // Reset to just the "All" option, then append
-  sel.innerHTML='<option value="">All Funders</option>'+
-    funders.map(f=>'<option value="'+escapeHtml(f)+'">'+escapeHtml(f)+'</option>').join("");
+  const sel=document.getElementById("funder-select");if(!sel)return;
+  const funders=[...new Set(ALL.map(g=>(g.funder||"").trim()).filter(f=>f&&f!=="Unknown funder"))].sort((a,b)=>a.localeCompare(b));
+  sel.innerHTML='<option value="">All Funders</option>'+funders.map(f=>'<option value="'+escapeHtml(f)+'">'+escapeHtml(f)+'</option>').join("");
 }
-
-// Rebuild funder dropdown when source tab changes so it only shows relevant funders
 function updateFunderDropdownForSource(){
-  const sel=document.getElementById("funder-select");
-  if(!sel)return;
+  const sel=document.getElementById("funder-select");if(!sel)return;
   const pool=curSrc==="all"?ALL:ALL.filter(g=>g.source===curSrc);
   const current=curFunder;
-  const funders=[...new Set(
-    pool.map(g=>(g.funder||"").trim()).filter(f=>f&&f!=="Unknown funder")
-  )].sort((a,b)=>a.localeCompare(b));
-  sel.innerHTML='<option value="">All Funders</option>'+
-    funders.map(f=>'<option value="'+escapeHtml(f)+'"'+(f===current?' selected':'')+'>'+escapeHtml(f)+'</option>').join("");
-  // If previously selected funder no longer exists in this source, clear it
+  const funders=[...new Set(pool.map(g=>(g.funder||"").trim()).filter(f=>f&&f!=="Unknown funder"))].sort((a,b)=>a.localeCompare(b));
+  sel.innerHTML='<option value="">All Funders</option>'+funders.map(f=>'<option value="'+escapeHtml(f)+'"'+(f===current?' selected':'')+'>'+escapeHtml(f)+'</option>').join("");
   if(current&&!funders.includes(current)){curFunder="";sel.value="";}
 }
 
-function setSrc(s){
-  curSrc=s;
-  document.querySelectorAll(".stab").forEach(t=>t.classList.toggle("active",t.dataset.s===s));
-  updateFunderDropdownForSource();
-  PAGE=0;render();
-}
-
+function setSrc(s){curSrc=s;document.querySelectorAll(".stab").forEach(t=>t.classList.toggle("active",t.dataset.s===s));updateFunderDropdownForSource();PAGE=0;render();}
 function setCat(c){curCat=c;PAGE=0;render();}
-
-// NEW: Funder filter
 function setFunder(f){curFunder=f;PAGE=0;render();}
+function setDeadline(d){curDeadline=d;PAGE=0;render();}
+function setSearchMode(mode){searchMode=mode;document.querySelectorAll('.search-mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));render();}
+function setView(v){curView=v;document.getElementById("view-card-btn").classList.toggle("active",v==="cards");document.getElementById("view-list-btn").classList.toggle("active",v==="list");PAGE=0;renderPage();}
 
-function setDeadline(d){curDeadline=d;document.querySelectorAll(".dl-chip[data-dl]").forEach(x=>x.classList.toggle("active",parseInt(x.dataset.dl)===d));PAGE=0;render();}
-
-function isNew(g){
-  if(g.source==="curated"&&(!g.deadline||deadlineDays(g.deadline)>180))return true;
-  const yr=new Date().getFullYear().toString();
-  if(g.source==="federal"&&g.oppNum&&g.oppNum.includes(yr))return true;
-  return false;
+function setSortCol(col){
+  if(listSortCol===col)listSortDir*=-1;else{listSortCol=col;listSortDir=1;}
+  document.querySelectorAll(".list-table thead th").forEach(th=>{th.classList.remove("sorted");const a=th.querySelector(".sort-arrow");if(a)a.textContent="↕";});
+  const colMap={"name":1,"source":2,"category":3,"amount":4,"deadline":5};
+  const idx=colMap[col];
+  if(idx!==undefined){const ths=document.querySelectorAll(".list-table thead th");if(ths[idx]){ths[idx].classList.add("sorted");const a=ths[idx].querySelector(".sort-arrow");if(a)a.textContent=listSortDir===1?"↑":"↓";}}
+  renderPage();
 }
+
+function isNew(g){if(g.source==="curated"&&(!g.deadline||deadlineDays(g.deadline)>180))return true;const yr=new Date().getFullYear().toString();if(g.source==="federal"&&g.oppNum&&g.oppNum.includes(yr))return true;return false;}
 function dlLabel(days){if(!days||days===9999)return{label:"Open",cls:"upcoming"};if(days<0)return{label:"Closed",cls:"urgent"};if(days<=45)return{label:days+"d left",cls:"urgent"};if(days<=120)return{label:days+"d left",cls:"soon"};return{label:new Date(Date.now()+days*86400000).toLocaleDateString("en-US",{month:"short",year:"numeric"}),cls:"upcoming"};}
-function amtNum(s){return parseInt(String(s||"0").replace(/[^0-9]/g,""))||0;}
 
-const SYNONYMS={
-  "money":["funding","grant","award","financial"],"cash":["funding","grant","award"],
-  "climate":["environment","environmental","sustainability","energy","carbon","ecology"],
-  "environment":["climate","ecology","sustainability","green","conservation"],
-  "medicine":["health","medical","clinical","disease","biomedical","healthcare"],
-  "health":["medical","clinical","disease","biomedical","healthcare","medicine"],
-  "doctor":["medical","clinical","health","physician"],
-  "computer":["technology","computing","software","stem","engineering","data"],
-  "tech":["technology","stem","engineering","computing","software","ai"],
-  "ai":["artificial intelligence","machine learning","technology","computing","stem"],
-  "race":["diversity","equity","inclusion","social justice","minority"],
-  "diversity":["equity","inclusion","minority","underrepresented","social justice"],
-  "poverty":["social","community","equity","economic","low income","underserved"],
-  "community":["social","public","civic","nonprofit","outreach"],
-  "writing":["humanities","literature","creative","arts","communication"],
-  "art":["arts","creative","humanities","culture","music"],
-  "music":["arts","creative","humanities","culture","performing"],
-  "history":["humanities","culture","heritage","social sciences"],
-  "science":["stem","research","engineering","technology","biology","chemistry","physics"],
-  "biology":["health","stem","life sciences","biomedical","ecology"],
-  "engineering":["stem","technology","computing","infrastructure"],
-  "education":["teaching","training","workforce","learning","academic"],
-  "teaching":["education","training","workforce","academic"],
-  "international":["global","foreign","abroad","overseas","developing"],
-  "global":["international","foreign","abroad","overseas"],
-  "women":["gender","diversity","equity","inclusion","female"],
-  "minority":["diversity","equity","inclusion","underrepresented","race"],
-  "startup":["entrepreneurship","innovation","business","commercialization"],
-  "business":["economics","entrepreneurship","commerce","finance","management"],
-  "law":["legal","policy","justice","regulation","governance"],
-  "policy":["law","government","regulation","public","political"],
-  "economics":["business","finance","commerce","trade","fiscal"],
-  "media":["communication","journalism","broadcasting","film","press","digital media"],
-  "journalism":["media","communication","press","broadcasting"],
-  "communication":["media","journalism","broadcasting","film","press"],
-  "public health":["epidemiology","global health","healthcare","disease prevention","population health"],
-  "epidemiology":["public health","disease","population","global health"],
-  "data science":["machine learning","ai","artificial intelligence","computing","statistics","analytics"],
-  "machine learning":["ai","data science","computing","artificial intelligence","algorithms"],
-  "mental health":["psychology","behavioral","social","wellness","counseling"],
-  "psychology":["mental health","behavioral","social sciences","neuroscience"],
-  "food":["agriculture","nutrition","health","environment","sustainability"],
-  "energy":["environment","sustainability","climate","renewable","infrastructure"],
-  "water":["environment","ecology","sustainability","climate","natural resources"],
-  "housing":["community","social","equity","urban","poverty"],
-  "drug":["health","medical","clinical","pharmaceutical","biomedical"],
-  "cancer":["health","medical","biomedical","clinical","disease"],
-  "virus":["health","medical","infectious disease","biomedical","public health"],
-  "space":["stem","astronomy","physics","engineering","technology"],
-  "math":["stem","mathematics","statistics","computing","engineering"]
-};
-
-function expandQuery(q){
-  const terms=[q];
-  for(const[key,vals]of Object.entries(SYNONYMS)){
-    if(q.includes(key))vals.forEach(v=>{if(!terms.includes(v))terms.push(v);});
-    if(vals.some(v=>q.includes(v))&&!terms.includes(key))terms.push(key);
-  }
-  return terms;
-}
-
-function setSearchMode(mode){searchMode=mode;document.querySelectorAll('.search-mode-btn').forEach(function(b){b.classList.toggle('active',b.dataset.mode===mode);});render();}
+const SYNONYMS={"money":["funding","grant","award","financial"],"cash":["funding","grant","award"],"climate":["environment","environmental","sustainability","energy","carbon","ecology"],"environment":["climate","ecology","sustainability","green","conservation"],"medicine":["health","medical","clinical","disease","biomedical","healthcare"],"health":["medical","clinical","disease","biomedical","healthcare","medicine"],"doctor":["medical","clinical","health","physician"],"computer":["technology","computing","software","stem","engineering","data"],"tech":["technology","stem","engineering","computing","software","ai"],"ai":["artificial intelligence","machine learning","technology","computing","stem"],"race":["diversity","equity","inclusion","social justice","minority"],"diversity":["equity","inclusion","minority","underrepresented","social justice"],"poverty":["social","community","equity","economic","low income","underserved"],"community":["social","public","civic","nonprofit","outreach"],"writing":["humanities","literature","creative","arts","communication"],"art":["arts","creative","humanities","culture","music"],"music":["arts","creative","humanities","culture","performing"],"history":["humanities","culture","heritage","social sciences"],"science":["stem","research","engineering","technology","biology","chemistry","physics"],"biology":["health","stem","life sciences","biomedical","ecology"],"engineering":["stem","technology","computing","infrastructure"],"education":["teaching","training","workforce","learning","academic"],"teaching":["education","training","workforce","academic"],"international":["global","foreign","abroad","overseas","developing"],"global":["international","foreign","abroad","overseas"],"women":["gender","diversity","equity","inclusion","female"],"minority":["diversity","equity","inclusion","underrepresented","race"],"startup":["entrepreneurship","innovation","business","commercialization"],"business":["economics","entrepreneurship","commerce","finance","management"],"law":["legal","policy","justice","regulation","governance"],"policy":["law","government","regulation","public","political"],"economics":["business","finance","commerce","trade","fiscal"],"media":["communication","journalism","broadcasting","film","press","digital media"],"journalism":["media","communication","press","broadcasting"],"communication":["media","journalism","broadcasting","film","press"],"public health":["epidemiology","global health","healthcare","disease prevention","population health"],"epidemiology":["public health","disease","population","global health"],"data science":["machine learning","ai","artificial intelligence","computing","statistics","analytics"],"machine learning":["ai","data science","computing","artificial intelligence","algorithms"],"mental health":["psychology","behavioral","social","wellness","counseling"],"psychology":["mental health","behavioral","social sciences","neuroscience"],"food":["agriculture","nutrition","health","environment","sustainability"],"energy":["environment","sustainability","climate","renewable","infrastructure"],"water":["environment","ecology","sustainability","climate","natural resources"],"housing":["community","social","equity","urban","poverty"],"drug":["health","medical","clinical","pharmaceutical","biomedical"],"cancer":["health","medical","biomedical","clinical","disease"],"virus":["health","medical","infectious disease","biomedical","public health"],"space":["stem","astronomy","physics","engineering","technology"],"math":["stem","mathematics","statistics","computing","engineering"]};
+function expandQuery(q){const terms=[q];for(const[key,vals]of Object.entries(SYNONYMS)){if(q.includes(key))vals.forEach(v=>{if(!terms.includes(v))terms.push(v);});if(vals.some(v=>q.includes(v))&&!terms.includes(key))terms.push(key);}return terms;}
 
 function render(){
   const q=document.getElementById("search").value.toLowerCase().trim();
@@ -563,10 +502,11 @@ function render(){
   FILT=ALL.filter(g=>{
     if(curSrc!=="all"&&g.source!==curSrc)return false;
     if(curCat&&g.category!==curCat)return false;
-    if(curFunder&&g.funder!==curFunder)return false;  // NEW funder filter
+    if(curFunder&&g.funder!==curFunder)return false;
     if(q){
       const hay=[g.name,g.funder,g.description,(g.keywords||[]).join(" "),g.eligibility,g.oppNum,g.category].join(" ").toLowerCase();
-      if(searchMode==='all'){var words=q.split(/\s+/).filter(function(w){return w.length>0;});if(!words.every(function(w){var wTerms=expandQuery(w);return wTerms.some(function(t){return hay.includes(t);});}))return false;}else{if(!terms.some(t=>hay.includes(t)))return false;}
+      if(searchMode==='all'){const words=q.split(/\s+/).filter(w=>w.length>0);if(!words.every(w=>expandQuery(w).some(t=>hay.includes(t))))return false;}
+      else{if(!terms.some(t=>hay.includes(t)))return false;}
     }
     if(curDeadline>0){const days=deadlineDays(g.deadline);if(days>curDeadline||days<0)return false;}
     return true;
@@ -576,41 +516,74 @@ function render(){
   else FILT.sort((a,b)=>(a.name||"").localeCompare(b.name||""));
   PAGE=0;
   document.getElementById("results-count").textContent=FILT.length.toLocaleString()+" results";
-  renderPage();
-  updateSelectAllBtn();
+  renderPage();updateSelectAllBtn();
 }
 
 function renderPage(){
-  const slice=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
-  const grid=document.getElementById("grid"),empty=document.getElementById("empty"),lmw=document.getElementById("lm-wrap");
+  const grid=document.getElementById("grid"),listWrap=document.getElementById("list-wrap"),empty=document.getElementById("empty"),lmw=document.getElementById("lm-wrap");
   if(!FILT.length){
-    grid.innerHTML="";
+    grid.style.display="none";listWrap.style.display="none";
     const q=document.getElementById("search").value.toLowerCase().trim();
     const terms=q?expandQuery(q):[];
-    const extraTerms=terms.filter(t=>t!==q);
-    empty.innerHTML='<div class="empty-icon">&#128301;</div><h3>No opportunities found</h3><p>No results for "'+escapeHtml(q)+'"'+(extraTerms.length?' — also searched: '+extraTerms.slice(0,4).map(t=>'<em>'+escapeHtml(t)+'</em>').join(', '):'')+'</p><p style="margin-top:8px;font-size:12px;">Try different keywords or clear your filters</p>';
+    const extras=terms.filter(t=>t!==q);
+    empty.innerHTML='<div class="empty-icon">&#128301;</div><h3>No opportunities found</h3><p>No results for "'+escapeHtml(q)+'"'+(extras.length?' — also searched: '+extras.slice(0,4).map(t=>'<em>'+escapeHtml(t)+'</em>').join(', '):'')+'</p><p style="margin-top:8px;font-size:12px;">Try different keywords or clear your filters</p>';
     empty.style.display="block";lmw.style.display="none";return;
   }
   empty.style.display="none";
-  grid.innerHTML=slice.map((g,i)=>{
-    const dl=dlLabel(deadlineDays(g.deadline)),tags=(g.keywords||[]).slice(0,3),isFed=g.source==="federal";
-    const isSel=SELECTED.has(g.id);
-    return'<div class="card" style="animation-delay:'+Math.min(i,12)*0.04+'s" onclick="openModal(\''+g.id+'\')">'+
-      '<div class="cab '+g.accentClass+'"></div>'+
-      '<div class="card-body">'+
-        '<div class="card-top"><span class="funder-badge">'+escapeHtml(g.funder||"Unknown funder")+'</span><span class="src-badge '+g.source+'">'+(isFed?"Federal":"Curated")+'</span>'+(isNew(g)?'<span class="new-badge">New</span>':'')+'</div>'+
-        '<div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge '+dl.cls+'">'+dl.label+'</span></div>'+
-        '<div class="card-title">'+escapeHtml(g.name)+'</div>'+
-        '<div class="card-desc">'+escapeHtml(g.description||"Visit the grant listing for full details.")+'</div>'+
-        '<div class="card-tags">'+tags.map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join("")+(g.oppNum?'<span class="tag fed-tag">'+escapeHtml(g.oppNum)+'</span>':'')+'</div>'+
-      '</div>'+
-      '<div class="card-footer">'+
-        '<div class="card-check'+(isSel?' checked':'')+'" onclick="event.stopPropagation();toggleSelect(\''+g.id+'\')" title="Select for download"></div>'+
-        '<div style="flex:1"><div class="amount-label">Award</div><div class="amount">'+escapeHtml(g.amount)+'</div></div>'+
-        '<button class="apply-btn '+(isFed?"fb":"")+'" onclick="event.stopPropagation();openModal(\''+g.id+'\')">View Details</button>'+
-      '</div>'+
-    '</div>';
-  }).join("");
+
+  let display=[...FILT];
+  if(listSortCol&&curView==="list"){
+    display.sort((a,b)=>{
+      let av,bv;
+      if(listSortCol==="deadline"){av=deadlineDays(a.deadline);bv=deadlineDays(b.deadline);}
+      else if(listSortCol==="amount"){av=amtNum(a.amount);bv=amtNum(b.amount);}
+      else{av=String(a[listSortCol]||"").toLowerCase();bv=String(b[listSortCol]||"").toLowerCase();}
+      return av<bv?-listSortDir:av>bv?listSortDir:0;
+    });
+  }
+
+  const slice=display.slice(0,(PAGE+1)*PAGE_SIZE);
+
+  if(curView==="cards"){
+    grid.style.display="grid";listWrap.style.display="none";
+    grid.innerHTML=slice.map((g,i)=>{
+      const dl=dlLabel(deadlineDays(g.deadline)),tags=(g.keywords||[]).slice(0,3),isFed=g.source==="federal",isSel=SELECTED.has(g.id);
+      return'<div class="card" style="animation-delay:'+Math.min(i,12)*0.04+'s" onclick="openModal(\''+g.id+'\')">'+
+        '<div class="cab '+g.accentClass+'"></div>'+
+        '<div class="card-body">'+
+          '<div class="card-top"><span class="funder-badge">'+escapeHtml(g.funder||"Unknown funder")+'</span><span class="src-badge '+g.source+'">'+(isFed?"Federal":"Curated")+'</span>'+(isNew(g)?'<span class="new-badge">New</span>':'')+'</div>'+
+          '<div class="card-top" style="margin-top:2px;margin-bottom:6px;"><div></div><span class="dl-badge '+dl.cls+'">'+dl.label+'</span></div>'+
+          '<div class="card-title">'+escapeHtml(g.name)+'</div>'+
+          '<div class="card-desc">'+escapeHtml(g.description||"Visit the grant listing for full details.")+'</div>'+
+          '<div class="card-tags">'+tags.map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join("")+(g.oppNum?'<span class="tag fed-tag">'+escapeHtml(g.oppNum)+'</span>':'')+'</div>'+
+        '</div>'+
+        '<div class="card-footer">'+
+          '<div class="card-check'+(isSel?' checked':'')+'" onclick="event.stopPropagation();toggleSelect(\''+g.id+'\')" title="Select"></div>'+
+          '<div style="flex:1"><div class="amount-label">Award</div><div class="amount">'+escapeHtml(g.amount)+'</div></div>'+
+          '<button class="apply-btn '+(isFed?"fb":"")+'" onclick="event.stopPropagation();openModal(\''+g.id+'\')">View Details</button>'+
+        '</div>'+
+      '</div>';
+    }).join("");
+  } else {
+    grid.style.display="none";listWrap.style.display="block";
+    const tbody=document.getElementById("list-body");
+    tbody.innerHTML=slice.map((g,i)=>{
+      const dl=dlLabel(deadlineDays(g.deadline)),isFed=g.source==="federal",isSel=SELECTED.has(g.id);
+      const catLabel=CAT_LABELS[g.category]||g.category;
+      const pd=parseDateSafe(g.deadline);
+      const dlText=pd?pd.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}):"Open";
+      return'<tr style="animation-delay:'+Math.min(i,20)*0.02+'s" onclick="openModal(\''+g.id+'\')">'+
+        '<td class="lt-check-cell" onclick="event.stopPropagation()"><div class="card-check'+(isSel?' checked':'')+'" onclick="toggleSelect(\''+g.id+'\')"></div></td>'+
+        '<td><div class="lt-name-title">'+escapeHtml(g.name)+'</div><div class="lt-name-funder">'+escapeHtml(g.funder||"")+'</div></td>'+
+        '<td style="white-space:nowrap;"><span class="lt-stripe '+g.source+'"></span>'+(isFed?"Federal":"Curated")+(isNew(g)?'&nbsp;<span class="new-badge" style="font-size:9px;padding:1px 5px;">New</span>':'')+'</td>'+
+        '<td class="lt-cat-col" style="font-size:12px;white-space:nowrap;">'+escapeHtml(catLabel)+'</td>'+
+        '<td><span class="lt-amount-val">'+escapeHtml(g.amount)+'</span></td>'+
+        '<td style="white-space:nowrap;"><span class="dl-badge '+dl.cls+'" style="font-size:11px;">'+dlText+'</span></td>'+
+        '<td class="lt-elig-col" style="font-size:12px;color:var(--text2);max-width:180px;">'+escapeHtml((g.eligibility||"").slice(0,80)+((g.eligibility||"").length>80?"…":""))+'</td>'+
+        '<td style="text-align:center;"><button class="lt-action-btn '+(isFed?"fb":"")+'" onclick="event.stopPropagation();openModal(\''+g.id+'\')">Details</button></td>'+
+      '</tr>';
+    }).join("");
+  }
   lmw.style.display=FILT.length>slice.length?"block":"none";
 }
 
@@ -623,14 +596,7 @@ function updateCounts(){
     const el=document.getElementById(id);if(el)el.textContent=v.toLocaleString();
   });
 }
-
-function setSyncState(which,state,label){
-  const k=which==="federal"?"fed":"cur";
-  const dot=document.getElementById("dot-"+k),lbl=document.getElementById("lbl-"+k);
-  if(dot)dot.className="sync-dot"+(state==="loading"?" loading":state==="error"?" error":"");
-  if(lbl)lbl.textContent=label;
-}
-
+function setSyncState(which,state,label){const k=which==="federal"?"fed":"cur";const dot=document.getElementById("dot-"+k),lbl=document.getElementById("lbl-"+k);if(dot)dot.className="sync-dot"+(state==="loading"?" loading":state==="error"?" error":"");if(lbl)lbl.textContent=label;}
 function showWarn(msg){const b=document.getElementById("warn-banner");b.textContent="Warning: "+msg;b.style.display="block";}
 function escapeHtml(str){return String(str||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
 
@@ -650,12 +616,8 @@ function openModal(id){
   document.getElementById("m-tags").innerHTML=(g.keywords||[]).map(t=>'<span class="mtag">'+escapeHtml(t)+'</span>').join("")+extra;
   const btn=document.getElementById("m-apply");
   btn.className="mbtn-pri"+(isFed?" fed":"");
-  if(g.url&&g.url!=="#"){
-    btn.disabled=false;btn.style.opacity="1";btn.textContent="Learn More & Apply \u2192";
-    btn.onclick=()=>{window.open(g.url,"_blank","noopener,noreferrer");};
-  }else{
-    btn.disabled=true;btn.style.opacity="0.4";btn.textContent="No link available";btn.onclick=null;
-  }
+  if(g.url&&g.url!=="#"){btn.disabled=false;btn.style.opacity="1";btn.textContent="Learn More & Apply \u2192";btn.onclick=()=>window.open(g.url,"_blank","noopener,noreferrer");}
+  else{btn.disabled=true;btn.style.opacity="0.4";btn.textContent="No link available";btn.onclick=null;}
   document.getElementById("overlay").classList.add("open");
   document.body.style.overflow="hidden";
 }
@@ -663,65 +625,40 @@ function closeOverlay(){document.getElementById("overlay").classList.remove("ope
 function closeModal(e){if(e.target===document.getElementById("overlay"))closeOverlay();}
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeOverlay();});
 
-/* ===== SELECTION FEATURE ===== */
 function toggleSelect(id){
   if(SELECTED.has(id))SELECTED.delete(id);else SELECTED.add(id);
   updateSelBar();
-  document.querySelectorAll('.card-check').forEach(el=>{
-    const onclick=el.getAttribute('onclick')||'';
-    const match=onclick.match(/toggleSelect\('([^']+)'\)/);
-    if(match&&match[1]===id)el.classList.toggle('checked',SELECTED.has(id));
-  });
+  document.querySelectorAll('.card-check').forEach(el=>{const oc=el.getAttribute('onclick')||'';const m=oc.match(/toggleSelect\('([^']+)'\)/);if(m&&m[1]===id)el.classList.toggle('checked',SELECTED.has(id));});
   updateSelectAllBtn();
 }
-function updateSelBar(){
-  const bar=document.getElementById('sel-bar'),cnt=document.getElementById('sel-bar-count');
-  if(SELECTED.size>0){bar.style.display='flex';cnt.textContent=SELECTED.size+' selected';}
-  else{bar.style.display='none';}
-}
+function updateSelBar(){const bar=document.getElementById('sel-bar'),cnt=document.getElementById('sel-bar-count');if(SELECTED.size>0){bar.style.display='flex';cnt.textContent=SELECTED.size+' selected';}else bar.style.display='none';}
 function clearSelection(){SELECTED.clear();updateSelBar();renderPage();updateSelectAllBtn();}
 function toggleSelectAll(){
   const allOnPage=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
   const allSelected=allOnPage.every(g=>SELECTED.has(g.id));
-  if(allSelected){allOnPage.forEach(g=>SELECTED.delete(g.id));}
-  else{allOnPage.forEach(g=>SELECTED.add(g.id));}
+  if(allSelected)allOnPage.forEach(g=>SELECTED.delete(g.id));else allOnPage.forEach(g=>SELECTED.add(g.id));
   updateSelBar();renderPage();updateSelectAllBtn();
 }
 function updateSelectAllBtn(){
   const btn=document.getElementById('sel-all-btn');if(!btn)return;
   const allOnPage=FILT.slice(0,(PAGE+1)*PAGE_SIZE);
   const allSelected=allOnPage.length>0&&allOnPage.every(g=>SELECTED.has(g.id));
-  btn.classList.toggle('active',allSelected);
-  btn.textContent=allSelected?'Deselect All':'Select All';
+  btn.classList.toggle('active',allSelected);btn.textContent=allSelected?'Deselect All':'Select All';
 }
-function downloadSelected(){
-  if(!SELECTED.size)return;
-  const items=ALL.filter(g=>SELECTED.has(g.id));
-  generateCSV(items,'selected_opportunities');
-}
+function downloadSelected(){if(!SELECTED.size)return;generateCSV(ALL.filter(g=>SELECTED.has(g.id)),'selected_opportunities');}
 
-/* ===== DOWNLOAD CSV FEATURE ===== */
 function generateCSV(items,filenamePrefix){
   if(!items.length)return;
   const csvEsc=v=>{const s=String(v||"");return s.includes(",")||s.includes('"')||s.includes("\n")?'"'+s.replace(/"/g,'""')+'"':s;};
   const headers=["Name","Source","Funder","Amount","Deadline","Category","Description","Eligibility","Keywords","URL","Opportunity Number"];
-  const rows=items.map(g=>[
-    csvEsc(g.name),csvEsc(g.source),csvEsc(g.funder),csvEsc(g.amount),
-    csvEsc(g.deadline),csvEsc(g.category),csvEsc(g.description),csvEsc(g.eligibility),
-    csvEsc((g.keywords||[]).join(", ")),csvEsc(g.url),csvEsc(g.oppNum)
-  ].join(","));
+  const rows=items.map(g=>[csvEsc(g.name),csvEsc(g.source),csvEsc(g.funder),csvEsc(g.amount),csvEsc(g.deadline),csvEsc(CAT_LABELS[g.category]||g.category),csvEsc(g.description),csvEsc(g.eligibility),csvEsc((g.keywords||[]).join(", ")),csvEsc(g.url),csvEsc(g.oppNum)].join(","));
   const csv=headers.join(",")+"\n"+rows.join("\n");
   const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
   const link=document.createElement("a");
-  link.href=URL.createObjectURL(blob);
-  link.download=filenamePrefix+"_"+new Date().toISOString().slice(0,10)+".csv";
-  document.body.appendChild(link);link.click();document.body.removeChild(link);
-  URL.revokeObjectURL(link.href);
+  link.href=URL.createObjectURL(blob);link.download=filenamePrefix+"_"+new Date().toISOString().slice(0,10)+".csv";
+  document.body.appendChild(link);link.click();document.body.removeChild(link);URL.revokeObjectURL(link.href);
 }
-function downloadCSV(){
-  if(!FILT.length)return;
-  generateCSV(FILT,'funding_opportunities');
-}
+function downloadCSV(){if(FILT.length)generateCSV(FILT,'funding_opportunities');}
 
 init();
 </script>
