@@ -411,24 +411,25 @@ function parseCSV(text,source){
     headers.forEach((h,idx)=>{row[h]=(vals[idx]||"").replace(/^"|"$/g,"").trim();});
     const name=getFirst(row,["name","opportunity","opportunitytitle","title","fundingopportunitytitle"]);
     if(!name)continue;
-    const cat=normaliseCategory(getFirst(row,["discipline","category","categoryoffundingactivity","fundingactivitycategory"]));
-    const rawKw=getFirst(row,["keywords","keyword","tags"],"");
+    const cat=normaliseCategory(getFirst(row,["discipline","category","field","subject","categoryoffundingactivity","fundingactivitycategory"]));
+    const rawKw=getFirst(row,["keywords","keyword","tags","researcharea","researchareas","disciplines"],"");
     const kws=rawKw?rawKw.replace(/^["']+|["']+$/g,"").split(/\s+/).map(k=>k.replace(/^#/,"").trim().toLowerCase()).filter(k=>k.length>1):[cat.toLowerCase()];
     const deadline=getFirst(row,["deadline","closedate","duedate","applicationdeadline"],"");
     if(deadlineDays(deadline)<0)continue;
     const item={id:`${source}_${i}`,source,name,
       funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
-      amount:(()=>{const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");if(!raw||raw.toLowerCase()==="see listing")return"See listing";const num=parseFloat(raw.replace(/[$,]/g,""));if(!isNaN(num)&&num>0)return"$"+num.toLocaleString("en-US");return raw;})(),
-      description:getFirst(row,["description","summary","synopsis","opportunitydescription"],""),
-      eligibility:getFirst(row,["eligibility","eligibleapplicants"],"See listing"),
+      amount:(()=>{const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");const note=getFirst(row,["amountnote","amount_note","awardnote"],"");if(!raw||raw.trim()==="")return note||"See listing";const cleaned=raw.replace(/[$,]/g,"").trim();const num=parseFloat(cleaned);if(!isNaN(num)&&num>0){const formatted="$"+Math.round(num).toLocaleString("en-US").replace(/,/g,"");return formatted+(note?" — "+note:"");}return raw.replace(/,/g,"")+(note?" — "+note:"");})(),
+      description:getFirst(row,["summary","description","synopsis","opportunitydescription"],""),
+      eligibility:getFirst(row,["eligibility","eligibleapplicants","eligibileapplicants","whocanapply","eligibilityrequirements"],"See listing"),
       category:cat,keywords:kws,
       url:getFirst(row,["url","link","opportunitylink","grantsgovurl","grantorlink"],"#"),
       oppNum:getFirst(row,["opportunitynumber","opportunity_number","fundingopportunitynumber"],""),
       cfda:getFirst(row,["cfda","cfdanumber","assistancelistingnumber"],""),
       featured:/^(yes|true|1|y|x|featured)$/i.test(getFirst(row,["featured","isFeatured","feature","highlight","highlighted"],"").trim()),
       rowIndex:i,
-      accentClass:source==="federal"?"federal":(accentOf[cat]||"curated")
+      accentClass:source==="federal"?"federal":(accentOf[cat]||"curated"),
+      deadlineNote:getFirst(row,["deadlinenote","deadline_note","deadlineinfo"],"")
     };
     const looksFederal=!!getFirst(row,["opportunitynumber","fundingopportunitynumber","cfdanumber","assistancelistingnumber","agencycode","categoryoffundingactivity"],"");
     if(source==="curated"&&looksFederal)continue;
@@ -635,7 +636,7 @@ function openModal(id){
   document.getElementById("m-title").textContent=g.name;
   document.getElementById("m-amount").textContent=g.amount;
   const pd=parseDateSafe(g.deadline);
-  document.getElementById("m-deadline").textContent=pd?pd.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"}):"Open / See listing";
+  const dlNote=g.deadlineNote?(" — "+g.deadlineNote):"";document.getElementById("m-deadline").textContent=(pd?pd.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"}):"Rolling / Open")+dlNote;
   document.getElementById("m-elig").textContent=g.eligibility||"See listing";
   document.getElementById("m-desc").textContent=g.description||"Visit the grant listing for full details.";
   const extra=(g.oppNum?'<span class="mtag ft">'+escapeHtml(g.oppNum)+'</span>':'')+(g.cfda?'<span class="mtag ft">CFDA: '+escapeHtml(g.cfda)+'</span>':'');
