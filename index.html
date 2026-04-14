@@ -444,27 +444,17 @@ function gvizToCSV(data){
   for(const r of t.rows){const vals=r.c.map(cell=>{if(!cell||cell.v===null||cell.v===undefined)return"";let v=cell.f||String(cell.v);if(v.includes(",")||v.includes('"')||v.includes("\n"))v='"'+v.replace(/"/g,'""')+'"';return v;});csvRows.push(vals.join(","));}
   return csvRows.join("\n");
 }
+
 async function loadTab(tabName,source){
   setSyncState(source,"loading","Loading "+source+"...");
   const GID=source==="curated"?"1152854448":"1347133722";
+  const gvizUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&gid="+GID;
   function tryFetch(url){return fetch(url).then(r=>r.text()).then(text=>{if(text.trim().startsWith("<")||text.length<10)throw new Error("bad response");return text;});}
-
-  // TSV fetch — tabs in cells are extremely rare so this avoids comma-in-text parsing bugs
-  function tryTSV(){
-    const tsvUrl="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:tsv&gid="+GID;
-    return tryFetch(tsvUrl);
-  }
-
-  // JSONP fallback — uses the gviz JSON API which handles quoting correctly
   function tryJSONP(){return new Promise((res,rej)=>{const cbName="gvizCb_"+source+"_"+Date.now();const script=document.createElement("script");const timer=setTimeout(()=>{delete window[cbName];try{document.head.removeChild(script);}catch(e){}rej(new Error("timeout"));},15000);window[cbName]=function(data){clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){}const csv=gvizToCSV(data);if(csv.length<10){rej(new Error("empty"));return;}res(csv);};script.onerror=function(){clearTimeout(timer);delete window[cbName];try{document.head.removeChild(script);}catch(e){}rej(new Error("script error"));};script.src="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?gid="+GID+"&headers=1&tqx=responseHandler:"+cbName;document.head.appendChild(script);});}
-
   try{
     let text;
-    // Try TSV first — most reliable for text fields containing commas
-    try{text=await tryTSV();}catch(e){
-      // Fall back to JSONP if TSV blocked
-      try{text=await tryJSONP();}catch(e2){
-        // Last resort: published CSV via proxy
+    try{text=await tryJSONP();}catch(e){
+      try{text=await tryFetch(gvizUrl);}catch(e2){
         const csvUrl="https://docs.google.com/spreadsheets/d/e/2PACX-1vQisWtDVnTEFF_02fjWvRzX6O11OX_vgbMr2M_HZFOdsQ-B9rsYuklpcG7ChwoqxeMPb5nVOfbkY2Ei/pub?gid="+GID+"&single=true&output=csv";
         text=await tryFetch("https://corsproxy.io/?"+encodeURIComponent(csvUrl));
       }
