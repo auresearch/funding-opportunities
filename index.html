@@ -35,7 +35,7 @@
   .search-mode-btn:first-child { border-right:1.5px solid var(--border); }
   .search-mode-btn:hover { color:var(--accent); }
   .search-mode-btn.active { background:var(--accent); color:#fff; }
-  .filter-label { font-size:11px; color:var(--text3); white-space:nowrap; font-weight:500; }
+  .filter-label { font-size:11px; color:var(--text2); white-space:nowrap; font-weight:700; }
   select { padding:9px 26px 9px 11px; border:1.5px solid var(--border); border-radius:9px; font-family:'Source Sans 3',sans-serif; font-size:13px; color:var(--text); background:var(--bg); outline:none; cursor:pointer; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239c9590' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 8px center; }
   select:focus { border-color:var(--accent); }
   #funder-select { max-width:200px; }
@@ -448,7 +448,7 @@ function parseCSV(text,source){
     const item={id:`${source}_${i}`,source,name,
       funder:getFirst(row,["funder","agency","agencyname","agencycode","agencycontact"],""),
       deadline,
-      amount:(()=>{const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");const note=getFirst(row,["amountnote","amount_note","awardnote"],"");if(!raw||raw.trim()==="")return note||"See listing";const cleaned=raw.replace(/[$,]/g,"").trim();const num=parseFloat(cleaned);if(!isNaN(num)&&num>0){const formatted="$"+Math.round(num).toLocaleString("en-US").replace(/,/g,"");return formatted+(note?" — "+note:"");}return raw.replace(/,/g,"")+(note?" — "+note:"");})(),
+      amount:(()=>{const raw=getFirst(row,["amount","awardceiling","awardfloor","estimatedtotalprogramfunding"],"");if(!raw||raw.trim()==="")return"See listing";const cleaned=raw.replace(/[$,]/g,"").trim();const km=cleaned.match(/^([0-9.]+)([kKmM])$/);let num;if(km){num=parseFloat(km[1])*(km[2].toLowerCase()==="k"?1000:1000000);}else{num=parseFloat(cleaned);}if(!isNaN(num)&&num>0){const s=raw.trim();if(/[kK]/.test(s)||/[mM]$/.test(s)){const prefix=s.match(/^[^0-9]*/)[0];return prefix+cleaned;}return raw.replace(/,/g,"");}return raw.replace(/,/g,"");})(),
       description:getFirst(row,["summary","description","synopsis","opportunitydescription"],""),
       eligibility:getFirst(row,["eligibility","eligibleapplicants","eligibileapplicants","whocanapply","eligibilityrequirements"],"See listing"),
       category:cat,keywords:kws,
